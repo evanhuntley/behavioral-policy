@@ -30,3 +30,6 @@ assets/js/
 
 # Bower
 src/components
+
+deploy
+rsync_exclude.txt

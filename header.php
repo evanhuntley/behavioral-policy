@@ -23,39 +23,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="ClearType" content="true" />
 
-<!-- The little things -->
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <link rel="shortcut icon" href="<?php echo bloginfo('template_directory'); ?>/favicon.png">
 	<link rel="apple-touch-icon" href="<?php echo bloginfo('template_directory'); ?>/apple-touch-icon-precomposed.png"/>
-<!-- The little things -->
 
-<!-- Stylesheets -->
-	<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+	<script src="https://use.typekit.net/kqt4yvo.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<link rel="stylesheet" href="<?php echo bloginfo('template_directory'); ?>/assets/css/style.css" />
-<!-- Stylesheets -->
-
-<!-- Load scripts quick smart -->
-
-<!-- Load scripts quick smart -->
 
 	<?php wp_deregister_script('jquery');wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> id="top">
+	<div class="access-nav">
+		<div class="container">
+			<?php
+				$args = array(
+					'menu' => 'Access Nav',
+					'container' => '<div>',
+					'items_wrap' => '<ul>%3$s</ul>',
+					);
+				wp_nav_menu($args);
+			?>
+
+			<ul class="social">
+				<li>
+					<a href="#"><i class="fa fa-twitter"></i><span class="screen-reader-text">Twitter</span></a>
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-linkedin"></i><span class="screen-reader-text">Linkedin</span></a>
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-rss"></i><span class="screen-reader-text">RSS</span></a>
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-envelope-o"></i><span class="screen-reader-text">Email</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
     <header role="banner">
 		<div class="container">
 	        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo"><?php bloginfo( 'name' ); ?></a>
 	        <nav role="navigation">
 	            <?php
 	                $args = array(
-	                    'container' => 'false',
+						'menu' => 'Main Nav',
+	                    'container' => false,
 	                    'items_wrap' => '<ul>%3$s</ul>',
 	                    );
 	                wp_nav_menu($args);
 	            ?>
 	        </nav>
-	        <?php //get_search_form(); ?>
 		</div>
     </header>

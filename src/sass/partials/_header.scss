@@ -4,36 +4,190 @@
 
 header {
     @extend %clearfix;
-    background: #ececec;
+    background: #fff;
+    border-bottom: 1px solid $bordergray;
 
     nav {
+        text-transform: lowercase;
 
         @include bp-xl {
             width: 70%;
             float: right;
+        }
 
-            ul {
-                margin: 0;
-                padding: 0;
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: block;
+
+            &:hover {
+
+                .sub-menu {
+                    display: block;
+                }
             }
 
-            li {
+            @include bp-xl {
                 display: inline-block;
+                position: relative;
 
-                a {
-                    display: block;
-                    padding: 1em;
+                &.current_page_item a {
+                    color: $orange;
+                    border-color: $orange;
+                }
+            }
+
+            a {
+                display: block;
+                padding: 12px 30px;
+                @include font-size(.75, 1);
+                color: #000;
+                background: #f9f9f9;
+
+                @include bp-xl {
+                    @include font-size(1.125, 1);
+                    padding: 3em 1em;
+                    border-top: 5px solid transparent;
+                    background: transparent;
+
+                    &:hover {
+                        border-color: $orange;
+                    }
+
+                    &.current_page_item a {
+                        color: $orange;
+                        border-color: $orange;
+                    }
                 }
             }
         }
     }
 
+    nav .sub-menu {
+
+        @include bp-xl {
+            display: none;
+            width: 170px;
+            position: absolute;
+            background: #f2efef;
+            border-top: 3px solid $orange;
+        }
+
+        li {
+            display: block;
+        }
+
+        a {
+            width: 100%;
+            padding: 1em;
+            border: none;
+            @include font-size(1, 1.2);
+            border-bottom: 1px solid #dcdadb;
+
+            &:hover {
+                background: #f7f7f7;
+                border-color: #dcdadb;
+            }
+        }
+    }
+
     .logo {
-        margin: 1em 0 0;
-        
+        display: block;
+        width: 183px;
+        height: 110px;
+        margin: 1em 0;
+        background: url("../img/l_bsp.png");
+        background: url("../img/l_bsp.svg");
+        background-repeat: no-repeat;
+        border: 0;
+        font: 0/0 a;
+        text-shadow: none;
+        color: transparent;
+        margin: 12px 0;
+
         @include bp-xl {
             width: 30%;
             float: left;
+        }
+    }
+}
+
+/* Access Nav -------------------------------------------------- */
+
+.access-nav {
+    @extend %clearfix;
+    background: #fafafa;
+    border-top: 3px solid $orange;
+    border-bottom: 1px solid $bordergray;
+    text-transform: lowercase;
+
+    .menu {
+
+        @include bp-xl {
+            float: left;
+        }
+
+        ul {
+            margin: 0;
+            list-style-type: none;
+        }
+
+        li {
+            display: inline-block;
+            border-left: 1px solid #efefef;
+
+            &:first-child {
+                border: none;
+
+                a {
+                    padding-left: 0;
+                }
+            }
+        }
+
+        a {
+            display: block;
+            padding: 1.25em 1em;
+            color: $dark-gray;
+            @include font-size(.75, 1);
+
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+}
+
+/* Social -------------------------------------------------- */
+
+.social {
+    margin: 0 auto;
+    list-style-type: none;
+    border-top: 1px solid $bordergray;
+
+    @include bp-xl {
+        float: right;
+        margin: .875em 0 0;
+        border: none;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        padding: .5em;
+        color: #bebdbd;
+
+        &:hover {
+            color: lighten(#bebdbd, 5%);
+        }
+
+        i {
+            @include font-size(1.2, 1.2);
         }
     }
 }

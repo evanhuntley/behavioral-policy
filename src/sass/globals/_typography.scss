@@ -17,7 +17,7 @@ html {
 
 body {
     @include font-size(1,1.5);
-	}
+}
 
 h1, h2, h3, h4, h5, h6 {
 	@include font-size(1.5, 1.75);
@@ -34,11 +34,14 @@ p {
 	}
 
 a {
+    color: #aa6500;
+    text-decoration: none;
 	@include hover-fade;
 
 	&:hover,
     &:active {
         outline: 0;
+        color: #d57e00;
 		}
 	}
 

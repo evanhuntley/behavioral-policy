@@ -27,6 +27,7 @@ npm-debug.log
 # Compiled items
 assets/css/
 assets/js/
+assets/fonts/
 
 # Bower
 src/components

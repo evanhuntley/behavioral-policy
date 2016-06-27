@@ -7,8 +7,10 @@ Version: 1.0
 */
 
 @import
-	// "globals/debug",
+	// Dependencies
+	"../components/font-awesome/scss/font-awesome.scss",
 
+	// Custom
 	"globals/reset",
 	"globals/settings",
 	"globals/typography",

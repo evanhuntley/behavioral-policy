@@ -117,3 +117,37 @@ $dark-gray: #747474;
         display: inline;
         }
     }
+
+// Grid Mixins (via Aleksandar Gosevski )
+
+// This is mixin which you will include in parent
+// of columns. It kills default margin of inline-block
+// elements.
+@mixin row () {
+  font-size: 0;
+  @extend %clearfix;
+}
+
+// This is column mixin.
+@mixin col ($col, $sum, $gap: 1em, $align: top, $first: false, $last: false) {
+    width: 100%;
+    display: inline-block;
+    font-size: 16px;
+
+    @media only screen and (min-width: 768px) {
+            width: percentage($col/$sum);
+            vertical-align: $align;
+			padding-left: $gap;
+		    padding-right: $gap;
+
+			&:first-child{
+		  	   padding-left: 0;
+			}
+
+			&:last-child{
+			   padding-right: 0;
+			}
+    }
+
+    &.fluid { width: percentage($col/$sum); }
+}

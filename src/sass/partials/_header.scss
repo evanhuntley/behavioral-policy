@@ -4,15 +4,18 @@
 
 header {
     @extend %clearfix;
+    position: relative;
     background: #fff;
     border-bottom: 1px solid $bordergray;
 
     nav {
+        display: none;
         text-transform: lowercase;
 
         @include bp-xl {
             width: 70%;
             float: right;
+            display: block;
         }
 
         ul {
@@ -115,6 +118,73 @@ header {
     }
 }
 
+/* Nav Toggle -------------------------------------------------- */
+
+.nav-toggle {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 2.5%;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: transparent;
+    z-index: 999;
+    transition: all 250ms ease-in-out;
+
+    @include bp-xl {
+        display: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    span {
+        left: 6px;
+    }
+
+    span, span:before, span:after {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 3px;
+      width: 30px;
+      background: #ccc;
+      position: absolute;
+      display: block;
+      content: '';
+      transition: all 250ms ease-in-out;
+    }
+
+    span:before {
+      top: -10px;
+    }
+
+    span:after {
+      bottom: -10px;
+    }
+
+    &.active {
+
+        span {
+            background-color: transparent;
+        }
+
+        span:before, span:after {
+            top: 0;
+            background-color: #ccc;
+        }
+
+        span:before {
+            transform: rotate(45deg);
+        }
+
+        span:after {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
 /* Access Nav -------------------------------------------------- */
 
 .access-nav {
@@ -124,10 +194,21 @@ header {
     border-bottom: 1px solid $bordergray;
     text-transform: lowercase;
 
+    .container {
+
+        @media (max-width: 1000px) {
+            width: 100%;
+        }
+    }
+
     .menu {
+        width: 100%;
+        text-align: center;
 
         @include bp-xl {
             float: left;
+            width: auto;
+            text-align: left;
         }
 
         ul {
@@ -165,12 +246,15 @@ header {
 
 .social {
     margin: 0 auto;
+    padding: 1em 0;
     list-style-type: none;
     border-top: 1px solid $bordergray;
+    text-align: center;
 
     @include bp-xl {
         float: right;
         margin: .875em 0 0;
+        padding: 0;
         border: none;
     }
 

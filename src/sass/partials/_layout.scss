@@ -9,6 +9,10 @@
     @include bp-xl {
         width: 1000px;
     }
+
+    @include bp-xxl {
+        width: 1150px;
+    }
 }
 
 .primary-content {

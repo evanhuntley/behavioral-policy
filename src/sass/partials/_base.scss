@@ -54,3 +54,17 @@ figure {
 .screen-reader-text {
     @extend %visuallyhidden;
 }
+
+.button {
+    display: inline-block;
+    margin: 1em 0;
+    padding: 1em;
+    text-transform: lowercase;
+    background: $orange;
+    color: #fff;
+
+    &:hover {
+        color: #fff;
+        background: lighten($orange, 5%);
+    }
+}

@@ -4,11 +4,17 @@ add_theme_support( 'menus' );
 
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
+		'name' => __( 'Sidebar' ),
+		'id' => 'sidebar-1',
 		'before_widget' => '<aside>',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
-));
+	));
+	register_sidebar( array(
+		'name' => __( 'Footer Widget Area' ),
+		'id' => 'footer-widgets'
+	));
 
 add_post_type_support('page', 'excerpt');
 

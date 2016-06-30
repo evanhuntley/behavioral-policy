@@ -12,7 +12,11 @@ header {
         width: 100%;
 
         @include bp-xl {
-            width: 95%;
+            width: 1000px;
+        }
+
+        @include bp-xxl {
+            width: 1150px;
         }
     }
 

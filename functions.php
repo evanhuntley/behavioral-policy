@@ -69,7 +69,8 @@ function custom_wp_nav_menu($var) {
                 // List of useful classes to keep
                 'current_page_item',
                 'current_page_parent',
-                'current_page_ancestor'
+                'current_page_ancestor',
+				'menu-item-has-children'
                 )
         ) : '';
 }

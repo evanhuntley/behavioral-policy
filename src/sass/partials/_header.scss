@@ -8,6 +8,14 @@ header {
     background: #fff;
     border-bottom: 1px solid $bordergray;
 
+    .container {
+        width: 100%;
+
+        @include bp-xl {
+            width: 95%;
+        }
+    }
+
     nav {
         display: none;
         text-transform: lowercase;
@@ -24,18 +32,21 @@ header {
         }
 
         li {
+            position: relative;
             display: block;
-
-            &:hover {
-
-                .sub-menu {
-                    display: block;
-                }
-            }
+            border-top: 1px solid #dadada;
 
             @include bp-xl {
                 display: inline-block;
                 position: relative;
+                border: none;
+
+                &:hover {
+
+                    .sub-menu {
+                        display: block;
+                    }
+                }
 
                 &.current_page_item a {
                     color: $orange;
@@ -50,6 +61,11 @@ header {
                 color: #000;
                 background: #f9f9f9;
 
+                &:hover {
+                    color: #000;
+                    background: #f6f6f6;
+                }
+
                 @include bp-xl {
                     @include font-size(1.125, 1);
                     padding: 3em 1em;
@@ -57,7 +73,9 @@ header {
                     background: transparent;
 
                     &:hover {
+                        color: $orange;
                         border-color: $orange;
+                        background: transparent;
                     }
 
                     &.current_page_item a {
@@ -70,9 +88,9 @@ header {
     }
 
     nav .sub-menu {
+        display: none;
 
         @include bp-xl {
-            display: none;
             width: 170px;
             position: absolute;
             background: #f2efef;
@@ -85,10 +103,24 @@ header {
 
         a {
             width: 100%;
-            padding: 1em;
+            padding: 1em 0 1em 3.5em;
             border: none;
-            @include font-size(1, 1.2);
-            border-bottom: 1px solid #dcdadb;
+            @include font-size(.75, 1);
+
+            &:before {
+                content: "-";
+                margin-right: 2px;
+            }
+
+            @include bp-xl {
+                padding: 1em;
+                @include font-size(1, 1.2);
+                border-bottom: 1px solid #dcdadb;
+
+                &:before {
+                    content: none;
+                }
+            }
 
             &:hover {
                 background: #f7f7f7;
@@ -101,7 +133,6 @@ header {
         display: block;
         width: 183px;
         height: 110px;
-        margin: 1em 0;
         background: url("../img/l_bsp.png");
         background: url("../img/l_bsp.svg");
         background-repeat: no-repeat;
@@ -109,11 +140,12 @@ header {
         font: 0/0 a;
         text-shadow: none;
         color: transparent;
-        margin: 12px 0;
+        margin: 12px 0 12px 2.5%;
 
         @include bp-xl {
             width: 30%;
             float: left;
+            margin: 12px 0;
         }
     }
 }
@@ -182,6 +214,48 @@ header {
         span:after {
             transform: rotate(-45deg);
         }
+    }
+}
+
+/* Submenu Toggles --------------------------------------------- */
+
+.toggle-sub {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 41px;
+    height: 41px;
+
+    &:before {
+        content: "\f078";
+        font-family: 'FontAwesome';
+        background-position: -32px -16px;
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        color: #333;
+        transition: all .2s;
+    }
+
+    &:hover {
+
+        &:before {
+            color: $orange;
+        }
+    }
+
+    &.active {
+
+        &:before {
+            content: "\f077";
+        }
+    }
+
+    @include bp-l {
+        display: none;
     }
 }
 

@@ -17,6 +17,8 @@
     "enquire": "~2.1.2",
     "html5shiv": "~3.7.3",
     "css3-mediaqueries-js": "~1.0.0",
-    "font-awesome": "fontawesome#^4.6.3"
+    "font-awesome": "fontawesome#^4.6.3",
+    "flexslider": "^2.6.1",
+    "jquery-numerator": "^0.2.1"
   }
 }

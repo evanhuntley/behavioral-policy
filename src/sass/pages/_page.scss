@@ -1,3 +1,18 @@
 // This is where you can put any styles specific to a page
 // .page is the class WordPress outputs to the body tag
-.page {}
+.page {
+
+    .content {
+
+        @include bp-l {
+            float: right;
+        }
+    }
+
+    .secondary-content {
+
+        @include bp-l {
+            float: left;
+        }
+    }
+}

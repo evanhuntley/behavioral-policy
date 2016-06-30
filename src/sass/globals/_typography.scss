@@ -21,7 +21,8 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	@include font-size(1.5, 1.75);
-	}
+    font-weight: 400;
+}
 
     h2 {}
     h3 {}

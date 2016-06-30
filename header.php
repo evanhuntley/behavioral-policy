@@ -49,16 +49,16 @@
 
 			<ul class="social">
 				<li>
-					<a href="#"><i class="fa fa-twitter"></i><span class="screen-reader-text">Twitter</span></a>
+					<a href="https://twitter.com/BeSciPol"><i class="fa fa-twitter"></i><span class="screen-reader-text">Twitter</span></a>
 				</li>
 				<li>
-					<a href="#"><i class="fa fa-linkedin"></i><span class="screen-reader-text">Linkedin</span></a>
+					<a href="https://www.linkedin.com/company/3114545"><i class="fa fa-linkedin"></i><span class="screen-reader-text">Linkedin</span></a>
 				</li>
 				<li>
-					<a href="#"><i class="fa fa-rss"></i><span class="screen-reader-text">RSS</span></a>
+					<a href="http://behavioralpolicy.org/feed"><i class="fa fa-rss"></i><span class="screen-reader-text">RSS</span></a>
 				</li>
 				<li>
-					<a href="#"><i class="fa fa-envelope-o"></i><span class="screen-reader-text">Email</span></a>
+					<a href="mailto:bspa@behavioralpolicy.org"><i class="fa fa-envelope-o"></i><span class="screen-reader-text">Email</span></a>
 				</li>
 			</ul>
 		</div>

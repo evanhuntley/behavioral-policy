@@ -13,7 +13,11 @@ if ( function_exists('register_sidebar') )
 	));
 	register_sidebar( array(
 		'name' => __( 'Footer Widget Area' ),
-		'id' => 'footer-widgets'
+		'id' => 'footer-widgets',
+		'before_widget' => '<div class="twitter">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4>',
+		'after_title' => '</h4>',
 	));
 
 add_post_type_support('page', 'excerpt');

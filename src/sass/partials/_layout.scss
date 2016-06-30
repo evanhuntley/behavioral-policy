@@ -15,6 +15,25 @@
     }
 }
 
-.primary-content {
+.primary {
+    @include row;
     padding: 1em 0;
+
+    .content {
+
+        @include bp-l {
+            @include col(3, 4);
+        }
+    }
+
+    .secondary-content {
+
+        @include bp-l {
+            @include col(1, 4);
+        }
+    }
+}
+
+.row {
+    @include row;
 }

@@ -12,7 +12,28 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <article role="main" class="type-page" id="post-<?php the_ID(); ?>">
+        <div class="flexslider">
+            <ul class="slides">
+                <?php
+                    $args = array(
+                        'post_type' => 'slides',
+                        'posts_per_page' => 3
+                    );
+                    $slides = new WP_Query( $args);
 
+                    while ( $slides->have_posts() ) : $slides->the_post();
+
+                    $simple = types_render_field('simple-centered', array("raw" => true));
+                    $simple = $simple == 1 ? 'simple' : '';
+                ?>
+                <li class="<?= $simple; ?>" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
+                    <div class="slide-content">
+                        <h1><?php the_title(); ?></h1>
+                    </div>
+                </li>
+                <?php endwhile; wp_reset_query(); ?>
+            </ul>
+        </div>
         <div class="billboard twitter">
             <div class="container">
                 <h2>Our Favorite Tweets This Week</h2>

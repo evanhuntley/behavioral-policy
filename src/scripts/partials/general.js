@@ -27,4 +27,9 @@ jQuery(document).ready(function($) {
         e.preventDefault();
     });
 
+    // flexslider
+    $('.flexslider').flexslider({
+        controlNav: false
+    });
+
 });

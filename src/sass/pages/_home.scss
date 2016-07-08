@@ -4,6 +4,88 @@
 
 .home {
 
+    // Flexslider
+    .flexslider {
+        margin: 0;
+        border: 0;
+        height: 300px;
+
+        .slides li {
+            color: #fff;
+            min-height: 300px;
+            background-position: center center;
+            background-size: cover;
+
+            &.simple {
+                text-align: center;
+            }
+
+            .slide-content {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                padding: 2em;
+                z-index: 5;
+                transform: translateY(0);
+                transition: transform .5s .2s;
+
+                @include bp-l {
+                    padding: 2em 8em;
+                }
+            }
+
+            &.flex-active-slide {
+
+                .slide-content {
+                    transform: translateY(-50%);
+                }
+            }
+
+            h1 {
+                @include font-size(1.8, 1.2);
+            }
+        }
+
+        // Nav
+        .flex-direction-nav {
+
+            a {
+                background: rgba(0, 0, 0, 0.6);
+
+                &:before {
+                    content: "\f053";
+                    font-family: "FontAwesome";
+                    font-size: 20px;
+                    display: inline-block;
+                    color: #fff;
+                    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+                }
+
+                &.flex-next {
+
+                    &:before {
+                        content: "\f054";
+                    }
+                }
+            }
+        }
+
+        &:hover {
+
+            .flex-direction-nav {
+
+                a {
+                    left: 0;
+
+                    &.flex-next {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
     .tweet {
         @include col(1,3);
     }

@@ -16,3 +16,36 @@
         }
     }
 }
+
+/* Billboard --------------------------------------------------- */
+
+.billboard {
+    text-align: left;
+    background-size: cover;
+
+    &.center {
+        text-align: center;
+
+        p {
+            width: 80%;
+            margin: 0 auto;
+            @include font-size(.875, 1.2);
+            color: $dark-gray;
+
+            @include bp-l {
+                width: 50%;
+            }
+        }
+
+        .button {
+            margin-top: 2em;
+        }
+    }
+
+    &.light {
+
+        h2, p {
+            color: #fff;
+        }
+    }
+}

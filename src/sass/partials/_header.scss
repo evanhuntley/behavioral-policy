@@ -25,9 +25,11 @@ header {
         text-transform: lowercase;
 
         @include bp-xl {
+            position: relative;
             width: 70%;
             float: right;
             display: block;
+            z-index: 1000;
         }
 
         ul {

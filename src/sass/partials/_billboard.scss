@@ -2,7 +2,9 @@
 
 .billboard {
     padding: 2em 0;
-    text-align: center;
+    text-align: left;
+    background-size: cover;
+    color: #333;
 
     @include bp-l {
         padding: 4em 0;
@@ -11,5 +13,31 @@
     h2 {
         @include font-size(2, 2);
         color: $blue;
+    }
+
+    &.center {
+        text-align: center;
+
+        p {
+            width: 80%;
+            margin: 0 auto;
+            @include font-size(.875, 1.2);
+            color: $dark-gray;
+
+            @include bp-l {
+                width: 50%;
+            }
+        }
+
+        .button {
+            margin-top: 2em;
+        }
+    }
+
+    &.light {
+
+        h2, h3, p {
+            color: #fff;
+        }
     }
 }

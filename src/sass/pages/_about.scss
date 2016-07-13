@@ -1,0 +1,29 @@
+/* ================================================================
+    About Page Styles
+=================================================================== */
+
+.about {
+
+    .who {
+        background-image: url('../img/bg_about-who.jpg');
+    }
+
+    .philosophy {
+        background-image: url('../img/bg_about-philosophy.jpg');
+    }
+
+    .community {
+        background-image: url('../img/bg_about-community.jpg');
+    }
+}
+
+// Meet the Team
+
+.grid {
+    margin: 0;
+    list-style-type: none;
+
+    .grid-item {
+        margin: 0 1em;
+    }
+}

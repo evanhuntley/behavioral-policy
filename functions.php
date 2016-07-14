@@ -101,4 +101,79 @@ function current_to_active($text){
         }
 add_filter ('wp_nav_menu','current_to_active');
 
+// Custom Image Sizes
+add_action( 'after_setup_theme', 'bp_theme_setup' );
+function bp_theme_setup() {
+  add_image_size( 'bio-thumb', 220, 161, true ); // (cropped)
+  add_image_size( 'bio-large', 576, 863, false );
+}
+
+// Menu Meta Box
+function custom_meta_box_markup($object)
+{
+    wp_nonce_field(basename(__FILE__), "meta-box-nonce");
+
+    ?>
+        <div>
+			<p><strong>Menu</strong></p>
+            <label class="screen-reader-text" for="meta-box-dropdown">Menu</label>
+            <select name="meta-box-dropdown">
+				<option>-- Inherit --</option>
+				<?php
+					$menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
+
+					foreach ( $menus as $menu ) {
+
+						if ( $menu->name == get_post_meta($object->ID, "meta-box-dropdown", true))
+						{
+						    ?>
+						        <option selected><?php echo $menu->name; ?></option>
+						    <?php
+						}
+						else {
+							?>
+						        <option><?php echo $menu->name; ?></option>
+						    <?php
+						}
+					}
+				?>
+				<option>-- None --</option>
+            </select>
+        </div>
+    <?php
+}
+
+function add_custom_meta_box()
+{
+    add_meta_box("demo-meta-box", "Subnavigation", "custom_meta_box_markup", "page", "side", "low", null);
+}
+
+add_action("add_meta_boxes", "add_custom_meta_box");
+
+function save_custom_meta_box($post_id, $post, $update)
+{
+    if (!isset($_POST["meta-box-nonce"]) || !wp_verify_nonce($_POST["meta-box-nonce"], basename(__FILE__)))
+        return $post_id;
+
+    if(!current_user_can("edit_post", $post_id))
+        return $post_id;
+
+    if(defined("DOING_AUTOSAVE") && DOING_AUTOSAVE)
+        return $post_id;
+
+    $slug = "page";
+    if($slug != $post->post_type)
+        return $post_id;
+
+    $meta_box_dropdown_value = "";
+
+    if(isset($_POST["meta-box-dropdown"]))
+    {
+        $meta_box_dropdown_value = $_POST["meta-box-dropdown"];
+    }
+    update_post_meta($post_id, "meta-box-dropdown", $meta_box_dropdown_value);
+}
+
+add_action("save_post", "save_custom_meta_box", 10, 3);
+
 ?>

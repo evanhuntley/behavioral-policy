@@ -38,4 +38,31 @@ jQuery(document).ready(function($) {
       layoutMode: 'fitRows'
     });
 
+    // change is-checked class on buttons
+    $('.grid-filters').each( function( i, filters ) {
+      var $filters = $( filters );
+      $filters.on( 'click', 'li', function() {
+          var filterValue = $( this ).attr('data-filter');
+          console.log(filterValue);
+          $grid.isotope({ filter: filterValue });
+          $filters.find('.active').removeClass('active');
+          $( this ).addClass('active');
+      });
+    });
+
+    // Expand lists
+    $('.expand-title').on('click', function() {
+
+		if ( !$(this).hasClass('open')) {
+			$('.expand-list li')
+				.find('.expand-description').slideUp()
+				.end()
+				.find('.expand-title').removeClass('open')
+				.end();
+		}
+
+		$(this).toggleClass('open');
+		$(this).next('.expand-description').slideToggle();
+	});
+
 });

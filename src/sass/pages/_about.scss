@@ -15,15 +15,70 @@
     .community {
         background-image: url('../img/bg_about-community.jpg');
     }
+
+    .faq {
+        background: #f3f3f3;
+
+        .faq-list {
+            float: right;
+            @include col(3,4);
+        }
+    }
 }
 
 // Meet the Team
 
+.grid-filters {
+    margin: 1em 0;
+    list-style-type: none;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+
+    li {
+        display: inline-block;
+        margin-right: 2em;
+        padding: .5em 0;
+        color: #aa6500;
+        cursor: pointer;
+        text-transform: lowercase;
+
+        &.active {
+            border-top: 2px solid $orange;
+        }
+
+        &:hover {
+            color: $orange;
+        }
+    }
+}
+
 .grid {
-    margin: 0;
+    margin: 3em 0 0;
     list-style-type: none;
 
     .grid-item {
-        margin: 0 1em;
+        width: 50%;
+        margin-right: 1em;
+        margin-bottom: 1em;
+
+        @include bp-l {
+            width: 25%;
+        }
+
+        h1 {
+            margin-bottom: .25em;
+        }
+
+        img {
+            margin: 0 0 1em;
+            width: 180px;
+        }
+
+        span {
+            display: inline-block;
+            margin-right: 5px;
+            color: #aa6500;
+            @include font-size(.875, 1);
+        }
     }
 }

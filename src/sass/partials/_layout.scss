@@ -17,7 +17,7 @@
 
 .primary {
     @include row;
-    padding: 1em 0;
+    padding: 48px 0;
 
     .content {
 
@@ -35,5 +35,10 @@
 }
 
 .row {
+    @include row;
+}
+
+.block {
+    padding: 48px 0;
     @include row;
 }

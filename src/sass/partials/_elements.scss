@@ -1,0 +1,42 @@
+// Expanding Lists
+
+.expand-list {
+    margin: 2em 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        position: relative;
+        padding: 2em 0 1em;
+        border-bottom: 1px solid #dddee0;
+    }
+
+    .expand-title {
+        display: block;
+        padding-left: 40px;
+        margin: 0 0 .5em;
+        font-size: 28px;
+        line-height: 1.4em;
+        color: #191f6b;
+        cursor: pointer;
+        text-transform: lowercase;
+
+        &:before {
+            content: "\f054";
+            font-family: "FontAwesome";
+            display: inline-block;
+            position: absolute;
+            top: 28px;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            font-size: 36px;
+        }
+    }
+
+    .expand-description {
+        display: none;
+        margin-left: 40px;
+        color: #23272a;
+    }
+}

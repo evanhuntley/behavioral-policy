@@ -2,9 +2,12 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <article role="main" class="type-page" id="post-<?php the_ID(); ?>">
-        <header class="section-header">
-            <h1><?php the_title(); ?></h1>
-        </header>
+        <div class="page-header" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
+            <div class="container">
+                <h1><?php the_title(); ?></h1>
+                <?php echo types_render_field("page-short-description"); ?>
+            </div>
+        </div>
 
         <div class="primary container">
             <section class="content">

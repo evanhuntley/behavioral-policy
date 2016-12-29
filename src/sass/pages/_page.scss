@@ -34,4 +34,17 @@
             }
         }
     }
+
+    // Page Header
+    .page-header {
+        padding: 3em 0;
+        text-align: center;
+        color: #fff;
+        background: $blue;
+        background-size: cover;
+
+        h1 {
+            @include font-size(2, 2);
+        }
+    }
 }

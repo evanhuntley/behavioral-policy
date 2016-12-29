@@ -1,3 +1,12 @@
+// Blocks
+
+.block {
+
+    h1 {
+        @include font-size(2, 2);
+    }
+}
+
 // Expanding Lists
 
 .expand-list {
@@ -15,8 +24,7 @@
         display: block;
         padding-left: 40px;
         margin: 0 0 .5em;
-        font-size: 28px;
-        line-height: 1.4em;
+        @include font-size(1.5, 2);
         color: #191f6b;
         cursor: pointer;
         text-transform: lowercase;
@@ -26,17 +34,63 @@
             font-family: "FontAwesome";
             display: inline-block;
             position: absolute;
-            top: 28px;
+            top: 36px;
             left: 0;
             width: 40px;
             height: 40px;
-            font-size: 36px;
+            font-size: 18px;
+        }
+
+        &.open {
+            color: $orange;
+
+            &:before {
+                content: "\f078";
+            }
         }
     }
 
     .expand-description {
         display: none;
         margin-left: 40px;
+        padding: 1em 0;
         color: #23272a;
+        @include font-size(.875, 1.5);
+    }
+}
+
+// Gravity Forms
+
+.gform_wrapper {
+    margin: 1em 0;
+    text-align: center;
+
+    .gform_fields {
+        margin: 0;
+        list-style-type: none;
+    }
+
+    label {
+        display: none;
+    }
+
+    input[type="email"], input[type="text"], textarea {
+        width: 100%;
+        margin: 0 0 1em;
+        padding: .5em;
+        border: none;
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    input[type="submit"] {
+        display: inline-block;
+        width: auto;
+        @extend .button.alt;
+        border: none;
+        margin-top: 1em;
+        @include font-size(.8125);
     }
 }

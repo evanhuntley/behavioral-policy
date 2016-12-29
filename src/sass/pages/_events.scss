@@ -1,0 +1,68 @@
+/* ================================================================
+    Events Page Styles
+=================================================================== */
+
+.event-featured {
+	margin: 0 0 2em;
+	
+	.featured-content {
+		padding: 2em;
+		color: #fff;
+		background-image: url('../img/bg_events-cta.jpg');
+		background-size: cover;
+	}
+}
+
+.events-list {
+	margin: 1em 0;
+	padding: 0;
+	list-style-type: none;
+
+	.event {
+		padding: 1.5em 0;
+		border-top: 1px solid #ececec;
+	}
+
+	.event-date {
+		float: left;
+		min-width: 60px;
+		margin: 0 1em 0 0;
+		padding: .25em 1.25em;
+		text-align: center;
+		text-transform: lowercase;
+		color: #fff;
+		background: $blue;
+
+		span {
+			display: block;
+			@include font-size(1, 1.4);
+		}
+
+		.day {
+			@include font-size(1.4, 1.8);
+		}
+	}
+
+	.event-details {
+		float: left;
+		color: $blue;
+
+		h2 {
+			@include font-size(1.6, 1.8);
+			margin-bottom: 0;
+
+			a {
+				color: $blue;
+			}
+		}
+
+		.location {
+		}
+	}
+
+	.description {
+		float: left;
+		width: 100%;
+		margin: 1em 0;
+	}
+}

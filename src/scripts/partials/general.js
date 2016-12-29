@@ -65,4 +65,7 @@ jQuery(document).ready(function($) {
 		$(this).next('.expand-description').slideToggle();
 	});
 
+    // Equal Height Boxes
+    $('.equal').matchHeight();
+
 });

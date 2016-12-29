@@ -176,4 +176,13 @@ function save_custom_meta_box($post_id, $post, $update)
 
 add_action("save_post", "save_custom_meta_box", 10, 3);
 
+
+// Custom Query Vars for Paper Filters
+function custom_query_vars_filter($vars) {
+  $vars[] = 'jobs-cat';
+  $vars[] = 'calls-cat';
+  return $vars;
+}
+add_filter( 'query_vars', 'custom_query_vars_filter' );
+
 ?>

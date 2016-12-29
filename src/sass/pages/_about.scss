@@ -16,6 +16,13 @@
         background-image: url('../img/bg_about-community.jpg');
     }
 
+    .team {
+
+        h1 {
+            @include font-size(2, 2);
+        }
+    }
+
     .faq {
         background: #f3f3f3;
 

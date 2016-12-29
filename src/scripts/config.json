@@ -4,7 +4,8 @@
         "src/components/jquery/dist/jquery.js",
         "src/components/enquire/dist/enquire.js",
         "src/components/flexslider/jquery.flexslider.js",
-        "src/components/isotope/dist/isotope.pkgd.js"
+        "src/components/isotope/dist/isotope.pkgd.js",
+        "src/components/matchHeight/dist/jquery.matchHeight.js"
     ],
     "public" : [
         "src/components/css3-mediaqueries-js/css3-mediaqueries.js",

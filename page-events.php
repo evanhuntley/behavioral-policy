@@ -83,20 +83,49 @@
         </div>
 
         <div id="highlights">
-            <div class="container">
+            <div class="container primary">
+                <div class="content">
                 <h1>Event Highlights</h1>
+                <?php
+                    $args = array(
+                        'post_type' => 'event-highlights',
+                        'posts_per_page' => -1
+                    );
+
+                    $event_highlights = new WP_Query( $args);
+
+                    if ( $event_highlights->have_posts() ) :
+                ?>
+                    <ul class="event-highlight-list">
+                        <?php while ( $event_highlights->have_posts() ) : $event_highlights->the_post(); ?>
+                            <li>
+                                <?php
+                                    $vid_url = types_render_field('event-highlight-vimeo-url', array("raw" => true));
+                                ?>
+                                <a href="<?= $vid_url; ?>" data-lity><img src="<?= the_post_thumbnail_url('event-highlight'); ?>" /></a>
+                                <h3><a href="<?= $vid_url; ?>" data-lity><?php the_title(); ?></a></h3>
+                                <div class="description">
+                                    <?php echo types_render_field('event-highlight-short-description'); ?>
+                                </div>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
             </div>
         </div>
 
-        <div id="event-notifications">
+        <div class="billboard center" id="event-notifications">
             <div class="container">
                 <h1>Sign Up for Early Bird Notifications of Our Events</h1>
             </div>
         </div>
 
-        <div id="join">
+        <div class="billboard center light join">
             <div class="container">
-                <h1>Become a Member</h1>
+                <h2>Become a Member</h2>
+                <p>There is a growing movement among public and private sector leaders to help bridge the divide between behavioral research and policy. We are a key part of this movement — as an information hub and as a community builder, fostering collaboration and connecting those applying behavioral science to specific problems for the greater good. We need you to join us in making this effort have a lasting impact.</p>
+                <a href="https://behavioralpolicy.org/signup" class="button">Join Us</a>
             </div>
         </div>
 

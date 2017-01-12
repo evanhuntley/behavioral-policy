@@ -20,6 +20,7 @@
     "font-awesome": "fontawesome#^4.6.3",
     "flexslider": "^2.6.1",
     "jquery-numerator": "^0.2.1",
-    "isotope": "^3.0.1"
+    "isotope": "^3.0.1",
+    "lity": "^2.2.2"
   }
 }

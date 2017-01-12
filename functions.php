@@ -106,6 +106,7 @@ add_action( 'after_setup_theme', 'bp_theme_setup' );
 function bp_theme_setup() {
   add_image_size( 'bio-thumb', 220, 161, true ); // (cropped)
   add_image_size( 'bio-large', 576, 863, false );
+  add_image_size( 'event-highlight', 500, 281, true); // (cropped)
 }
 
 // Menu Meta Box

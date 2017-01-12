@@ -4,7 +4,7 @@
 
 .event-featured {
 	margin: 0 0 2em;
-	
+
 	.featured-content {
 		padding: 2em;
 		color: #fff;
@@ -64,5 +64,21 @@
 		float: left;
 		width: 100%;
 		margin: 1em 0;
+	}
+}
+
+.event-highlight-list {
+	@include row;
+
+	li {
+		@include col(1, 3);
+	}
+
+	img {
+		margin-bottom: 1em;
+	}
+
+	h3 {
+		margin-bottom: 0;
 	}
 }

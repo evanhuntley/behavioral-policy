@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     browsersync = require('browser-sync'),
     cssnano = require('cssnano'),
     cssimport = require('postcss-import'),
+    svgSprite = require('gulp-svg-sprite'),
     autoprefixer = require('autoprefixer'),
     $ = require( 'gulp-load-plugins' )(),
 
@@ -39,6 +40,38 @@ var gulp = require('gulp'),
     // JS Configurations
     jsConfig = require('./src/scripts/config.json');
 
+    // SVG Config
+    svgConfig = {
+        shape: {
+            dimension           : {                         // Dimension related options
+                maxWidth        : 16,                     // Max. shape width
+                maxHeight       : 16,                     // Max. shape height
+                precision       : 2,                        // Floating point precision
+                attributes      : true,                    // Width and height attributes on embedded shapes
+            }
+        },
+        mode: {
+            symbol: { // symbol mode to build the SVG
+                dest: 'svg', // destination foldeer
+                sprite: 'sprite.svg' //sprite name
+            },
+            css: {
+                dest: './css/',
+                layout: "vertical",
+                bust: true,
+                render: {
+                    scss: {
+                        dest: "../../src/sass/svg/_sprite.scss"
+                    }
+                }
+            }
+      },
+      svg: {
+        xmlDeclaration: false, // strip out the XML attribute
+        doctypeDeclaration: false // don't include the !DOCTYPE declaration
+      }
+    };
+
 // BrowserSync proxy
 gulp.task('browsersync', function () {
     browsersync({
@@ -47,8 +80,19 @@ gulp.task('browsersync', function () {
     });
 });
 
+// SVG
+gulp.task('svg', function() {
+    var stream = gulp.src('src/svg/*')
+    .pipe(svgSprite(svgConfig));
+
+    return stream.on("error", function(e) {
+        console.error(e);
+        errors = true;
+    }).pipe(gulp.dest('assets'));
+});
+
 // CSS
-gulp.task('styles', function() {
+gulp.task('styles', ['svg'], function() {
 
     var stream = gulp.src(paths.scss)
         .pipe($.if(env === 'dev', $.sourcemaps.init()))

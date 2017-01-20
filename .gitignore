@@ -32,5 +32,9 @@ assets/fonts/
 # Bower
 src/components
 
+# Generated
+src/sass/svg
+assets/svg
+
 deploy
 rsync_exclude.txt

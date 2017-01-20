@@ -227,30 +227,6 @@
         }
     }
 
-
-    // Newsletter Section
-    .newsletter {
-        background-image: url('../img/bg_home-newsletter.jpg');
-
-        p {
-            margin-bottom: 2em;
-        }
-
-        .gform_wrapper {
-            margin: 0;
-        }
-
-        .gform_body, .gform_footer {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-
-            @include bp-l {
-                width: 50%;
-            }
-        }
-    }
-
     .bsp {
         background-image: url('../img/bg_home-bsp.jpg');
     }

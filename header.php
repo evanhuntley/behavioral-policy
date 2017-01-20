@@ -41,8 +41,7 @@
 			<?php
 				$args = array(
 					'menu' => 'Access Nav',
-					'container' => '<div>',
-					'items_wrap' => '<ul>%3$s</ul>',
+					'items_wrap' => '<div class="menu"><ul>%3$s</ul></div>',
 					);
 				wp_nav_menu($args);
 			?>

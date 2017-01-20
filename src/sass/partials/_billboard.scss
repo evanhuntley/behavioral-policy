@@ -44,4 +44,42 @@
     &.join {
         background-image: url('../img/bg_home-join.jpg');
     }
+
+    // Newsletter
+    &.newsletter {
+        background-image: url('../img/bg_home-newsletter.jpg');
+
+        p {
+            margin-bottom: 2em;
+        }
+
+        .gform_wrapper {
+            margin: 0;
+        }
+
+        .gform_body, .gform_footer {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+
+            @include bp-l {
+                width: 50%;
+            }
+        }
+    }
+
+    // Submit
+    &.submit {
+        background-image: url('../img/bg_billboard-submit.jpg');
+    }
+
+    // Early Bird Notifications
+    &.notifications {
+        background-image: url('../img/bg_billboard-notifications.jpg');
+    }
+
+    // Conference
+    &.conference {
+        background-image: url('../img/bg_billboard-conference.jpg');
+    }
 }

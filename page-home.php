@@ -110,20 +110,8 @@
                 <a href="https://behavioralpolicy.org/about/" class="button">Learn more about BSP and other publications</a>
             </div>
         </div>
-        <div class="billboard center newsletter">
-            <div class="container">
-                <h2>Subscribe to Our Newsletter</h2>
-                <p>Get hot off the press insights and round-ups from the behavioral science community straight to your inbox. Sign-up below to ensure you don’t miss out!</p>
-                <?php echo do_shortcode('[gravityform id="4" title="false" description="false" ajax="true"]'); ?>
-            </div>
-        </div>
-        <div class="billboard center light join">
-            <div class="container">
-                <h2>Become a Member</h2>
-                <p>There is a growing movement among public and private sector leaders to help bridge the divide between behavioral research and policy. We are a key part of this movement — as an information hub and as a community builder, fostering collaboration and connecting those applying behavioral science to specific problems for the greater good. We need you to join us in making this effort have a lasting impact.</p>
-                <a href="https://behavioralpolicy.org/signup" class="button">Join Us</a>
-            </div>
-        </div>
+        <?php get_template_part('billboard', 'subscribe') ?>
+        <?php get_template_part('billboard', 'join') ?>
 
     </article>
 <?php endwhile; ?>

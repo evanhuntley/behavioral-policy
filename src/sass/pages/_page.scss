@@ -7,6 +7,10 @@
         @include bp-l {
             float: right;
         }
+
+        p {
+            margin-bottom: 1em;
+        }
     }
 
     .secondary-content {

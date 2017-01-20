@@ -17,22 +17,45 @@
 		<h1>BSP Archive</h1>
 		<?php get_sidebar(); ?>
 		<section class="content">
-			<?php
-				/* Since we called the_post() above, we need to
-				 * rewind the loop back to the beginning that way
-				 * we can run the loop properly, in full.
-				 */
-				rewind_posts();
+			<div class="articles">
+				<div class="displayed-results">
+					<h2>
+						<?php
+							global $searchandfilter;
+							$sf_current_query = $searchandfilter->get(13596)->current_query()->get_array();
 
-				/* Run the loop for the archives page to output the posts.
-				 * If you want to overload this in a child theme then include a file
-				 * called loop-archives.php and that will be used instead.
-				 */
-				 get_template_part( 'loop', 'journal' );
-			?>
+							if ($sf_current_query) {
+								echo '<ul>';
+								foreach($sf_current_query as $key) {
+									echo '<li>' . $key['active_terms'][0]['name'] . '</li>';
+								}
+								echo '</ul>';
+							} else {
+							  echo 'All Articles';
+							}
+						?>
+					</h2>
+				</div>
+				<?php
+					/* Since we called the_post() above, we need to
+					 * rewind the loop back to the beginning that way
+					 * we can run the loop properly, in full.
+					 */
+					rewind_posts();
+
+					/* Run the loop for the archives page to output the posts.
+					 * If you want to overload this in a child theme then include a file
+					 * called loop-archives.php and that will be used instead.
+					 */
+					while ( have_posts() ) : the_post();
+					 	get_template_part( 'loop', 'journal' );
+				 	endwhile;
+				?>
 		</section>
 	</div>
 
 </article>
+
+<?php get_template_part('billboard', 'submit') ?>
 
 <?php get_footer(); ?>

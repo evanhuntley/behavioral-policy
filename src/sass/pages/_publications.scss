@@ -1,0 +1,181 @@
+/* ================================================================
+    Publications Styles
+=================================================================== */
+
+/* Publication Archive --------------------------------------------- */
+
+#article-archive {
+
+    .page-header {
+        background-image: url('../img/bg_bsp-cta.jpg');
+    }
+
+    .secondary-content {
+
+        @include bp-l {
+            padding-left: 0;
+        }
+    }
+
+    .primary h1 {
+        padding: 0 0 1em;
+        border-bottom: 1px solid #ececec;
+    }
+
+    h2 {
+        @include font-size(1.2, 1.6);
+        color: #000;
+    }
+
+    // Filter Controls
+    .searchandfilter {
+
+        ul {
+            margin-left: 0;
+        }
+
+        h4 {
+            position: relative;
+            margin: 1em 0;
+            padding-bottom: .5em;
+            @include font-size(1.2, 1.6);
+            border-bottom: 1px solid #ececec;
+
+            &:before {
+                content: "\f068";
+                position: absolute;
+                top: .5em;
+                right: 0;
+                color: #ccc;
+                font-family: 'FontAwesome', Arial, sans-serif;
+            }
+
+            &.closed {
+
+                &:before {
+                    content: "\f067";
+                }
+            }
+        }
+
+        label, input[type="text"] {
+            width: 100%;
+        }
+
+        input[type="text"] {
+            padding: .5em;
+        }
+
+        .sf-label-radio {
+            padding-left: 0;
+        }
+
+        input[type=radio] {
+            display: none;
+
+            &:checked + label {
+                color: $orange;
+            }
+        }
+    }
+}
+
+.displayed-results {
+
+    h2 {
+        padding: 0 0 1em;
+        border-bottom: 1px solid #ececec;
+    }
+
+    ul {
+        margin: 0;
+        list-style-type: none;
+
+        li {
+            display: inline-block;
+            padding: 0 .5em;
+            border-right: 1px solid;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+}
+
+.journal-article {
+    position: relative;
+    margin: 0 0 1em;
+    padding-right: 200px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ececec;
+    color: #23272a;
+
+    h3 {
+        margin-bottom: 0;
+    }
+
+    .authors {
+        margin: 0 0 1em;
+    }
+
+    .options a {
+        color: #ccc;
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        max-width: 180px;
+    }
+}
+
+/* Single Publication --------------------------------------------- */
+
+.single-article {
+
+    .page-header {
+        background-image: url('../img/bg_bsp-cta.jpg');
+    }
+
+    h1 {
+        margin-bottom: .5em;
+    }
+
+    .options {
+        float: right;
+        @include font-size(2, 2);
+
+        a {
+            color: #ccc;
+        }
+    }
+
+    .content {
+        float: none;
+        margin: 0 auto;
+        display: block;
+
+        p {
+            margin-bottom: 1em;
+        }
+    }
+
+    .article-content {
+        padding: 1em 0;
+
+        p:first-child:first-letter {
+            float: left;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            color: $orange;
+            @include font-size(3, 3);
+        }
+    }
+}

@@ -68,4 +68,9 @@ jQuery(document).ready(function($) {
     // Equal Height Boxes
     $('.equal').matchHeight();
 
+    // Expand/Collapse Filter Sections
+    $('.searchandfilter h4').on('click', function() {
+        $(this).toggleClass('closed').next('ul, label').slideToggle();
+    });
+
 });

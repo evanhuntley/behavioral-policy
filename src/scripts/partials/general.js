@@ -73,4 +73,19 @@ jQuery(document).ready(function($) {
         $(this).toggleClass('closed').next('ul, label').slideToggle();
     });
 
+    // Tabs
+    $('.tab-nav a').on('click', function(e) {
+        var id = $(this).attr('href');
+
+        // Handle Nav
+        $('.tab-nav a').removeClass('active');
+        $(this).addClass('active');
+
+        // Handle Tab Content
+        $('.tab-content').removeClass('active');
+        $('.tab-content' + id).addClass('active');
+
+        e.preventDefault();
+    });
+
 });

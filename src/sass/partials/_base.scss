@@ -54,27 +54,3 @@ figure {
 .screen-reader-text {
     @extend %visuallyhidden;
 }
-
-.button {
-    display: inline-block;
-    margin: 1em 0;
-    padding: 1em 2em;
-    text-transform: lowercase;
-    background: $orange;
-    color: #fff;
-    cursor: pointer;
-    @include font-size(.8125, 1.2);
-
-    &:hover {
-        color: #fff;
-        background: lighten($orange, 8%);
-    }
-
-    &.alt {
-        background: $blue;
-
-        &:hover {
-            background: lighten($blue, 8%);
-        }
-    }
-}

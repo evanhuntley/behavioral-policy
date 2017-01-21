@@ -7,6 +7,35 @@
     }
 }
 
+// Buttons
+.button {
+    display: inline-block;
+    margin: 1em 0;
+    padding: 1em 2em;
+    text-transform: lowercase;
+    background: $orange;
+    color: #fff;
+    cursor: pointer;
+    @include font-size(.8125, 1.2);
+
+    &:hover {
+        color: #fff;
+        background: lighten($orange, 8%);
+    }
+
+    &.alt {
+        background: $blue;
+
+        &:hover {
+            background: lighten($blue, 8%);
+        }
+    }
+
+    &.shortcode {
+        @include font-size(1, 1.4);
+    }
+}
+
 // Expanding Lists
 
 .expand-list {
@@ -93,4 +122,87 @@
         margin-top: 1em;
         @include font-size(.8125);
     }
+}
+
+// Tabs
+.tab-nav {
+    margin: 16px 0;
+    list-style-type: none;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    @include row;
+
+    li {
+        display: inline-block;
+        text-align: center;
+        @include col(1, 4);
+    }
+
+    a {
+        display: block;
+        padding: 1em;
+        color: $blue;
+        outline: none;
+        transition: color .2s;
+    }
+
+    a.active {
+        border-bottom: 3px solid $orange;
+    }
+}
+
+.tab-content {
+    display: none;
+    padding: 1.5em;
+
+    &.active {
+        display: block;
+    }
+}
+
+// Card Flips
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+    	width: 300px;
+    	height: 300px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+    padding: 2em 1.5em;
+    color: #fff;
+    background: #333;
+	transform: rotateY(180deg);
 }

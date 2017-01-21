@@ -1,0 +1,19 @@
+/* ================================================================
+    Giving Page Styles
+=================================================================== */
+
+.giving {
+
+    .content {
+        @include col(4, 4);
+    }
+
+    .flip-cards {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .flip-container {
+        float: left;
+    }
+}

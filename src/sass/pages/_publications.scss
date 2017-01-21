@@ -285,4 +285,26 @@
         max-width: 300px;
         margin: 0 1.5em 0 0;
     }
+
+    .filters {
+        margin: 1em 0;
+        padding: 1em 0;
+        border-top: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+        text-transform: lowercase;
+
+        li {
+            display: inline-block;
+            margin-right: 1em;
+            @include font-size(1.2, 1.4);
+        }
+
+        a {
+            color: #ccc;
+        }
+
+        li.active a {
+            color: #23272a;
+        }
+    }
 }

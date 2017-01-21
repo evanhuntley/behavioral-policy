@@ -26,7 +26,7 @@ header {
 
         @include bp-xl {
             position: relative;
-            width: 70%;
+            width: 80%;
             float: right;
             display: block;
             z-index: 1000;
@@ -149,7 +149,7 @@ header {
         margin: 12px 0 12px 2.5%;
 
         @include bp-xl {
-            width: 30%;
+            width: 20%;
             float: left;
             margin: 12px 0;
         }

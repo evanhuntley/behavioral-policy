@@ -182,8 +182,33 @@ add_action("save_post", "save_custom_meta_box", 10, 3);
 function custom_query_vars_filter($vars) {
   $vars[] = 'jobs-cat';
   $vars[] = 'calls-cat';
+  $vars[] = 'sortby';
   return $vars;
 }
 add_filter( 'query_vars', 'custom_query_vars_filter' );
+
+// Custom Query Vars for Paper Filters
+function custom_article_vars_filter($vars) {
+  $vars[] = 'sortby';
+  return $vars;
+}
+add_filter( 'query_vars', 'custom_article_vars_filter' );
+
+// Button Shortcode
+// [button text="Words" url="URL" color="blue"]
+function button_func( $atts ) {
+
+	$a = shortcode_atts( array(
+	    'text' => 'Button',
+	    'url' => '/',
+		'color' => 'orange'
+	), $atts );
+
+	$a['color'] == 'blue' ? $class = 'alt' : $class = '';
+
+	$button = '<a href="' . $a['url'] . '" class="button shortcode ' . $class . '">' . $a['text'] . '</a>';
+	return $button;
+}
+add_shortcode( 'button', 'button_func' );
 
 ?>

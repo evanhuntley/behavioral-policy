@@ -32,15 +32,40 @@
                     <li><a href="/publications/about"><span>Learn More</span> meet our editors and learn more about the journal</a></li>
                     <li><a href="/articles"><span>Archive</span> sign in to access the<br /> BSP archive</a></li>
                 </ul>
-                <div class="featured-articles">
+                <div class="featured-articles" id="featured">
 
                     <?php
+                        $sortby = get_query_var('sortby') ? get_query_var('sortby') : 'featured';
+                        $args = array();
+                    ?>
+                    <ul class="filters">
+                        <li <?php if ($sortby == 'featured') echo 'class="active"'; ?>><a href="<?php echo add_query_arg(array('sortby' => 'featured'), '/publications/#featured'); ?>">Featured Articles</a></li>
+                        <li <?php if ($sortby == 'date') echo 'class="active"'; ?>><a href="<?php echo add_query_arg(array('sortby' => 'date'), '/publications/#featured'); ?>">Most Recent</a></li>
+                    </ul>
+                    <?php
+                        if ($sortby == 'featured') {
+                            $args = array(
+                                'post_type' => 'articles',
+                                'posts_per_page' => 3,
+                                'orderby' => 'date',
+                                'order' => 'RAND',
+                                'meta_query'	=> array(
+                                    array(
+                                        'key'	  	=> 'wpcf-is-featured-article',
+                                        'value'	  	=> '1',
+                                        'compare' 	=> '=',
+                                    )
+                            	),
+                            );
 
-                        $args = array(
-                            'post_type' => 'articles',
-                            'posts_per_page' => 3,
-                            'orderby' => 'RAND'
-                        );
+                        } else {
+                            $args = array(
+                                'post_type' => 'articles',
+                                'posts_per_page' => 3,
+                                'orderby' => 'date',
+                                'order' => 'DESC'
+                            );
+                        }
 
                         $related = new WP_Query($args);
 

@@ -211,4 +211,24 @@ function button_func( $atts ) {
 }
 add_shortcode( 'button', 'button_func' );
 
+// News Query
+function news_query($cat) {
+
+	$args = array(
+		'post_type' => 'news',
+		'posts_per_page' => 3,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'news-category',
+				'field'    => 'slug',
+				'terms'    => $cat,
+			),
+		),
+	);
+
+	return new WP_Query($args);
+}
+
 ?>

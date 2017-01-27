@@ -6,7 +6,6 @@ Template Name: News Page
 
 <?php get_header(); ?>
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <article role="main" class="page news" id="post-<?php the_ID(); ?>">
 
         <div class="page-header" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
@@ -24,10 +23,10 @@ Template Name: News Page
                     'post_type' => 'news',
                     'posts_per_page' => 1,
                     'order' => 'RAND',
-                    'meta_query'	=> array(
+                    'meta_query' => array(
                         array(
                             'key'	  	=> 'wpcf-news-featured',
-                            'value'	  	=> '1',
+                            'value'	  	=> "1",
                             'compare' 	=> '=',
                         )
                     ),
@@ -37,7 +36,7 @@ Template Name: News Page
 
                 if ($featured_news->have_posts()) :
                     ?>
-                    <?php while ( $related->have_posts() ) : $related->the_post(); ?>
+                    <?php while ( $featured_news->have_posts() ) : $featured_news->the_post(); ?>
                         <?php get_template_part('loop', 'newsitem') ?>
                     <?php endwhile;  ?>
                 <?php endif; wp_reset_query(); ?>
@@ -143,6 +142,5 @@ Template Name: News Page
         <?php get_template_part('billboard', 'bsp') ?>
 
     </article>
-<?php endwhile; ?>
 
 <?php get_footer(); ?>

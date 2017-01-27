@@ -225,7 +225,7 @@ function news_query($cat) {
 				'field'    => 'slug',
 				'terms'    => $cat,
 			),
-		),
+		)
 	);
 
 	return new WP_Query($args);

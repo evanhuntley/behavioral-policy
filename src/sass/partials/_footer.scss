@@ -35,9 +35,30 @@ footer {
                 color: $orange;
             }
         }
-
-        .button {
-            margin-top: 3em;
+    }
+    
+    .menu {
+        margin: 2em 0 0;
+        padding: 0;
+        list-style-type: none;
+        
+        li {
+            display: inline-block;
+            width: 45%;
+            margin: 0 0 .5em;
+        }
+        
+        a {
+            text-transform: lowercase;
+            color: #8C8989;
+        }
+    }
+    
+    .footer-newsletter {
+        text-align: center;
+        
+        input[type="submit"] {
+            margin-top: .5em;
             color: #bfbfbf;
             background: #555;
 
@@ -45,34 +66,6 @@ footer {
                 color: #fff;
                 background: darken(#555, 5%);
             }
-        }
-    }
-
-    .twitter {
-
-        ul {
-            margin: 0;
-            list-style-type: none;
-        }
-
-        li {
-            position: relative;
-            margin: 0 0 1em;
-            padding-left: 3em;
-
-            &:before {
-                position: absolute;
-                top: 5px;
-                left: 0;
-                content: "\f099";
-                font-family: 'FontAwesome';
-                font-size: 32px;
-                color: #d8d8d8;
-            }
-        }
-
-        a {
-            color: #BFBFBF;
         }
     }
 

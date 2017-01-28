@@ -2,23 +2,27 @@
 <footer role="contentinfo">
 	<div class="container">
 		<div class="org-info">
-			<div>
+			<div class="contact">
 				<h4>Contact Information</h4>
 				<p>PO Box 51336<br />
 				Durham, NC 27717<br />
 				USA<br />
-				+1 (919) 681-5932<br />
-				<a href="mailto:BSPA@behavioralpolicy.org">BSPA@behavioralpolicy.org</a></p>
-				<a class="newsletter-button button" href="https://behavioralpolicy.org/#subscribe">Sign up for our E-newsletter</a>
+				+1 (919) 681-5932
 			</div>
-			<div>
-				<h4>Global Community</h4>
-				<p>The Behavioral Science &amp; Policy Association (BSPA) is a global community of behavioral science researchers, policy analysts, and practitioners. Our mission is to promote the application of rigorous behavioral science research to concrete policy solutions that serve the public interest. We do this through a variety of activities, including conferences and briefings, networking activities, creation and maintenance of an online information resource, and publication of our flagship journal, Behavioral Science &amp; Policy. BSPA is a nonprofit 501(c)3 organization.</p>
+			<div class="footer-nav">
+				<?php
+					$args = array(
+						'menu' => 'Main Nav',
+						'container' => false,
+						'items_wrap' => '<ul class="menu">%3$s</ul>',
+						'depth' => 1
+						);
+					wp_nav_menu($args);
+				?>
 			</div>
-			<div>
-				<?php if( is_active_sidebar('footer-widgets') ) { ?>
-				    <?php dynamic_sidebar('footer-widgets'); ?>
-				<?php } ?>
+			<div class="footer-newsletter">
+				<h2>Sign Up for Our Weekly Newsletter</h2>
+				<?php echo do_shortcode('[gravityform id="4" title="false" description="false" ajax="true"]'); ?>
 			</div>
 		</div>
 	</div>

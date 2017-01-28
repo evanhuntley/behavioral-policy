@@ -33,6 +33,7 @@
 
         .news-image {
             position: relative;
+            margin: 0 0 1em;
         }
 
         svg {
@@ -47,6 +48,15 @@
             fill: #fff;
             opacity: .5;
             transition: all .2s;
+        }
+    }
+    
+    /* Reports Section --------------------------------------------------- */
+    .reports {
+        @extend .primary;
+        
+        .content {
+            width: 75%;
         }
     }
 }

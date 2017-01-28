@@ -90,8 +90,21 @@ Template Name: News Page
 
         </div>
 
-        <div class="reports">
+        <div class="reports container">
+            <div class="content">
+                <h2>Reports</h2>
+                <?php
+                $reports = news_query('reports');
 
+                if ($reports->have_posts()) :
+                    ?>
+                    <ul>
+                        <?php while ( $reports->have_posts() ) : $reports->the_post(); ?>
+                            <li><?php the_title(); ?></li>
+                        <?php endwhile;  ?>
+                    </ul>
+                <?php endif; wp_reset_query(); ?>
+            </div>
         </div>
 
         <?php get_template_part('billboard', 'join') ?>

@@ -1,6 +1,4 @@
 <?php ?>
-<section class="primary-content">
-<?php $firstClass = 'first-post'; ?>
 
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 	<?php if ( ! have_posts() ) : ?>
@@ -24,17 +22,16 @@
 <?php while ( have_posts() ) : the_post(); ?>
 	<?php /* How to display standard posts and search results */ ?>
 
-        <article class="article-archive <?php echo $firstClass; ?>" id="post-<?php the_ID(); ?>">
-			<?php $firstClass = ""; ?>
-			<?php ?>
-                <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
-                	<h2><?php the_title(); ?></h2>
-                </a>
-                <?php the_excerpt(); ?>
-                <p class="entry-meta"><time datetime="<?php the_time('l, F jS, Y') ?>" pubdate><?php the_time('l jS F Y') ?></time></p>
+        <article class="blog-item">
+			<img src="<?php echo the_post_thumbnail_url('bio-thumb'); ?>" />
+			<div class="blog-details">
+				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+					<h2><?php the_title(); ?></h2>
+				</a>
+				<p class="entry-meta"><time datetime="<?php the_time('l, F jS, Y') ?>" pubdate><?php the_time('l jS F Y') ?></time></p>
+				<?php the_excerpt(); ?>
+			</div>
 		</article>
-
-		<?php comments_template( '', true ); ?>
 
 <?php endwhile; // End the loop. Whew. ?>
 
@@ -49,4 +46,3 @@
         </li>
     </ul>
 <?php endif; ?>
-</section>

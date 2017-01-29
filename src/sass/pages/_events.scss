@@ -82,3 +82,24 @@
 		margin-bottom: 0;
 	}
 }
+
+/* Single Events, Conferences ------------------------------------------ */
+
+.single-event, .single-conference {
+	
+	.page-header {
+		padding: 4em 0;
+		background-image: url('../img/bg_conference.jpg');
+	}
+	
+	.content {
+		width: 100%;
+	}
+}
+
+.single-conference {
+	
+	.current-conference {
+		text-align: center;
+	}
+}

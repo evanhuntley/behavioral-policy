@@ -50,6 +50,11 @@ figure {
 
         }
     }
+    
+hr {
+    margin: 2em 0;
+    border-color: #ececec;
+}
 
 .screen-reader-text {
     @extend %visuallyhidden;

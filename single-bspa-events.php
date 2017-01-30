@@ -30,10 +30,23 @@
             <section class="content">
                 <?php if ($date > time()) : ?>
                     <div class="current-conference">
+                        <?php 
+                            $date = types_render_field("event-date", array("format" => "M j, Y"));
+                            $weekday = types_render_field("event-date", array("format" => "D"));
+                            $month = types_render_field("event-date", array("format" => "M"));
+                            $day = types_render_field("event-date", array("format" => "d"));
+                            $year = types_render_field("event-date", array("format" => "Y"));
+                        ?>
+                        <div class="event-date">
+                            <span class="month"><?= $month; ?></span>
+                            <span class="day"><?= $day; ?></span>
+                            <span class="year"><?= $year; ?></span>
+                        </div>
                         <h1><?php the_title(); ?></h1>
                         <?php the_content(); ?>
                         <hr />
                         <h2>About the BSPA Annual Conference</h2>
+                        <img class="about-conference" src="<?php echo get_template_directory_uri(); ?>/assets/img/g_conference.png" alt="BSPA Conference" />
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, quam harum? Quisquam iusto sint quibusdam totam aliquam enim aliquid reiciendis tempore, ullam, qui dolorum dicta repudiandae provident laborum harum. Quaerat?</p>
                         <hr />

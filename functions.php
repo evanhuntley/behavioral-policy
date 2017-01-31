@@ -204,6 +204,15 @@ function button_func( $atts ) {
 }
 add_shortcode( 'button', 'button_func' );
 
+// Blog Star Block Shortcode
+// [starblock]Stuff Here[/starblock]
+function starblock_func( $atts, $content = null ) {
+	
+	return '<div class="star-block">' . $content . '</div>';
+
+}
+add_shortcode( 'starblock', 'starblock_func' );
+
 // News Query
 function news_query($cat) {
 

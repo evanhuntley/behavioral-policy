@@ -38,7 +38,11 @@ a img {
     max-width: 100%;
     min-height: auto;
     vertical-align: middle;
+    
+    &.attachment-full {
+        margin-bottom: 1em;
     }
+}
 
 figure, img {
 

@@ -96,6 +96,7 @@ add_filter ('wp_nav_menu','current_to_active');
 // Custom Image Sizes
 add_action( 'after_setup_theme', 'bp_theme_setup' );
 function bp_theme_setup() {
+  add_image_size( 'person', 200, 250, true ); // (cropped)
   add_image_size( 'bio-thumb', 220, 161, true ); // (cropped)
   add_image_size( 'bio-large', 576, 863, false );
   add_image_size( 'event-highlight', 500, 281, true); // (cropped)

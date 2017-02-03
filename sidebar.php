@@ -29,7 +29,8 @@
     <?php
         if (is_post_type_archive('articles')) {
             echo '<h2>Search Archive</h2>';
-            echo do_shortcode('[searchandfilter id="13596"]');
+            //echo do_shortcode('[searchandfilter id="13596"]');
+            echo do_shortcode('[searchandfilter id="13950"]');
         }
      ?>
 </section>

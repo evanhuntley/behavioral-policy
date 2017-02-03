@@ -9,26 +9,34 @@
     <?php endif; ?>
 <?php ?>
 
-    <h1>
-        <?php if ( is_day() ) : ?><?php printf( __( '<span>Daily Archive</span> %s' ), get_the_date() ); ?>
-        <?php elseif ( is_month() ) : ?><?php printf( __( '<span>Monthly Archive</span> %s' ), get_the_date('F Y') ); ?>
-        <?php elseif ( is_year() ) : ?><?php printf( __( '<span>Yearly Archive</span> %s' ), get_the_date('Y') ); ?>
-        <?php elseif ( is_category() ) : ?><?php echo single_cat_title(); ?>
-        <?php elseif ( is_search() ) : ?><?php printf( __( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?>
-        <?php elseif ( is_home() ) : ?>Latest Posts<?php else : ?>
-        <?php endif; ?>
-    </h1>
+    <?php if ( is_day() ) : ?><?php printf( __( '<h1><span>Daily Archive</span> %s</h1>' ), get_the_date() ); ?>
+    <?php elseif ( is_month() ) : ?><?php printf( __( '<h1><span>Monthly Archive</span> %s</h1>' ), get_the_date('F Y') ); ?>
+    <?php elseif ( is_year() ) : ?><?php printf( __( '<h1><span>Yearly Archive</span> %s</h1>' ), get_the_date('Y') ); ?>
+    <?php elseif ( is_category() ) : ?><?php echo '<h1>' . single_cat_title() . '</h1>'; ?>
+    <?php elseif ( is_search() ) : ?><?php printf( __( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?>
+    <?php endif; ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 	<?php /* How to display standard posts and search results */ ?>
 
         <article class="blog-item">
-			<img src="<?php echo the_post_thumbnail_url('bio-thumb'); ?>" />
+			<div class="blog-date">
+				<div class="date">
+					<span class="day"><?php the_time('d') ?></span>
+					<span class="month-year"><?php the_time('m, Y') ?></span>
+				</div>
+				<span class="icon"><i class="fa fa-pencil"></i></span>
+			</div>
+			<img class="blog-image" src="<?php echo the_post_thumbnail_url('bio-thumb'); ?>" />
 			<div class="blog-details">
 				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 					<h2><?php the_title(); ?></h2>
 				</a>
-				<p class="entry-meta"><time datetime="<?php the_time('l, F jS, Y') ?>" pubdate><?php the_time('l jS F Y') ?></time></p>
+				<p class="entry-meta">
+					By <?php the_author_link(); ?> |
+					<time datetime="<?php the_time('F jS, Y') ?>" pubdate><?php the_time('F, j Y') ?></time> |
+					Categories: <?php the_category( ',' ); ?> 
+				</p>
 				<?php the_excerpt(); ?>
 			</div>
 		</article>

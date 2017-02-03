@@ -16,14 +16,62 @@
     }
     
     .blog-item {
+        @extend %clearfix;
+        position: relative;
+        margin-bottom: 3em;
         
         .blog-image {
             float: left;
+            width: 220px;
             margin: 0 1em 0 0;
         }
         
         .blog-details {
+            margin-left: 336px;
+        }
+        
+        .blog-date {
             float: left;
+            margin-right: 1em;
+            text-align: center;
+            
+            span {
+                display: block;
+            }
+            
+            .date {
+                padding: .5em 1em;
+                color: #fff;
+                background: $orange;
+            }
+            
+            .day {
+                @include font-size(1.6, 2.2);
+                font-weight: 600;
+            }
+            
+            .month-year {
+                @include font-size(.875, 1);
+            }
+            
+            .icon {
+                margin-top: .5em;
+                padding: .5em;
+                background: #ececec;
+                color: $orange;
+                @include font-size(1.2, 1.4);
+            }
+        }
+        
+        .entry-meta {
+            margin: 0 0 1em;
+        }
+        
+        .read-more {
+            display: block;
+            margin: 1em 0;
+            text-align: right;
+            @include font-size(.875, 1);
         }
     }
 }

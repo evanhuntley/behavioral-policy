@@ -22,8 +22,8 @@
 					<h2>
 						<?php
 							global $searchandfilter;
-							$sf_current_query = $searchandfilter->get(13596)->current_query()->get_array();
-
+							//$sf_current_query = $searchandfilter->get(13596)->current_query()->get_array();
+							$sf_current_query = $searchandfilter->get(13950)->current_query()->get_array();
 							if ($sf_current_query) {
 								echo '<ul>';
 								foreach($sf_current_query as $key) {

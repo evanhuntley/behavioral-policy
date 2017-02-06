@@ -75,32 +75,3 @@
         }
     }
 }
-
-/* Single Blog Post --------------------------------------------------- */
-
-.single-post {
-    background: #fafafa;
-    
-    .page-header {
-        padding: 3em 0;
-        background: #fafafa;
-        border-top: 1px solid #d2d3d4;
-        border-bottom: 1px solid #d2d3d4;
-        
-        h1 {
-            margin: 0;
-            @include font-size(2, 2.6);
-        }
-    }
-    
-    .post-content {
-        padding: 1em;
-        background: #fff;
-    }
-    
-    .star-block {
-        margin: 1em -1em;
-        padding: 1em;
-        background: #f6f6f6;
-    }
-}

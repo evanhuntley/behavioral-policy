@@ -112,9 +112,13 @@
                         </ul>
                     </div>
                     <div class="tab-content" id="tab-3">
-                        <?php $speakers = types_child_posts("conference-speaker") ?>
+                        <?php $appearances = types_child_posts("appearances") ?>
                         <ul class="speaker-list">
-                        <?php foreach($speakers as $speaker) : ?>
+                        <?php foreach($appearances as $appearance) : ?>
+                            <?php 
+                                $sp_id = wpcf_pr_post_get_belongs($appearance->ID, 'conference-speaker'); 
+                                $speaker = get_post($sp_id);
+                            ?>
                             <li>
                                 <img src="<?php echo get_the_post_thumbnail_url($speaker->ID, 'person'); ?>" />
                                 <h3>
@@ -196,16 +200,20 @@
             <div class="primary container">
                 <div class="content">
                     <h2>Speakers</h2>
-                    <?php $speakers = types_child_posts("conference-speaker") ?>
+                    <?php $appearances = types_child_posts("appearances") ?>
                     <ul class="speaker-list">
-                        <?php foreach($speakers as $speaker) : ?>
-                            <li>
-                                <img src="<?php echo get_the_post_thumbnail_url($speaker->ID, 'person'); ?>" />
-                                <h3>
-                                    <?php echo $speaker->post_title; ?>
-                                </h3>
-                            </li>
-                        <?php endforeach; ?>
+                    <?php foreach($appearances as $appearance) : ?>
+                        <?php 
+                            $sp_id = wpcf_pr_post_get_belongs($appearance->ID, 'conference-speaker'); 
+                            $speaker = get_post($sp_id);
+                        ?>
+                        <li>
+                            <img src="<?php echo get_the_post_thumbnail_url($speaker->ID, 'person'); ?>" />
+                            <h3>
+                                <?php echo $speaker->post_title; ?>
+                            </h3>
+                        </li>
+                    <?php endforeach; ?>                    
                     </ul>               
                 </div>
             </div> 

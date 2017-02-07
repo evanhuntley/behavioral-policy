@@ -28,6 +28,30 @@
     
     /* BSPA This Week ---------------------------------------------- */
     
+    .btw-stories {
+        list-style-type: none;
+        margin: 0 0 2em;
+        
+        li {
+            position: relative;
+            padding: 2em 0;
+            padding-right: 320px;
+            border-top: 1px solid #ececec;
+            
+            &:first-child {
+                padding-top: 1em;
+                border-top: none;
+            }
+        }
+        
+        .btw-story-image {
+            position: absolute;
+            top: 1.5em;
+            right: 0;
+            width: 300px;
+        }
+    }
+    
     .btw-tweets {
         @include row;
         

@@ -21,9 +21,48 @@
     }
     
     .star-block {
-        margin: 1em -1em;
-        padding: 1em;
+        position: relative;
+        margin: 2em -1em;
+        padding: 2.5em 1em;
         background: #f6f6f6;
+        
+        .star-grey, .star-white {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            left: 50%;
+            margin-left: -20px;
+            text-align: center;
+            line-height: 40px;
+            transform: rotate(-45deg);
+            
+            &::before {
+                content: "\f005";
+                display: inline-block;
+                font-size: 20px;
+                font-family: 'fontawesome', Arial, sans-serif;
+                transform: rotate(45deg);
+            }
+        }
+        
+        .star-white {
+            top: -20px;
+            background: #fff;
+
+            &::before {
+                color: orange;
+            }
+        }
+        
+        .star-grey {
+            bottom: -20px;
+            background: #f6f6f6;
+            
+            &::before {
+                color: $blue;
+            }
+        }
     }
     
     /* BSPA This Week ---------------------------------------------- */

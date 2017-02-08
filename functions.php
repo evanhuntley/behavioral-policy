@@ -208,7 +208,7 @@ add_shortcode( 'button', 'button_func' );
 // [starblock]Stuff Here[/starblock]
 function starblock_func( $atts, $content = null ) {
 	
-	return '<div class="star-block">' . $content . '</div>';
+	return '<div class="star-block"><span class="star-white"></span><span class="star-grey"></span>' . $content . '</div>';
 
 }
 add_shortcode( 'starblock', 'starblock_func' );

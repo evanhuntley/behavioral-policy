@@ -11,12 +11,18 @@
 					?>
 					<span class="role">
 						<?php 
-							$terms = get_the_terms($post->ID, 'team-roles');
-							$roles = [];
-							foreach($terms as $term) {
-								$roles[] = $term->name;
+							$subtitle = types_render_field("person-subtitle", array("raw" => true));
+						
+							if ($subtitle) {
+								echo $subtitle;
+							} else {
+								$terms = get_the_terms($post->ID, 'team-roles');
+								$roles = [];
+								foreach($terms as $term) {
+									$roles[] = $term->name;
+								}
+								echo join(",", $roles);
 							}
-							echo join(",", $roles);
 						?>
 					</span>
 				</div>

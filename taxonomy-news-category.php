@@ -8,15 +8,17 @@
 <article role="main" class="page" id="news-archive">
 	<div class="page-header">
 		<div class="container">
-			<h1>Category Name</h1>
+			<?php 
+				$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+			?>
+			<h1><?php echo $term->name; ?></h1>
 		</div>
 	</div>
 
 	<div class="primary container">
-		<?php get_sidebar(); ?>
 		<section class="content">
 			<div class="articles">
-
+				<ul>
 				<?php
 					/* Since we called the_post() above, we need to
 					 * rewind the loop back to the beginning that way
@@ -29,9 +31,10 @@
 					 * called loop-archives.php and that will be used instead.
 					 */
 					while ( have_posts() ) : the_post();
-					 	get_template_part( 'loop' );
+					 	get_template_part( 'loop', 'news-item' );
 				 	endwhile;
 				?>
+				</ul>
 		</section>
 	</div>
 

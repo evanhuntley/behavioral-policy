@@ -57,7 +57,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-
+                    <a href="/news-category/in-the-news">View All</a>
                 <h2>Policy Making</h2>
                 <?php
                 $policy = news_query('policy-making');
@@ -70,7 +70,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-
+                    <a href="/news-category/policy-making">View All</a>
                 <h2>BSP in the News</h2>
                 <?php
                 $bsp_itn = news_query('bsp-in-the-news');
@@ -83,6 +83,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
+                <a href="/news-category/bsp-in-the-news">View All</a>
             </div>
         </div>
 
@@ -104,6 +105,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
+                <a href="/news-category/reports">View All</a>
             </div>
         </div>
 
@@ -123,6 +125,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
+                <a href="/news-category/recommended-reading">View All</a>
 
                 <h2>Free Resources</h2>
                 <?php
@@ -136,7 +139,8 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-
+                <a href="/news-category/free-resources">View All</a>
+                
                 <h2>Exec Ed/Continuing Professional Development</h2>
                 <?php
                 $exec = news_query('exec-ed');
@@ -149,6 +153,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
+                <a href="/news-category/exec-ed">View All</a>
             </div>
         </div>
 

@@ -77,6 +77,8 @@
         margin: 0 0 2em;
         
         li {
+            @extend %clearfix;
+            min-height: 250px;
             position: relative;
             padding: 2em 0;
             padding-right: 320px;

@@ -77,6 +77,10 @@
                 color: $orange;
             }
         }
+        
+        .select2-container {
+            max-width: 100%;
+        }
     }
 }
 
@@ -157,6 +161,10 @@
 
     .article-header {
         position: relative;
+        
+        h1 {
+            padding-right: 80px;
+        }
 
         svg {
             position: absolute;

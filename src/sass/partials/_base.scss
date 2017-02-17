@@ -61,6 +61,28 @@ hr {
     border-color: #ececec;
 }
 
+.alignright {
+    margin: 1em 0;
+    
+    @include bp-l {
+        float: right;
+        margin-left: 1em;
+    }
+}
+
+.alignleft {
+    margin: 1em 0;
+    
+    @include bp-l {
+        float: left;
+        margin-right: 1em;
+    }
+}
+
+.aligncenter {
+    margin: 1em 0;
+}
+
 .screen-reader-text {
     @extend %visuallyhidden;
 }

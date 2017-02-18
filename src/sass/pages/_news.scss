@@ -4,9 +4,63 @@
 
 .news {
 
+    .primary {
+        background: #fafafa;
+    }
+    
+    .feature-heading {
+        margin: 0 0 1em;
+        padding: 0 0 1em;
+        color: $blue;
+        border-bottom: 1px solid #ececec;
+    }
+    
+    h2 {
+        color: $blue;
+    }
+    
+    /* Featured Item -------------------------------------------- */
+    .featured-item {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        
+        img {
+            width: 100%;
+            margin: 0 0 1em;
+        }
+        
+        li {
+            position: relative;
+            
+            &:hover {
+
+                svg {
+                    fill: $orange;
+                    opacity: 1;
+                }
+            }
+        }
+        
+        svg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            top: 50%;
+            margin-top: -36px;
+            margin-left: -36px;
+            width: 72px;
+            height: 72px;
+            fill: #fff;
+            opacity: .5;
+            transition: all .2s;
+        }
+    }
+
     /* News Sections -------------------------------------------- */
     .news-section {
         @extend .primary;
+        background: #fff;
 
         .content {
             width: 75%;
@@ -49,14 +103,30 @@
             opacity: .5;
             transition: all .2s;
         }
+        
+        .more-link {
+            display: block;
+            text-align: right;
+            color: $blue;
+            text-transform: lowercase;
+        }
     }
     
     /* Reports Section --------------------------------------------------- */
     .reports {
         @extend .primary;
+        background: #fff;
         
         .content {
             width: 75%;
+        }
+        
+        h2 {
+            @include font-size(2, 2.4);
+        }
+        
+        h3 {
+            color: $blue;
         }
         
         ul {
@@ -65,9 +135,53 @@
             padding: 0;
         }
         
-        li {
-            padding: 1em 0;
-            border-bottom: 1px solid #ececec;
+        .reports-details {
+            @extend %clearfix;
+            
+            li {
+                @include rowMachine(3, 4%);    
+                
+                @include bp-l {
+                    @include rowMachine(5, 4%);
+                }
+            }
+        }
+        
+        .report-list {
+            
+            li {
+                position: relative;
+                padding: 1em 0;
+                border-top: 1px solid #ececec;
+            }
+            
+            .thumb {
+                max-width: 225px;
+                
+                @include bp-l {
+                    position: absolute;
+                    top: 1em;
+                    left: 0;
+                }
+            }
+            
+            .item-details {
+                
+                @include bp-l {
+                    padding-left: 250px;
+                    padding-right: 220px;
+                }
+            }
+            
+            .org {
+                max-width: 200px;
+                
+                @include bp-l {
+                    position: absolute;
+                    top: 1em;
+                    right: 0;
+                }
+            }
         }
     }
 }

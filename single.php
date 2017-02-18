@@ -3,7 +3,8 @@
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
         <article role="main" class="single-post" id="post-<?php the_ID(); ?>">
-            <div class="page-header">
+			<?php $class = has_category('bspa-this-week') ? 'weekly' : ''; ?>
+            <div class="page-header <?= $class; ?>">
 				<div class="container">
 					<h1><?php the_title(); ?></h1>
 				</div>
@@ -20,27 +21,27 @@
 							
 							<ul class="btw-stories">
 								<li>
+									<img class="btw-story-image" src="<?= types_render_field('blog-story-1-image', array('size' => 'event-highlight', 'url' => 'true')); ?>" />
 									<h3><a href="<?= types_render_field('blog-story-1-url', array('raw' => true)); ?>"><?= types_render_field("blog-story-1-title"); ?></a></h3>
 									<?= types_render_field("blog-story-1-content"); ?>
-									<img class="btw-story-image" src="<?= types_render_field('blog-story-1-image', array('size' => 'event-highlight', 'url' => 'true')); ?>" />
 								</li>
 								<li>
+									<img class="btw-story-image" src="<?= types_render_field('blog-story-2-image', array('size' => 'event-highlight', 'url' => 'true')); ?>" />
 									<h3><a href="<?= types_render_field('blog-story-2-url', array('raw' => true)); ?>"><?= types_render_field("blog-story-2-title"); ?></a></h3>
 									<?= types_render_field("blog-story-2-content"); ?>
-									<img class="btw-story-image" src="<?= types_render_field('blog-story-2-image', array('size' => 'event-highlight', 'url' => 'true')); ?>" />
 								</li>
 								<li>
+									<img class="btw-story-image" src="<?= types_render_field('blog-story-3-image', array('size' => 'event-highlight', 'url' => 'true')); ?>" />
 									<h3><a href="<?= types_render_field('blog-story-3-url', array('raw' => true)); ?>"><?= types_render_field("blog-story-3-title"); ?></a></h3>
 									<?= types_render_field("blog-story-3-content"); ?>
-									<img class="btw-story-image" src="<?= types_render_field('blog-story-3-image', array('size' => 'event-highlight', 'url' => 'true')); ?>" />
 								</li>
 								<li>
+									<img class="btw-story-image" src="<?= types_render_field('blog-story-4-image', array('size' => 'event-highlight', 'url' => 'true')); ?>" />
 									<h3><a href="<?= types_render_field('blog-story-4-url', array('raw' => true)); ?>"><?= types_render_field("blog-story-4-title"); ?></a></h3>
 									<?= types_render_field("blog-story-4-content"); ?>
-									<img class="btw-story-image" src="<?= types_render_field('blog-story-4-image', array('size' => 'event-highlight', 'url' => 'true')); ?>" />
 								</li>
 							</ul>
-							
+							<h2>In Other News...</h2>
 							<ul class="btw-tweets">
 								<li class="tweet">
 									<?php echo types_render_field( "tweet", array("separator" => "</li><li class='tweet'>") ); ?>

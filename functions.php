@@ -213,6 +213,21 @@ function starblock_func( $atts, $content = null ) {
 }
 add_shortcode( 'starblock', 'starblock_func' );
 
+// Date Shortcode
+// [bigdate day="19" month="Sept" year="2017"]
+function bigdate_func( $atts ) {
+
+	$a = shortcode_atts( array(
+	    'day' => '01',
+	    'month' => 'Jan',
+		'year' => '2017'
+	), $atts );
+
+	$bigdate = '<div class="bigdate"><span class="month">' . $a['month'] . '</span><span class="day">' . $a['day'] . '</span><span class="year">' . $a['year'] . '</span></div>';
+	return $bigdate;
+}
+add_shortcode( 'bigdate', 'bigdate_func' );
+
 // News Query
 function news_query($cat) {
 

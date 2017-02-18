@@ -16,8 +16,11 @@
 }
 
 .primary {
-    @include row;
     padding: 48px 0;
+    
+    @include bp-l {
+        @include row;
+    }
 
     .content {
 

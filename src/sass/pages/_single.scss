@@ -4,7 +4,7 @@
     background: #fafafa;
     
     .page-header {
-        padding: 3em 0;
+        padding: 4em 0;
         background: #fafafa;
         border-top: 1px solid #d2d3d4;
         border-bottom: 1px solid #d2d3d4;
@@ -12,6 +12,12 @@
         h1 {
             margin: 0;
             @include font-size(2, 2.6);
+        }
+        
+        &.weekly {
+            color: #fff;
+            background-image: url('../img/bg_weekly-roundup.jpg');
+            background-size: cover;
         }
     }
     
@@ -81,7 +87,6 @@
             min-height: 250px;
             position: relative;
             padding: 2em 0;
-            padding-right: 320px;
             border-top: 1px solid #ececec;
             
             &:first-child {
@@ -91,10 +96,12 @@
         }
         
         .btw-story-image {
-            position: absolute;
-            top: 1.5em;
-            right: 0;
-            width: 300px;
+            margin: 1em 0;
+            
+            @include bp-l {
+                float: right;
+                margin: 0 0 1em 1em;
+            }
         }
     }
     

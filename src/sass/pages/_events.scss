@@ -2,6 +2,18 @@
     Events Page Styles
 =================================================================== */
 
+.events {
+	
+	.content h1 {
+		@include font-size(1.75, 2);
+		color: $blue;
+		
+		@include bp-l {
+			@include font-size(2, 2.4);
+		}
+	}
+}
+
 .event-featured {
 	margin: 0 0 2em;
 
@@ -19,13 +31,14 @@
 	list-style-type: none;
 
 	.event {
+		position: relative;
 		@extend %clearfix;
 		padding: 1.5em 0;
 		border-top: 1px solid #ececec;
 	}
 
 	.event-date {
-		float: left;
+		position: absolute;
 		min-width: 60px;
 		margin: 0 1em 0 0;
 		padding: .25em 1.25em;
@@ -46,6 +59,8 @@
 
 	.event-details {
 		float: left;
+		min-height: 80px;
+		padding-left: 84px;
 		color: $blue;
 
 		h2 {
@@ -68,19 +83,37 @@
 	}
 }
 
-.event-highlight-list {
-	@include row;
+.events-page-conference {
+	@extend .primary;
+	background: #fafafa;
+}
 
-	li {
-		@include col(1, 3);
+.events-page-spotlight {
+	@extend .primary;
+	
+	.flip-container, .front, .back {
+    	width: 280px;
+    	height: 280px;
 	}
+}
 
-	img {
-		margin-bottom: 1em;
-	}
+.events-event-highlights {
+	background: #fafafa;
+	
+	.event-highlight-list {
+		@include row;
 
-	h3 {
-		margin-bottom: 0;
+		li {
+			@include col(1, 3);
+		}
+
+		img {
+			margin-bottom: 1em;
+		}
+
+		h3 {
+			margin-bottom: 0;
+		}
 	}
 }
 

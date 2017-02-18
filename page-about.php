@@ -33,13 +33,16 @@
         <div class="primary container">
             <?php get_sidebar(); ?>
             <section class="content">
-                <div class="team">
+                <div class="team" id="team">
                     <h1>Meet Our Team</h1>
                     <ul class="grid-filters">
                         <li class="active" data-filter="*">All</li>
                         <?php
                             $terms = get_terms( array(
-                                'taxonomy' => 'team-roles'
+                                'taxonomy' => 'team-roles',
+                                'include' => array(4, 5, 6, 7),
+                                'orderby' => 'name',
+                                'order' => 'ASC'
                             ) );
 
                             foreach($terms as $term) :
@@ -55,7 +58,14 @@
                             'post_type' => 'people',
                             'posts_per_page' => -1,
                             'order' => 'ASC',
-                            'orderby' => 'title'
+                            'orderby' => 'title',
+                            'tax_query' => array(
+                        		array(
+                        			'taxonomy' => 'team-roles',
+                        			'field'    => 'slug',
+                        			'terms'    => array( 'bspa-team', 'advisory-board', 'executive-committee' ),
+                        		),
+                        	),                            
                         );
                         $people = new WP_Query( $args);
 
@@ -95,7 +105,7 @@
             </section>
         </div>
 
-        <div class="block faq">
+        <div class="block faq" id="faq">
             <div class="container">
                 <div class="faq-list">
                     <h1>facts and questions</h1>

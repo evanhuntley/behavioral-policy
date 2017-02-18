@@ -40,6 +40,14 @@
                 </div>
             </section>
         </div>
+        
+        <div class="partners">
+            <div class="container">
+                <h2>Our Partners</h2>
+                <hr />
+                <?= types_render_field("giving-our-partners"); ?>
+            </div>
+        </div>
 
     </article>
 <?php endwhile; ?>

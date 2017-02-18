@@ -8,7 +8,11 @@
 <li class="news-item">
     <div class="news-image">
         <a <?= $format == 'video' ? 'data-lity' : ''; ?> href="<?= types_render_field('news-item-url', array("raw" => true)); ?>" title="<?php the_title(); ?>">
-            <img src="<?php echo the_post_thumbnail_url('event-highlight'); ?>" alt="<?php the_title(); ?>">
+            <?php if (types_render_field('news-featured') == '1') : ?>
+                <img src="<?php echo the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>">    
+            <?php else : ?>
+                <img src="<?php echo the_post_thumbnail_url('event-highlight'); ?>" alt="<?php the_title(); ?>">
+            <?php endif; ?>
             <svg class="icon">
                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#<?php echo $format; ?>"></use>
             </svg>
@@ -19,5 +23,5 @@
             <?php the_title(); ?>
         </a>
     </h3>
-    <p><?php the_excerpt(); ?></p>
+    <?= types_render_field('news-short-description'); ?>
 </li>

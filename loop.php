@@ -33,7 +33,7 @@
 					<h2><?php the_title(); ?></h2>
 				</a>
 				<p class="entry-meta">
-					By <?php the_author_link(); ?> |
+					By PolicyShop Admin |
 					<time datetime="<?php the_time('F jS, Y') ?>" pubdate><?php the_time('F, j Y') ?></time> |
 					Categories: <?php the_category( ',' ); ?> 
 				</p>

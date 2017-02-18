@@ -8,7 +8,7 @@
 <article role="main" class="page" id="article-archive">
 	<div class="page-header">
 		<div class="container">
-			<h1>BSP Logo</h1>
+			<h1><img src="<?php echo get_template_directory_uri(); ?>/assets/img/l_bsp_small.png" alt="BSP" /></h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum officia autem doloremque repellendus, cupiditate adipisci officiis itaque libero culpa quaerat eius sit blanditiis, delectus atque odio quia id repellat facilis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia laborum assumenda aliquam animi? Cum aspernatur fugiat sint repellat eius velit dolore fuga ut suscipit repudiandae. Officia, repellendus, iusto! Nulla, nihil.</p>
 		</div>
 	</div>

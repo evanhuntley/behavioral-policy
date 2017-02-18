@@ -73,7 +73,7 @@ header {
                 }
 
                 @include bp-xl {
-                    @include font-size(1.125, 1);
+                    @include font-size(1, 1.8);
                     padding: 3em 1em;
                     border-top: 5px solid transparent;
                     background: transparent;

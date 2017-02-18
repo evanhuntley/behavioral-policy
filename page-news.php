@@ -15,32 +15,37 @@ Template Name: News Page
             </div>
         </div>
 
-        <div class="primary container">
-            <?php get_sidebar(); ?>
-            <section class="content">
-                <?php
-                $args = array(
-                    'post_type' => 'news',
-                    'posts_per_page' => 1,
-                    'order' => 'RAND',
-                    'meta_query' => array(
-                        array(
-                            'key'	  	=> 'wpcf-news-featured',
-                            'value'	  	=> "1",
-                            'compare' 	=> '=',
-                        )
-                    ),
-                );
+        <div class="primary">
+            <div class="container">
+                <?php get_sidebar(); ?>
+                <section class="content" id="news">
+                    <h1 class="feature-heading">News</h1>
+                    <ul class="featured-item">
+                    <?php
+                    $args = array(
+                        'post_type' => 'news',
+                        'posts_per_page' => 1,
+                        'order' => 'RAND',
+                        'meta_query' => array(
+                            array(
+                                'key'	  	=> 'wpcf-news-featured',
+                                'value'	  	=> "1",
+                                'compare' 	=> '=',
+                            )
+                        ),
+                    );
 
-                $featured_news = new WP_Query($args);
+                    $featured_news = new WP_Query($args);
 
-                if ($featured_news->have_posts()) :
-                    ?>
-                    <?php while ( $featured_news->have_posts() ) : $featured_news->the_post(); ?>
-                        <?php get_template_part('loop', 'newsitem') ?>
-                    <?php endwhile;  ?>
-                <?php endif; wp_reset_query(); ?>
-            </section>
+                    if ($featured_news->have_posts()) :
+                        ?>
+                        <?php while ( $featured_news->have_posts() ) : $featured_news->the_post(); ?>
+                            <?php get_template_part('loop', 'newsitem') ?>
+                        <?php endwhile;  ?>
+                    <?php endif; wp_reset_query(); ?>
+                </ul>
+                </section>
+            </div>
         </div>
 
         <div class="news-section container">
@@ -57,7 +62,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-                    <a href="/news-category/in-the-news">View All</a>
+                    <a class="more-link" href="/news-category/in-the-news">See All</a>
                 <h2>Policy Making</h2>
                 <?php
                 $policy = news_query('policy-making');
@@ -70,7 +75,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-                    <a href="/news-category/policy-making">View All</a>
+                    <a class="more-link" href="/news-category/policy-making">See All</a>
                 <h2>BSP in the News</h2>
                 <?php
                 $bsp_itn = news_query('bsp-in-the-news');
@@ -83,33 +88,42 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-                <a href="/news-category/bsp-in-the-news">View All</a>
+                <a class="more-link" href="/news-category/bsp-in-the-news">See All</a>
             </div>
         </div>
 
-        <div class="in-action">
+        <?php get_template_part('billboard', 'in-action') ?>
 
-        </div>
-
-        <div class="reports container">
+        <div class="reports container" id="reports">
             <div class="content">
-                <h2>Reports</h2>
+                <h2>Reports Corner</h2>
+                <div class="reports-details">
+                    <?= types_render_field('reports-corner-text'); ?>
+                </div>
                 <?php
                 $reports = news_query('reports');
 
                 if ($reports->have_posts()) :
                     ?>
-                    <ul>
+                    <ul class="report-list">
                         <?php while ( $reports->have_posts() ) : $reports->the_post(); ?>
-                            <li><?php the_title(); ?></li>
+                            <li>
+                                <img class="thumb" src="<?php echo the_post_thumbnail_url('event-highlight'); ?>" alt="<?php the_title(); ?>">
+                                <div class="item-details">
+                                    <h3><?php the_title(); ?></h3>
+                                    <?= types_render_field('news-short-description'); ?>
+                                    <img class="org" src="<?php echo types_render_field('report-organization-logo', array("raw" => true)); ?>" alt="<?php types_render_field('report-organization-name', array("raw" => true)); ?>">
+                                </div>
+                            </li>
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-                <a href="/news-category/reports">View All</a>
             </div>
         </div>
 
-        <?php get_template_part('billboard', 'join') ?>
+        <div id="new-to-bsp">
+            <?php get_template_part('billboard', 'new-to-bsp') ?>
+        </div>
 
         <div class="news-section container">
             <div class="content">
@@ -125,7 +139,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-                <a href="/news-category/recommended-reading">View All</a>
+                <a class="more-link" href="/news-category/recommended-reading">See All</a>
 
                 <h2>Free Resources</h2>
                 <?php
@@ -139,7 +153,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-                <a href="/news-category/free-resources">View All</a>
+                <a class="more-link" href="/news-category/free-resources">See All</a>
                 
                 <h2>Exec Ed/Continuing Professional Development</h2>
                 <?php
@@ -153,7 +167,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-                <a href="/news-category/exec-ed">View All</a>
+                <a class="more-link" href="/news-category/exec-ed">See All</a>
             </div>
         </div>
 

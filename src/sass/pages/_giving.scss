@@ -7,6 +7,11 @@
     .content {
         @include col(4, 4);
     }
+    
+    .tab-nav a {
+        @include font-size(1.2, 1.4);
+        text-transform: lowercase;
+    }
 
     .flip-cards {
         max-width: 900px;
@@ -15,5 +20,45 @@
 
     .flip-container {
         float: left;
+    }
+    
+    .partners {
+        @extend %clearfix;
+        position: relative;
+        padding: 3em 0;
+        background: #fafafa;
+        
+        h2 {
+            display: inline-block;
+            padding: 0 .5em 0 0;
+            @include font-size(2, 2.4);
+            background: #fafafa;
+            position: relative;
+            z-index: 1;
+        }
+        
+        hr {
+            position: relative;
+            top: -5em;
+            margin-bottom: 0;
+        }
+        
+        ul {
+            margin: 1em 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        li {
+            @include rowMachine(2, 4%);    
+            
+            @include bp-l {
+                @include rowMachine(4, 4%);    
+            }
+            
+            @include bp-xl {
+                @include rowMachine(5, 4%);    
+            }
+        }
     }
 }

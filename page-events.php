@@ -7,7 +7,7 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-    <article role="main" class="type-page about" id="post-<?php the_ID(); ?>">
+    <article role="main" class="type-page events" id="post-<?php the_ID(); ?>">
 
         <div class="page-header" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
             <div class="container">
@@ -19,7 +19,7 @@
         <div class="primary container">
             <?php get_sidebar(); ?>
             <section class="content">
-                <div class="event-featured">
+                <div class="event-featured" id="featured">
                     <h1>Featured</h1>
                     <div class="featured-content">
                         <h2><?= types_render_field("event-feature-title"); ?></h2>
@@ -27,7 +27,7 @@
                         <a class="button alt" href="<?= types_render_field("event-feature-url"); ?>"><?= types_render_field("event-feature-link-text"); ?></a>
                     </div>
                 </div>
-                <div class="calendar">
+                <div class="calendar" id="calendar">
                     <h1>Calendar</h1>
                     <?php
                         $args = array(
@@ -65,24 +65,31 @@
                                 </li>
                             <?php endwhile; ?>
                         </ul>
-                    <?php endif; ?>
+                    <?php endif; wp_reset_query(); ?>
                 </div>
             </section>
         </div>
 
-        <div id="conference">
+        <div class="events-page-conference" id="conference">
             <div class="container">
-                <h1>BSPA Annual Conference</h1>
+                <div class="content">
+                    <h1>BSPA Annual Conference</h1>
+                    <?= types_render_field("events-annual-conference"); ?>
+                </div>
+                
             </div>
         </div>
 
-        <div id="spotlights">
+        <div class="events-page-spotlight" id="spotlight">
             <div class="container">
-                <h1>Spotlights Workshops</h1>
+                <div class="content">
+                    <h1>Spotlights Workshops</h1>
+                    <?= types_render_field("events-spotlights-workshops"); ?>
+                </div>
             </div>
         </div>
 
-        <div id="highlights">
+        <div class="events-event-highlights" id="event-highlights">
             <div class="container primary">
                 <div class="content">
                 <h1>Event Highlights</h1>

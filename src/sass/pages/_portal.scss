@@ -1,0 +1,26 @@
+/* ================================================================
+    Portal Page Styles
+=================================================================== */
+
+.portal {
+    
+    .content {
+        width: 100%;
+    }
+    
+    .tab-nav {
+        border: none;
+        
+        a {
+            padding: 1.5em 1em;
+            text-transform: lowercase;
+            border: 1px solid #e6e6e6;
+            background: #f9f9f9;
+            
+            &.active {
+                border: 1px solid #e6e6e6;
+                background: #d0d4d7;
+            }
+        }
+    }
+}

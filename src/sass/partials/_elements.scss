@@ -162,7 +162,14 @@
 
 // Card Flips
 /* entire container, keeps perspective */
+
+.flip-cards {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 .flip-container {
+    float: left;
 	perspective: 1000px;
 }
 	/* flip the pane when hovered */
@@ -205,4 +212,31 @@
     color: #fff;
     background: #333;
 	transform: rotateY(180deg);
+}
+
+// Big Dates
+
+.bigdate {
+    float: left;
+    display: block;
+    padding: 1em 1.5em;
+    margin: 0 1em 1em 0;
+    min-width: 60px;
+    color: #fff;
+    text-transform: lowercase;
+    text-align: center;
+    background: $orange;
+    
+    span {
+        display: block;
+    }
+    
+    .month, .year {
+        @include font-size(1.2, 1.2);
+    }
+    
+    .day {
+        @include font-size(2.4, 2.4);
+    }
+
 }

@@ -152,3 +152,24 @@ $dark-gray: #747474;
 
     &.fluid { width: percentage($col/$sum); }
 }
+
+// Row Machine (via Chris Coyier)
+@mixin rowMachine($numPerRow, $margin, $bottom: $margin) {
+	width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+	float: left;
+	
+	&:nth-child(n) {
+		margin-bottom: $bottom;
+		margin-right: $margin;
+		clear: none;
+	}
+	
+	&:nth-child(#{$numPerRow}n) {
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+	
+	&:nth-child(#{$numPerRow}n + 1) {
+		clear: left;
+	}
+}

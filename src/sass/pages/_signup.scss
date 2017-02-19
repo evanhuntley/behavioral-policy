@@ -4,4 +4,79 @@
 
 .signup {
     
+    > div {
+        padding: 3em 0;
+        text-align: center;
+    }
+    
+    .subscriptions-main {
+        @extend %clearfix;
+        color: #fff;
+        background: url('../img/bg_signup.jpg');
+        background-size: cover;
+        
+        h1 {
+            @include font-size(2.4, 2.4);
+        }
+        
+        ul {
+            @extend %unlist;
+            margin: 0 0 1em;
+        }
+        
+        .level {
+            padding: 10px;
+            background: #fff;
+            
+            @include bp-l {
+                @include rowMachine(3, 4%);
+            }
+            
+            h3 {
+                padding: .5em;
+                @include font-size(.875, 1);
+                color: #fff;
+                background: $orange;    
+            }
+            
+            .price {
+                position: relative;
+                padding: 2em 0 1em;
+                color: #505050;
+                
+                .currency {
+                    position: relative;
+                    top: -30px;
+                    font-size: 28px;
+                }
+                
+                .integer-part {
+                    color: $orange;
+                    font-size: 75px;
+                    font-weight: 700;
+                }
+                
+                .decimal-part {
+                    position: relative;
+                    top: -30px;
+                    font-weight: 700;
+                }
+                
+                .time {
+                    color: #888888;
+                    font-size: 20px;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+    
+    .subscription-options {
+        background: #fafafa;
+        
+        ul {
+            @extend %unlist;
+        }
+    }
+    
 }

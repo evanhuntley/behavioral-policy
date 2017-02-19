@@ -21,6 +21,23 @@
         }
     }
     
+    .simple-navigation {
+        @extend %clearfix;
+        @include font-size(.875, 1);
+        margin: 0 0 1em;
+        padding: .5em 0;
+        border-top: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+        
+        a[rel="prev"] {
+            float: left;
+        }
+        
+        a[rel="next"] {
+            float: right;
+        }
+    }
+    
     .post-content {
         padding: 1em;
         background: #fff;

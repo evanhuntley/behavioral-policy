@@ -12,6 +12,10 @@
 			
 			<div class="primary container">
 				<div class="content">
+					<div class="simple-navigation">
+						<?php previous_post_link('%link', '&lt; Previous', false); ?> 
+						<?php next_post_link( '%link', 'Next &gt;', false ); ?>
+					</div>
 					<?php the_post_thumbnail('full');?>
 					
 					<div class="post-content">

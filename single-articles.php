@@ -4,7 +4,7 @@
     <article role="main" class="page single-article" id="post-<?php the_ID(); ?>">
         <div class="page-header">
             <div class="container">
-                <h1>BSP LOGO</h1>
+                <h1><img src="<?php echo get_template_directory_uri(); ?>/assets/img/l_bsp_small.png" alt="BSP" /></h1>
                 <?php //echo types_render_field("page-short-description"); ?>
             </div>
         </div>
@@ -43,6 +43,10 @@
                 </div>
                 <div class="article-content">
                     <?php the_content(); ?>
+                    <?php if (types_render_field('article-supplemental-material', array("raw" => true))) : ?>
+                        <hr />
+                        <a href="<?= types_render_field('article-supplemental-material', array("raw" => true)); ?>">Supplemental Material</a>
+                    <?php endif; ?>
                 </div>
             </section>
         </div>

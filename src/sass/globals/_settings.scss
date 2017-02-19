@@ -84,6 +84,13 @@ $dark-gray: #747474;
         clear: both;
         }
     }
+	
+// Unstyled Lists
+%unlist {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
 
 /* Visually hide element http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
 // Use: @extend %visuallyhidden;

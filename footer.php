@@ -47,9 +47,9 @@
 	</div>
 </footer>
 
-<?php wp_footer(); ?>
-
 <script src="<?php echo bloginfo('template_directory'); ?>/assets/js/scripts.min.js"></script>
+
+<?php wp_footer(); ?>
 
 <?php if ( is_singular() ) wp_print_scripts( 'comment-reply' ); ?>
 </body>

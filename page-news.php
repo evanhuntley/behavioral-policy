@@ -76,9 +76,9 @@ Template Name: News Page
                     </ul>
                 <?php endif; wp_reset_query(); ?>
                     <a class="more-link" href="/news-category/policy-making">See All</a>
-                <h2>BSP in the News</h2>
+                <h2>BSPA in the News</h2>
                 <?php
-                $bsp_itn = news_query('bsp-in-the-news');
+                $bsp_itn = news_query('bspa-in-the-news');
 
                 if ($bsp_itn->have_posts()) :
                     ?>
@@ -88,7 +88,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-                <a class="more-link" href="/news-category/bsp-in-the-news">See All</a>
+                <a class="more-link" href="/news-category/bspa-in-the-news">See All</a>
             </div>
         </div>
 

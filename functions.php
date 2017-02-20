@@ -214,6 +214,15 @@ function starblock_func( $atts, $content = null ) {
 }
 add_shortcode( 'starblock', 'starblock_func' );
 
+// Blog Tag Block Shortcode
+// [tagblock]Stuff Here[/tagblock]
+function tagblock_func( $atts, $content = null ) {
+	
+	return '<div class="tag-block"><span class="tag-icon"></span>' . $content . '</div>';
+
+}
+add_shortcode( 'tagblock', 'tagblock_func' );
+
 // Date Shortcode
 // [bigdate day="19" month="Sept" year="2017"]
 function bigdate_func( $atts ) {

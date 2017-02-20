@@ -88,6 +88,45 @@
         }
     }
     
+    .tag-block {
+        position: relative;
+        margin: 2em -1em;
+        padding: 2.5em 1em;
+        background: #f6f6f6;
+        
+        .tag-icon {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: -20px;
+            left: 50%;
+            margin-left: -20px;
+            text-align: center;
+            line-height: 40px;
+            color: $orange;
+            background: #fff;
+            transform: rotate(-45deg);
+            
+            &::before {
+                content: "\f02e";
+                display: inline-block;
+                font-size: 20px;
+                font-family: 'fontawesome', Arial, sans-serif;
+                transform: rotate(45deg);
+            }
+        }
+    }
+    
+    .star-block + .tag-block {
+        margin-top: -2em;
+        background: #fff;
+        
+        .tag-icon {
+            background: #f6f6f6;
+        }
+    }
+    
     .date {
         margin: 1.5em 0 0;
         @include font-size(.875, 1);

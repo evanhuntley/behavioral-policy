@@ -9,14 +9,76 @@
         text-align: center;
     }
     
+    .price {
+        position: relative;
+        padding: 2em 0 1em;
+        color: #505050;
+        font-size: 16px;
+        
+        .currency {
+            position: relative;
+            top: -1em;
+            font-size: 1.75em
+        }
+        
+        .integer-part {
+            color: $orange;
+            font-size: 4.6875em;
+            font-weight: 700;
+        }
+        
+        .decimal-part {
+            position: relative;
+            top: -1.5em;
+            font-weight: 700;
+            font-size: 1.4375em;
+            color: $orange;
+        }
+        
+        .time {
+            color: #888888;
+            font-size: 1.25em;
+            font-style: italic;
+        }
+    }
+    
     .subscriptions-main {
         @extend %clearfix;
         color: #fff;
         background: url('../img/bg_signup.jpg');
         background-size: cover;
         
+        .subscription-content {
+            position: relative;
+        }
+        
+        .sub-login {
+            
+            span {
+                display: block;
+                text-transform: lowercase;
+            }
+            
+            @include bp-l {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+        
+        .subtitle {
+            margin: 1em 0;
+            color: #d0d2e1;
+            text-transform: lowercase;
+            @include font-size(1.125, 1.4);
+        }
+        
         h1 {
-            @include font-size(2.4, 2.4);
+            @include font-size(2.6, 2.6);
+        }
+        
+        h2 {
+            margin: 1em 0 1.5em;
         }
         
         ul {
@@ -25,6 +87,7 @@
         }
         
         .level {
+            margin: 0 0 1em;
             padding: 10px;
             background: #fff;
             
@@ -33,49 +96,60 @@
             }
             
             h3 {
-                padding: .5em;
-                @include font-size(.875, 1);
+                padding: .75em;
+                @include font-size(1.2, 1);
                 color: #fff;
                 background: $orange;    
-            }
-            
-            .price {
-                position: relative;
-                padding: 2em 0 1em;
-                color: #505050;
-                
-                .currency {
-                    position: relative;
-                    top: -30px;
-                    font-size: 28px;
-                }
-                
-                .integer-part {
-                    color: $orange;
-                    font-size: 75px;
-                    font-weight: 700;
-                }
-                
-                .decimal-part {
-                    position: relative;
-                    top: -30px;
-                    font-weight: 700;
-                }
-                
-                .time {
-                    color: #888888;
-                    font-size: 20px;
-                    font-style: italic;
-                }
             }
         }
     }
     
     .subscription-options {
-        background: #fafafa;
+        background: #fcfcfc;
         
-        ul {
+        h2 {
+            @include font-size(2, 2);
+            color: #333;
+        }
+        
+        .option-list {
+            @extend %clearfix;
             @extend %unlist;
+            padding: 10px;
+            background: #f8f8f8;
+        }
+        
+        .option {
+            margin: 0 0 1em;
+            border: 1px solid #ededed;
+            
+            @include bp-l {
+                @include rowMachine(4, 0);
+            }
+            
+            h3 {
+                padding: .75em;
+                @include font-size(1.125, 1);
+                background: #fff;
+            }
+            
+            .price {
+                padding-bottom: 2em;
+                font-size: 10px;
+                background: #f8f8f8;
+            }
+            
+            ul {
+                @extend %unlist;
+                color: #747474;
+                background: #fff;
+                @include font-size(.8125, 1);
+                
+                li {
+                    padding: .75em;
+                    border-bottom: 1px solid #ededed;
+                }
+            }
         }
     }
     

@@ -14,6 +14,12 @@
                 <div class="subtitle">Thank you for your interest in the</div>
                 <h1>behavioral science &amp; policy association</h1>
                 <div class="subscription-content">
+                    <?php if(!rcp_is_active()) : ?>
+                    <div class="sub-login">
+                        <span>Already a Member?</span>
+                        <a class="button" href="/login">Login</a>
+                    </div>
+                    <?php endif; ?>
                     <?php the_content(); ?>
                     <ul>
                         <li class="level">
@@ -54,11 +60,67 @@
         <div class="subscription-options">
             <div class="container">
                 <h2>BSP Subscription Options (Non-Member)</h2>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                <ul class="option-list">
+                    <li class="option">
+                        <h3>bspa individual subscription (online-only)</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="integer-part">30</span>
+                            <sup class="decimal-part">00</sup>
+                            <span class="time">/ year</span>
+                        </div>
+                        <ul>
+                            <li>Non-Member</li>
+                            <li>Online Subscription to Behavioral Science &amp; Policy</li>
+                            <li>--</li>
+                        </ul>
+                        <a class="button light" href="/signup/bspa-indiv-online">Select</a>
+                    </li>
+                    <li class="option">
+                        <h3>bspa individual subscription (online and print)</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="integer-part">45</span>
+                            <sup class="decimal-part">00</sup>
+                            <span class="time">/ year</span>
+                        </div>
+                        <ul>
+                            <li>Non-Member</li>
+                            <li>Online Subscription to Behavioral Science &amp; Policy</li>
+                            <li>Print edition mailed to you</li>
+                        </ul>
+                        <a class="button light" href="http://muse.jhu.edu/cgi-bin/single_title_subscription.cgi?year=2017">Select</a>
+                    </li>
+                    <li class="option">
+                        <h3>bsp institutional subscription (online only)</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="integer-part">225</span>
+                            <sup class="decimal-part">00</sup>
+                            <span class="time">/ year</span>
+                        </div>
+                        <ul>
+                            <li>Non-Member</li>
+                            <li>Online Subscription to Behavioral Science &amp; Policy</li>
+                            <li>--</li>
+                        </ul>
+                        <a class="button light" href="http://muse.jhu.edu/cgi-bin/single_title_subscription.cgi?year=2016">Select</a>
+                    </li>
+                    <li class="option">
+                        <h3>bsp institutional subscription (online and print)</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="integer-part">255</span>
+                            <sup class="decimal-part">00</sup>
+                            <span class="time">/ year</span>
+                        </div>
+                        <ul>
+                            <li>Non-Member</li>
+                            <li>Online Subscription to Behavioral Science &amp; Policy</li>
+                            <li>--</li>
+                        </ul>
+                        <a class="button light" href="http://muse.jhu.edu/cgi-bin/single_title_subscription.cgi?year=2016">Select</a>
+                    </li>
                 </ul>
             </div>
         </div>

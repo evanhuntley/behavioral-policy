@@ -316,3 +316,22 @@
         }
     }
 }
+
+/* About BSP --------------------------------------------------------------- */
+
+.about-bsp {
+    background: #fafafa;
+    
+    .editors {
+        @extend %clearfix;
+    }
+    
+    .areas {
+        @extend .primary;
+        background: #fff;
+        
+        h2 {
+            @include font-size(2, 2);
+        }
+    }
+}

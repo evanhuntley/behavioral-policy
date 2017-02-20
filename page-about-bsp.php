@@ -90,6 +90,8 @@
                 </div>
             </section>
         </div>
+        
+        <?php get_template_part('areas-block') ?>
 
     </article>
 <?php endwhile; ?>

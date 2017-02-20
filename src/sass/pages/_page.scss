@@ -11,6 +11,46 @@
         p {
             margin-bottom: 1em;
         }
+        
+        // Gravity Forms
+
+        .gform_wrapper {
+            margin: 1em 0;
+            text-align: center;
+
+            .gform_fields {
+                margin: 0;
+                list-style-type: none;
+            }
+
+            label {
+                display: block;
+                text-align: left;
+            }
+            
+            .gfield {
+                margin: 0 0 2em;
+            }
+            
+            .ginput_container_name {
+                @include row;
+                
+                .name_first, .name_last {
+                    @include col(1, 2);
+                }
+            }
+
+            input[type="email"], input[type="text"], textarea {
+                width: 100%;
+                margin: 0 0 1em;
+                padding: .5em;
+                border: 1px solid #ececec;
+            }
+
+            textarea {
+                height: 150px;
+            }
+        }
     }
 
     .secondary-content {

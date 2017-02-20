@@ -31,6 +31,14 @@
             @include col(3,4);
         }
     }
+    
+    .areas {
+        @extend .primary;
+        
+        h2 {
+            @include font-size(2, 2);
+        }
+    }
 }
 
 // Meet the Team

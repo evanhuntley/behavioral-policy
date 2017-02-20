@@ -10,10 +10,10 @@
         </div>
 
         <div class="primary container">
+            <?php get_sidebar(); ?>
             <section class="content">
                 <?php the_content(); ?>
             </section>
-            <?php get_sidebar(); ?>
         </div>
 
     </article>

@@ -8,7 +8,7 @@
 }
 
 // Buttons
-.button {
+.button, input[type="submit"] {
     display: inline-block;
     margin: 1em 0;
     padding: 1em 2em;
@@ -42,6 +42,18 @@
 
     &.shortcode {
         @include font-size(1, 1.4);
+    }
+}
+
+// Tables 
+
+table {
+    width: 100%;
+    margin: 0 0 2em;
+    
+    th, td {
+        padding: .5em;
+        border: 1px solid #ececec;
     }
 }
 

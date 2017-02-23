@@ -32,7 +32,10 @@
                     <?php
                         $args = array(
                             'post_type' => 'bspa-events',
-                            'posts_per_page' => -1
+                            'posts_per_page' => -1,
+                            'orderby' => 'meta_value',
+                            'meta_key'  => 'wpcf-event-date',
+                            'order' => 'ASC'
                         );
 
                         $events = new WP_Query( $args);
@@ -55,7 +58,11 @@
                                         <span class="day"><?= $day; ?></span>
                                     </div>
                                     <div class="event-details">
-                                        <h2><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                        <?php if (types_render_field('event-external-url')) : ?>
+                                            <h2><a href="<?php echo types_render_field('event-external-url', array("raw" => true)); ?>"><?php the_title(); ?></a></h2>
+                                        <?php else : ?>
+                                            <h2><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>    
+                                        <?php endif; ?>
                                         <div class="location"><?= $location; ?></div>
                                         <?= $date; ?>
                                     </div>

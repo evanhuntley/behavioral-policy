@@ -29,20 +29,31 @@
                 <ul class="tab-nav">
                     <li><a class="active" href="#tab-1"><?= types_render_field('portal-tab1-name'); ?></a></li>
                     <li><a href="#tab-2"><?= types_render_field('portal-tab2-name'); ?></a></li>
-                    <li><a href="#tab-3"><?= types_render_field('portal-tab3-name'); ?></a></li>
+                    <li><a href="/articles">BSP Archive</a></li>
                     <li><a href="#tab-4"><?= types_render_field('portal-tab4-name'); ?></a></li>
                 </ul>
                 <div class="tab-content active" id="tab-1">
                     <?= types_render_field('portal-tab1-content'); ?>
                 </div>
                 <div class="tab-content" id="tab-2">
-                    <?= types_render_field('portal-tab2-content'); ?>
+                    <?php 
+                        $favs = get_user_favorites($user_id = null, $site_id = null, $filters = null); 
+                        
+                        $args = array(
+                            'post_type' => array( 'articles' ),
+                            'orderby' => 'ASC',
+                            'post__in' => $favs
+                        );
+                        
+                        $favorites = new WP_Query($args);
+                    ?>
+                        <?php while ( $favorites->have_posts() ) : $favorites->the_post(); ?>
+                            <?php get_template_part( 'loop', 'journal' ); ?>
+                        <?php endwhile; ?>
                 </div>
-                <div class="tab-content" id="tab-3">
-                    <?= types_render_field('portal-tab3-content'); ?>
-                </div>
+                <div class="tab-content" id="tab-3"></div>
                 <div class="tab-content" id="tab-4">
-                    <?= types_render_field('portal-tab4-content'); ?>
+                    <?php echo do_shortcode('[subscription_details]'); ?>
                 </div>
             </section>
         </div>

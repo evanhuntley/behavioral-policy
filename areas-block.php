@@ -1,4 +1,4 @@
-<div class="areas">
+<div class="areas" id="areas">
     <div class="container">
         <div class="content">
             <h2>Areas of Focus</h2>

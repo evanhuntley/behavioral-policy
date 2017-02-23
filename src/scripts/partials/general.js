@@ -77,19 +77,21 @@ jQuery(document).ready(function($) {
     $('.tab-nav a').on('click', function(e) {
         var id = $(this).attr('href');
         
-        // Handle Nav
-        $('.tab-nav a').removeClass('active');
-        $(this).addClass('active');
-        
-        // Handle Tab Content
-        $('.tab-content').removeClass('active');
-        $('.tab-content' + id).addClass('active');
-        
-        e.preventDefault();
+        if ( id.substring(0, 1) == '#') {
+            // Handle Nav
+            $('.tab-nav a').removeClass('active');
+            $(this).addClass('active');
+            
+            // Handle Tab Content
+            $('.tab-content').removeClass('active');
+            $('.tab-content' + id).addClass('active');
+            
+            e.preventDefault();
+        }
     });
     
     // Smooth scroll to items!
-    $('a[href*="#"]:not([href="#"])').click(function() {
+    $('nav a[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');

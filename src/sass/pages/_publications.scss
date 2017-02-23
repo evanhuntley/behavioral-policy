@@ -138,8 +138,23 @@
         margin: 0 0 1em;
     }
 
-    .options a {
-        color: #ccc;
+    .options {
+        
+        button {
+            background: transparent;
+            border: none;   
+        }
+        
+        a {
+            display: inline-block;
+            margin-right: .25em;
+        }
+        
+        i {
+            display: block;
+            width: 16px;
+            height: 16px;
+        }
     }
 
     img {

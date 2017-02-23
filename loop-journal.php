@@ -24,8 +24,9 @@
             <?php if (is_post_type_archive('articles')) : ?>
     			<div class="options">
     				<a href="<?php echo types_render_field('article-file', array("raw" => true)); ?>" class="download" title="Download">
-    					<i class="fa fa-download"></i>
+    					<i class="svg-download"></i>
     				</a>
+                    <?php echo the_favorites_button(); ?>
     			</div>
             <?php endif; ?>
 			<img src="<?= the_post_thumbnail_url('event-highlight'); ?>" />

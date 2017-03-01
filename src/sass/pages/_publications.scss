@@ -199,6 +199,15 @@
     h1 {
         margin-bottom: .5em;
     }
+    
+    h2 {
+        @include font-size(1.4, 1.6);
+    }
+    
+    h3, h4 {
+        margin: 1.5em 0;
+        @include font-size(1.25, 1.5);
+    }
 
     .options {
         float: right;
@@ -217,6 +226,52 @@
 
         p {
             margin-bottom: 1em;
+        }
+    }
+    
+    .content-boxes {
+        padding: 1em;
+        margin: 1em 0;
+        font-size: 16px;
+        background: #ececec;
+
+        .fusion-clearfix {
+            display: none;
+        }
+    }
+    
+    // Expand Blocks
+    .expand-block {
+        padding: .5em;
+        border-top: 1px solid #ececec;
+
+        .expand-title {
+            
+            h3 {
+                color: $blue;
+                
+                &:before {
+                    content: "\f067";
+                    font-family: "fontawesome", Arial, sans-serif;
+                    display: inline-block;
+                    margin-right: 3em;
+                    padding: 4px 8px;
+                    font-size: 14px;
+                    color: #fff;
+                    background: $blue;
+                }
+            }
+            
+            &.open h3 {
+                
+                &:before {
+                    content: "\f068";
+                }
+            }
+        }
+        
+        .expand-description {
+            display: none;
         }
     }
 

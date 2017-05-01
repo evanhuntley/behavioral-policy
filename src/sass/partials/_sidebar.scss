@@ -4,6 +4,34 @@
 
 .secondary-content {
     
+    .subnav {
+        
+        li {
+            display: block;
+            padding: 10px 10px 10px 12px;
+            @include font-size(.8125);
+            border-bottom: 1px solid rgb(231, 230, 230);
+            text-transform: lowercase;
+
+            &::before {
+                content: "\f054";
+                margin-right: 8px;
+                font-size: 10px;
+                font-family: "FontAwesome";
+                color: $blue;
+            }
+            
+            a {
+                color: $blue;
+                
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
+    }
+    
     .tweets {
         margin: 0 0 1em;
         padding: 0;

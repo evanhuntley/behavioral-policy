@@ -214,6 +214,25 @@
 			@include font-size(1.4, 1.8);
 		}
 	}
+	
+	.event-highlight-list {
+		@extend %unlist;
+
+		li {
+			
+			@include bp-l {
+				@include rowMachine(4, 4%);	
+			}
+		}
+
+		img {
+			margin-bottom: 1em;
+		}
+
+		h3 {
+			margin-bottom: 0;
+		}
+	}
 }
 
 /* Conference/Event Speaker List --------------------------------------- */

@@ -145,6 +145,10 @@ table {
     }
 }
 
+.ginput_container_fileupload {
+    text-align: left;
+}
+
 // Tabs
 .tab-nav {
     margin: 16px 0;
@@ -164,6 +168,7 @@ table {
         padding: 1em;
         color: $blue;
         outline: none;
+        @include font-size(1.2, 1.4);
         text-transform: lowercase;
         transition: color .2s;
     }
@@ -269,7 +274,7 @@ table {
     li {
         position: relative;
         margin: 0 0 1em;
-        padding: 1em 1em 1em 4em;
+        padding: 1em 1em 1em 3.5em;
         background: rgb(249, 249, 249);
         border: 1px solid rgb(235,234,234);
         
@@ -281,12 +286,16 @@ table {
             position: absolute;
             top: 1em;
             left: 1em;
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
+        }
+        
+        p {
+            @include font-size(.8125, 1.5);
         }
     }
     
-    &.policy {
+    &.disciplinary {
         
         h3 {
             color: $blue;
@@ -294,10 +303,11 @@ table {
         
         svg {
             fill: $blue;
+            color: $blue;
         }
     }
     
-    &.disciplinary {
+    &.policy {
         
         h3 {
             color: $orange;
@@ -305,6 +315,7 @@ table {
         
         svg {
             fill: $orange;
+            color: #d57e00;
         }
     }
     

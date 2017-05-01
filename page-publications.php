@@ -23,8 +23,8 @@
                     <img class="bsp-cover" src="<?php echo types_render_field('bsp-issue-cover', array("raw" => true)); ?>" alt="BSP Current Issue" />
                     <h1>Behavioral Science &amp; Policy</h1>
                     <?php the_content(); ?>
-                    <a class="button" href="<?php echo types_render_field('bsp-issue-pdf'); ?>">Download</a>
-                    <a class="button" href="<?php echo types_render_field('bsp-issue-url'); ?>">Read Online</a>
+                    <a target="_blank" class="button" href="<?php echo types_render_field('bsp-issue-pdf'); ?>">Download</a>
+                    <a target="_blank" class="button" href="<?php echo types_render_field('bsp-issue-url'); ?>">Read Online</a>
                 </div>
                 <ul class="bsp-links">
                     <li><a href="#"><span>Submit</span> we are currently seeking submissions</a></li>

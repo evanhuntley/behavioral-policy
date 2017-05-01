@@ -35,7 +35,10 @@
                             foreach($terms as $term) :
                         ?>
                         <li data-filter=".<?php echo $term->slug; ?>">
-                            <?php echo $term->name; ?>
+                            <?php 
+                                $str = str_replace("-", " ", $term->slug);
+                                echo $str;
+                            ?>
                         </li>
                         <?php endforeach; ?>
                     </ul>

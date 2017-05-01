@@ -11,22 +11,19 @@
         <div class="billboard light who">
             <div class="container">
                 <h2>Who We Are</h2>
-                <p>we are a global community of public and private sector decision makers, behavioral science researchers, policy analysts, and practitioners with a bold mission to promote the application of rigorous behavioral science research that serve the public interest. we serve as an information hub, and community builder- connecting individuals and organizations through our conferences, spotlight workshops, taskforces, and the publication of newsletters and behavioral science &amp; policy.</p>
+                <h3>we are a global community of public and private sector decision makers, behavioral science researchers, policy analysts, and practitioners with a bold mission to promote the application of rigorous behavioral science research that serve the public interest. we serve as an information hub, and community builder- connecting individuals and organizations through our conferences, spotlight workshops, taskforces, and the publication of newsletters and behavioral science &amp; policy.</h3>
             </div>
         </div>
         <div class="billboard philosophy">
             <div class="container">
                 <h2>Our Philosophy</h2>
-                <h3>the impact of public and private sector policies depends critically on the behavior of individuals, groups, and organizations.</h3>
-                <p>we believe a clear understanding of the power of behavioral science research and interventions can provide innovative solutions for addressing challenges faced by policymakers and other practitioners.</p>
+                <h3>the impact of public and private sector policies depends critically on the behavior of individuals, groups, and organizations. we believe a clear understanding of the power of behavioral science research and interventions can provide innovative solutions for addressing challenges faced by policymakers and other practitioners.</h3>
             </div>
         </div>
         <div class="billboard light community">
             <div class="container">
                 <h2>Our Community</h2>
-                <h3>bspa is a global hub where behavioral scientists, policymakers, and other practitioners interact via conferences, workshops, briefings,and our membership portal.</h3>
-                <p>in addition, our membership services facilitate information exchange and collaboration to promote thoughtful application of behavioral science research in ways that serve the public interest.</p>
-                <p>we actively collaborate with a number of behavioral policy oriented organizations and direct our members to their activities and services.</p>
+                <h3>bspa is a global hub where behavioral scientists, policymakers, and other practitioners interact via conferences, workshops, briefings,and our membership portal. in addition, our membership services facilitate information exchange and collaboration to promote thoughtful application of behavioral science research in ways that serve the public interest. we actively collaborate with a number of behavioral policy oriented organizations and direct our members to their activities and services.</h3>
             </div>
         </div>
 
@@ -48,7 +45,10 @@
                             foreach($terms as $term) :
                         ?>
                         <li data-filter=".<?php echo $term->slug; ?>">
-                            <?php echo $term->name; ?>
+                            <?php 
+                                $str = str_replace("-", " ", $term->slug);
+                                echo $str;
+                            ?>
                         </li>
                         <?php endforeach; ?>
                     </ul>
@@ -108,7 +108,7 @@
         <div class="block faq" id="faq">
             <div class="container">
                 <div class="faq-list">
-                    <h1>facts and questions</h1>
+                    <h1>frequently asked questions</h1>
                     <ul class="expand-list">
                         <li class="faq-item">
                             <div class="faq-title expand-title">What is 'Behavioral Science'?</div>

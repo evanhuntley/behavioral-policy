@@ -2,6 +2,6 @@
     <div class="container">
         <h2>Submit</h2>
         <?= ot_get_option('submit_billboard_text'); ?>
-        <a href="https://behavioralpolicy.org/publications" class="button alt">Learn More About BSP and Other Publications</a>
+        <a href="https://behavioralpolicy.org/publications/about-bsp/" class="button alt">Learn More About BSP and Other Publications</a>
     </div>
 </div>

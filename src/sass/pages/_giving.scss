@@ -4,13 +4,22 @@
 
 .giving {
 
+    .page-header {
+        
+        p:first-of-type {
+            margin-bottom: 1em;
+        }
+    }
+
     .content {
         @include col(4, 4);
     }
     
-    .tab-nav a {
-        @include font-size(1.2, 1.4);
-        text-transform: lowercase;
+    #tab-1, #tab-2, #tab-4 {
+        
+        @include bp-xxl {
+            padding: 1.5em 9em;
+        }
     }
 
     .flip-cards {
@@ -47,17 +56,22 @@
             margin: 1em 0;
             padding: 0;
             list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
         }
         
         li {
-            @include rowMachine(2, 4%);    
+            flex: 100%;
+            margin-bottom: 2em;
             
             @include bp-l {
-                @include rowMachine(4, 4%);    
+                flex: 30%;
+                margin-right: 3%; 
             }
             
             @include bp-xl {
-                @include rowMachine(5, 4%);    
+                flex: 15%;
+                margin-right: 5%;
             }
         }
     }

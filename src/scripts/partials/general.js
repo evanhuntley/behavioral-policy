@@ -69,6 +69,8 @@ jQuery(document).ready(function($) {
     $('.equal').matchHeight();
     
     // Expand/Collapse Filter Sections
+    $('.searchandfilter h4').addClass('closed').next('ul, label').slideToggle();
+    
     $('.searchandfilter h4').on('click', function() {
         $(this).toggleClass('closed').next('ul, label').slideToggle();
     });

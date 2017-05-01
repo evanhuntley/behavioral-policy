@@ -29,7 +29,7 @@
 			</div>
 			<img class="blog-image" src="<?php echo the_post_thumbnail_url('bio-thumb'); ?>" />
 			<div class="blog-details">
-				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+				<a target="_blank" href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 					<h2><?php the_title(); ?></h2>
 				</a>
 				<p class="entry-meta">

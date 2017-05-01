@@ -27,13 +27,15 @@
         						$job_terms = get_terms( array(
         						    'taxonomy' => 'job-category',
         						    'hide_empty' => false,
-        						    'orderby' => 'count',
+        						    'orderby' => 'name',
         						    'order' => 'ASC'
         						) );
 
         						$call_terms = get_terms( array(
         						    'taxonomy' => 'call-category',
         						    'hide_empty' => false,
+                                    'orderby' => 'name',
+                                    'order' => 'ASC'
         						) );
         					?>
         					<ul class="job-categories">

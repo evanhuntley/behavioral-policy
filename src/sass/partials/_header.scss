@@ -26,7 +26,7 @@ header {
 
         @include bp-xl {
             position: relative;
-            width: 80%;
+            max-width: 80%;
             float: right;
             display: block;
             z-index: 1000;
@@ -71,9 +71,9 @@ header {
                     color: #000;
                     background: #f6f6f6;
                 }
-
+                
                 @include bp-xl {
-                    @include font-size(1, 1.8);
+                    @include font-size(.9, 1.6);
                     padding: 3em 1em;
                     border-top: 5px solid transparent;
                     background: transparent;
@@ -88,6 +88,10 @@ header {
                         color: $orange;
                         border-color: $orange;
                     }
+                }
+                
+                @include bp-xxl {
+                    @include font-size(1, 1.8);
                 }
             }
         }

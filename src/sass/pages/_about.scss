@@ -9,6 +9,8 @@
     }
 
     .philosophy {
+        text-align: right;
+        color: $blue;
         background-image: url('../img/bg_about-philosophy.jpg');
     }
 
@@ -37,6 +39,10 @@
         
         h2 {
             @include font-size(2, 2);
+        }
+        
+        .tab-content {
+            padding: 1.5em 0;
         }
     }
 }

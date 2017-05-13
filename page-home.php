@@ -17,7 +17,7 @@
                 <?php
                     $args = array(
                         'post_type' => 'slides',
-                        'posts_per_page' => 3,
+                        'posts_per_page' => -1,
                         'order' => 'ASC'
                     );
                     $slides = new WP_Query( $args);

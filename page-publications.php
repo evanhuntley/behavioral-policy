@@ -27,8 +27,8 @@
                     <a target="_blank" class="button" href="<?php echo types_render_field('bsp-issue-url'); ?>">Read Online</a>
                 </div>
                 <ul class="bsp-links">
-                    <li><a href="#"><span>Submit</span> we are currently seeking submissions</a></li>
-                    <li><a href="/#subscribe"><span>Subscribe</span> subscribe to BSP to get access to...</a></li>
+                    <li><a target="_blank" href="http://bsp.msubmit.net/"><span>Submit</span> we are currently seeking submissions</a></li>
+                    <li><a href="/signup"><span>Subscribe</span> subscribe to BSP to get access to...</a></li>
                     <li><a href="/publications/about"><span>Learn More</span> meet our editors and learn more about the journal</a></li>
                     <li><a href="/articles"><span>Archive</span> sign in to access the<br /> BSP archive</a></li>
                 </ul>
@@ -47,8 +47,8 @@
                             $args = array(
                                 'post_type' => 'articles',
                                 'posts_per_page' => 3,
-                                'orderby' => 'date',
-                                'order' => 'RAND',
+                                'orderby' => 'menu_order',
+                                'order' => 'DESC',
                                 'meta_query'	=> array(
                                     array(
                                         'key'	  	=> 'wpcf-is-featured-article',

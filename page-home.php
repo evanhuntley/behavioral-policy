@@ -6,6 +6,7 @@
     $tweet_1 = types_render_field("home-tweet-1", array("raw" => true));
     $tweet_2 = types_render_field("home-tweet-2", array("raw" => true));
     $tweet_3 = types_render_field("home-tweet-3", array("raw" => true));
+    $tweet_4 = types_render_field("home-tweet-4", array("raw" => true));
 ?>
 
 <?php get_header(); ?>
@@ -82,7 +83,7 @@
                 </div>
             </div>
         </div>
-        <div class="billboard twitter">
+        <div class="billboard center twitter">
             <div class="container">
                 <h2>Our Favorite Tweets This Week</h2>
                 <div class="row">
@@ -94,6 +95,9 @@
                     </div>
                     <div class="tweet">
                         <?= $tweet_3; ?>
+                    </div>
+                    <div class="tweet">
+                        <?= $tweet_4; ?>
                     </div>
                 </div>
                 <div class="follow">

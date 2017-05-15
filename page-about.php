@@ -104,7 +104,9 @@
                 </div>
             </section>
         </div>
-
+        
+        <?php get_template_part('areas-block') ?>
+        
         <div class="block faq" id="faq">
             <div class="container">
                 <div class="faq-list">
@@ -137,8 +139,6 @@
                 </div>
             </div>
         </div>
-        
-        <?php get_template_part('areas-block') ?>
 
     </article>
 <?php endwhile; ?>

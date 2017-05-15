@@ -12,7 +12,7 @@
 			<div class="footer-nav">
 				<?php
 					$args = array(
-						'menu' => 'Main Nav',
+						'menu' => 'Footer',
 						'container' => false,
 						'items_wrap' => '<ul class="menu">%3$s</ul>',
 						'depth' => 1

@@ -31,6 +31,7 @@
                     <?= types_render_field('giving-tab2-content'); ?>
                 </div>
                 <div class="tab-content" id="tab-3">
+                    <p style="text-align: center;">By giving general or targetted gifts to the Behavioral Science &amp; Policy Association, you will be supporting a number of different projects:</p>
                     <div class="flip-cards">
                         <?= types_render_field('giving-tab3-content'); ?>
                     </div>

@@ -47,39 +47,28 @@
             </ul>
         </div>
         <div class="goals">
-            <div class="container">
-                <div class="block">
-                    <div class="home-callout">
-                        <h2>Accelerating Knowledge</h2>
-                        <p>Promoting the dissemination of behavioral science insights</p>
-                    </div>
-                    <ul>
-                        <li><a href="/journal/#_current">BSP</a></li>
-                        <li><a href="/jobs-and-calls">Jobs &amp; Calls</a></li>
-                        <li><a href="/jobs-and-calls#matchmaker">Matchmaker</a></li>
-                        <li><a href="/blog">PolicyShop</a></li>
-                        <li><a href="#">Reports Corner (Coming Soon!)</a></li>
-                    </ul>
+            <div class="home-callout">
+                <div class="callout-header">
+                    <h2>Accelerating Knowledge</h2>
                 </div>
-                <div class="block">
-                    <div class="home-callout second">
-                        <h2>Community Building</h2>
-                        <p>Convening communities and dialogues that promote the accessibility of social and behavioral science to policymakers and other practitioners.</p>
-                    </div>
-                    <ul>
-                        <li><a href="/events">Annual Conferences</a></li>
-                        <li><a href="/events/#_spotlight">Spotlight Workshops</a></li>
-                    </ul>
+                <div class="callout-content">
+                    <p>Promoting the dissemination of behavioral science insights</p>
                 </div>
-                <div class="block">
-                    <div class="home-callout third">
-                        <h2>Translating Behavioral Science</h2>
-                        <p>Reviewing and interpreting state of the art research concerning practically relevant scientific knowledge for non-experts</p>
-                    </div>
-                    <ul>
-                        <li><a href="#">BSPA Archive (Coming soon!)</a></li>
-                        <li><a href="#">Workgroup taskforces (Behavioral Science &amp; Policy Series)</a></li>
-                    </ul>
+            </div>
+            <div class="home-callout second">
+                <div class="callout-header">
+                    <h2>Community Building</h2>
+                </div>
+                <div class="callout-content">
+                    <p>Convening communities and dialogues that promote the accessibility of social and behavioral science to policymakers and other practitioners.</p>
+                </div>
+            </div>
+            <div class="home-callout third">
+                <div class="callout-header">
+                    <h2>Translating Behavioral Science</h2>
+                </div>
+                <div class="callout-content">
+                    <p>Reviewing and interpreting state of the art research concerning practically relevant scientific knowledge for non-experts</p>
                 </div>
             </div>
         </div>
@@ -113,5 +102,12 @@
 
     </article>
 <?php endwhile; ?>
+
+<div class="popup lity-hide">
+    <h1>Get Closer to Cutting Edge Research</h1>
+    <p>Sign up for highlights of the latest behavioral science research from around the world</p>
+    <p><strong>Join the Community Today</strong></p>
+    <?php echo do_shortcode('[gravityform id="4" title="false" description="false" ajax="true"]'); ?>
+</div>
 
 <?php get_footer(); ?>

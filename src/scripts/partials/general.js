@@ -2,6 +2,14 @@
 
 jQuery(document).ready(function($) {
     
+    // Load Popup
+    var cookie = Cookies.get('popup');
+    
+    if ( $('body').hasClass('home') && cookie != 'shown') {
+        lity('.popup');    
+        Cookies.set('popup', 'shown', { expires: 60 });
+    }
+    
     // Mobile Nav Menu
     $('.nav-toggle').on('click', function() {
         $('header nav').slideToggle();
@@ -30,6 +38,11 @@ jQuery(document).ready(function($) {
     // flexslider
     $('.flexslider').flexslider({
         controlNav: false
+    });
+    
+    // Expand/Collapse Home Page items 
+    $('.home-callout .callout-header').on('click', function() {
+        $(this).next().slideToggle();
     });
     
     // init Isotope

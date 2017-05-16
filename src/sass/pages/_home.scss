@@ -123,42 +123,32 @@
 
     // Goals Section
     .goals {
-        padding: 2em 0;
+        @extend %clearfix;
+        padding: 0 0 1em;
         background: #fafafa;
 
-        .container {
-            @include row;
-        }
-
-        .block {
-            @include col(1, 3, 0);
-        }
-
         .home-callout {
-            padding: 2em;
-            height: 300px;
-            max-width: 480px;
-            margin: 20px 0;
+            padding: 1em 0;
             color: #fff;
-            background: url('../img/home-accelerating-knowledge.png');
-            background-repeat: no-repeat;
-
+            text-align: center;
+            background: $blue;
+            
+            @include bp-xl {
+                @include rowMachine(3, 0, 0);
+            }
+            
+            .callout-content {
+                display: none;
+            }
+            
             h2 {
-                margin-bottom: 30px;
-                @include font-size(1.4, 2.5);
+                margin-bottom: 0;
                 color: $orange;
-
-                @include bp-xl {
-                    @include font-size(1.875, 3);
-                }
-
-                @include bp-xxl {
-                    @include font-size(2.2, 3);
-                }
+                @include font-size(1.4, 2.5);
             }
 
             &.second {
-                background-image: url('../img/home-community.png');
+                background: #d0d4d7;
 
                 h2 {
                     color: $blue;
@@ -170,7 +160,7 @@
             }
 
             &.third {
-                background-image: url('../img/home-translating.png');
+                background: $orange;
 
                 h2 {
                     color: #fff;
@@ -228,6 +218,37 @@
 
         .button {
             margin-top: 2em;
+        }
+    }
+    
+    .popup {
+        margin: 0 1em;
+        padding: 1em;
+        color: #fff;
+        text-align: center;
+        background: url('../img/bg_popup.jpg');
+        background-size: cover;
+        
+        h1 {
+            margin-bottom: .5em;
+            @include font-size(2, 2.25);
+        }
+        
+        p {
+            color: $blue;
+        }
+        
+        .gform_wrapper {
+            margin-bottom: 0;
+        }
+        
+        @include bp-l {
+            max-width: 700px;
+            padding: 2em 8em;
+            
+            h1 {
+                @include font-size(3, 3);
+            }
         }
     }
 }

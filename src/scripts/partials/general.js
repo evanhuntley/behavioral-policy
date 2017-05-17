@@ -43,6 +43,7 @@ jQuery(document).ready(function($) {
     // Expand/Collapse Home Page items 
     $('.home-callout .callout-header').on('click', function() {
         $(this).next().slideToggle();
+        $(this).find('h2').toggleClass('open')
     });
     
     // init Isotope

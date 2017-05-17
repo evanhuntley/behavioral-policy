@@ -72,6 +72,13 @@
                 </div>
             </div>
         </div>
+        <div class="cards">
+            <div class="container">
+                <div class="flip-cards">
+                    <?= types_render_field('home-flip-cards'); ?>
+                </div>
+            </div>
+        </div>
         <div class="billboard center twitter">
             <div class="container">
                 <h2>Our Favorite Tweets This Week</h2>

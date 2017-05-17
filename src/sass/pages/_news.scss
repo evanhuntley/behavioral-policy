@@ -153,6 +153,10 @@
                 position: relative;
                 padding: 1em 0;
                 border-top: 1px solid #ececec;
+                
+                @include bp-l {
+                    min-height: 200px;
+                }
             }
             
             .thumb {

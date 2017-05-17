@@ -120,6 +120,12 @@
             }
         }
     }
+    
+    // Cards
+    .cards {
+        @extend %clearfix;
+        padding: 2em 0 0;
+    }
 
     // Goals Section
     .goals {
@@ -128,7 +134,7 @@
         background: #fafafa;
 
         .home-callout {
-            padding: 1em 0;
+            padding: 1em;
             color: #fff;
             text-align: center;
             background: $blue;
@@ -145,6 +151,23 @@
                 margin-bottom: 0;
                 color: $orange;
                 @include font-size(1.4, 2.5);
+                
+                &:after {
+                    content: "\f078";
+                    font-family: "FontAwesome";
+                    display: inline-block;
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                }
+
+                &.open {
+
+                    &:after {
+                        content: "\f077";
+                    }
+                }                
             }
 
             &.second {

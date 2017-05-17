@@ -23,6 +23,10 @@
             margin: 0 auto;
             @include font-size(.875, 1.2);
             color: $dark-gray;
+            
+            @include bp-xxl {
+                width: 65%;
+            }
         }
 
         .button {

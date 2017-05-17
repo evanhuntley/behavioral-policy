@@ -30,13 +30,20 @@
         @include bp-xxl {
             width: 25%;
         }
+        
+        &.active {
+            
+            a {
+                color: $orange;
+            }
+        }
     }
 
     a {
         display: inline-block;
 		margin: 0 0 1.5em;
 		color: #181e6c;
-		font-weight: 700;
+		font-weight: 500;
 		text-transform: lowercase;
     }
 
@@ -52,13 +59,22 @@
 }
 
 .jobs-list {
+    
+    @include bp-l {
+        max-height: 650px;
+        overflow-y: scroll;    
+    }
+    
+    .job-title {
+        font-weight: 500;
+    }
 
     .job-description h4 {
         margin-top: 0;
         margin-bottom: 8px;
         @include font-size(1, 1.5);
         color: #333333;
-        font-weight: 700;
+        font-weight: 500;
     }
 
     p {
@@ -97,4 +113,49 @@
 			}
 		}
 	}
+}
+
+/* Matchmaker Portal ------------------------------------------- */
+
+.matchmaker {
+    @extend %clearfix;
+    padding: 4em 0;
+    color: #fff;
+    background: url('../img/bg_mm.png');
+    background-size: cover;
+    
+    .mm-description {
+        
+        h1 {
+            @include font-size(2.75, 2.75);
+        }
+        
+        li {
+            margin: 0 0 1em;
+            @include font-size(.875, 1.4);
+        }
+        
+        @include bp-xl {
+            float: left;
+            width: 65%;
+        }
+    }
+    
+    .mm-form {
+        text-align: center;
+        
+        img {
+            margin: 0 0 1em;
+        }
+        
+        .gform_Wrapper {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        @include bp-xl {
+            float: right;
+            width: 30%;
+        }
+    }
 }

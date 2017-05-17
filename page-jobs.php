@@ -24,6 +24,9 @@
                     <h2 class="jobs-section-title">jobs &amp; calls</h2>
         				<div class="job-filters">
         					<?php
+                                $jobs_category = get_query_var('jobs-cat') ? get_query_var('jobs-cat') : '';
+        					    $calls_category = get_query_var('calls-cat') ? get_query_var('calls-cat') : '';                            
+                            
         						$job_terms = get_terms( array(
         						    'taxonomy' => 'job-category',
         						    'hide_empty' => false,
@@ -39,32 +42,43 @@
         						) );
         					?>
         					<ul class="job-categories">
-        							<li><a href="/jobs-and-calls#jobs-section">Most Recent</a></li>
+                                <?php 
+                                    $jobs_category == '' && $calls_category == '' ? $active = 'class="active"' : $active = '';
+                                ?>
+        						<li <?= $active; ?>><a href="/jobs-and-calls#jobs-section">Most Recent</a></li>
         						<?php foreach($job_terms as $term) : ?>
-        							<li><a href="<?php echo add_query_arg('jobs-cat', $term->slug, '/jobs-and-calls#jobs-section'); ?>"><?php echo $term->name; ?></a><span><?php echo ' [' . $term->count . ']'; ?></span></li>
+                                    <?php 
+                                        $jobs_category == $term->slug ? $active = 'class="active"' : $active = '';
+                                    ?>
+        							<li <?= $active; ?>><a href="<?php echo add_query_arg('jobs-cat', $term->slug, '/jobs-and-calls#jobs-section'); ?>"><?php echo $term->name; ?></a><span><?php echo ' [' . $term->count . ']'; ?></span></li>
         						<?php endforeach; ?>
         					</ul>
 
         					<ul class="call-categories">
         						<?php foreach($call_terms as $term) : ?>
-        							<li><a href="<?php echo add_query_arg('calls-cat', $term->slug, '/jobs-and-calls#jobs-section'); ?>"><?php echo $term->name; ?></a><span><?php echo ' [' . $term->count . ']'; ?></span></li>
+                                    <?php 
+                                        $calls_category == $term->slug ? $active = 'class="active"' : $active = '';
+                                    ?>
+        							<li <?= $active; ?>><a href="<?php echo add_query_arg('calls-cat', $term->slug, '/jobs-and-calls#jobs-section'); ?>"><?php echo $term->name; ?></a><span><?php echo ' [' . $term->count . ']'; ?></span></li>
         						<?php endforeach; ?>
         					</ul>
         				</div>
 
         				<?php
-        					$jobs_category = get_query_var('jobs-cat') ? get_query_var('jobs-cat') : '';
-        					$calls_category = get_query_var('calls-cat') ? get_query_var('calls-cat') : '';
 
         					if ( $jobs_category == '' && $calls_category == '') {
         						$args = array(
         				            'post_type' => 'jobs-calls',
+                                    'orderby' => 'date',
+                                    'order' => 'DESC',
         				            'posts_per_page' => -1,
         				        );
         					} elseif ( $calls_category == '' ) {
         						$args = array(
         				            'post_type' => 'jobs-calls',
         				            'posts_per_page' => -1,
+                                    'orderby' => 'date',
+                                    'order' => 'DESC',
         							'tax_query' => array(
         								array(
         									'taxonomy' => 'job-category',
@@ -77,6 +91,8 @@
         						$args = array(
         				            'post_type' => 'jobs-calls',
         				            'posts_per_page' => -1,
+                                    'orderby' => 'date',
+                                    'order' => 'DESC',
         							'tax_query' => array(
         								array(
         									'taxonomy' => 'call-category',
@@ -160,6 +176,19 @@
                         <p>Recruiters – wanting to hire a behavioral science candidate? Let us know by submitting the form below or emailing your job opportunity to <a href="mailto:bspa@behavioralpolicy.org">bspa@behavioralpolicy.org</a>.</p>
                         <?php echo do_shortcode('[gravityform id="3" title="false" description="false" ajax="true"]'); ?>
                     </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="matchmaker" id="matchmaker">
+            <div class="container">
+                <div class="mm-description">
+                    <h1>The Matchmaker Portal</h1>
+                    <?php echo types_render_field("jobs-matchmaker-content"); ?>
+                </div>
+                <div class="mm-form">
+                    <img src="<?php echo bloginfo('template_directory'); ?>/assets/img/l_bsp-white.png" />
+                    <?php echo do_shortcode('[gravityform id="6" title="true" description="false" ajax="true"]'); ?>
                 </div>
             </div>
         </div>

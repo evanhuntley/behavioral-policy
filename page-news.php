@@ -108,7 +108,7 @@ Template Name: News Page
                     <ul class="report-list">
                         <?php while ( $reports->have_posts() ) : $reports->the_post(); ?>
                             <li>
-                                <img class="thumb" src="<?php echo the_post_thumbnail_url('event-highlight'); ?>" alt="<?php the_title(); ?>">
+                                <img class="thumb" src="<?php echo the_post_thumbnail_url('bio-thumb'); ?>" alt="<?php the_title(); ?>">
                                 <div class="item-details">
                                     <h3><?php the_title(); ?></h3>
                                     <?= types_render_field('news-short-description'); ?>

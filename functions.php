@@ -195,12 +195,15 @@ function button_func( $atts ) {
 	$a = shortcode_atts( array(
 	    'text' => 'Button',
 	    'url' => '/',
-		'color' => 'orange'
+		'color' => 'orange',
+		'new-window' => false
 	), $atts );
 
 	$a['color'] == 'blue' ? $class = 'alt' : $class = '';
+	
+	$a['new-window'] == true ? $new = ' target="_blank" ' : '';
 
-	$button = '<a href="' . $a['url'] . '" class="button shortcode ' . $class . '">' . $a['text'] . '</a>';
+	$button = '<a' . $new . ' href="' . $a['url'] . '" class="button shortcode ' . $class . '">' . $a['text'] . '</a>';
 	return $button;
 }
 add_shortcode( 'button', 'button_func' );

@@ -54,7 +54,7 @@ header {
                     }
                 }
 
-                &.current_page_item a {
+                &.active a {
                     color: $orange;
                     border-color: $orange;
                 }

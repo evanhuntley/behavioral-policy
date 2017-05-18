@@ -20,7 +20,7 @@
             <?php get_sidebar(); ?>
             <section class="content">
                 <div class="event-featured" id="featured">
-                    <h1>Featured</h1>
+                    <h1>Highlights</h1>
                     <div class="featured-content">
                         <h2><?= types_render_field("event-feature-title"); ?></h2>
                         <?= types_render_field("event-feature-description"); ?>

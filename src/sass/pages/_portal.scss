@@ -4,6 +4,18 @@
 
 .portal {
     
+    .page-header {
+        padding: 3em 0;
+        
+        @include bp-l {
+            padding: 6em 0;
+        }
+        
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+    
     .content {
         width: 100%;
     }
@@ -27,6 +39,8 @@
     .tab-content {
         
         .primary {
+            padding-top: 0;
+            
             @include bp-l {
                 @include col(3, 4);
             }
@@ -38,9 +52,55 @@
             }
         }
         
+        h1 {
+            padding: .5em 0;
+            @include font-size(2.5, 2.5);
+            color: $blue;
+            border-bottom: 1px solid #ececec;
+        }
+        
         .suggested-news {
             float: left;
             width: 100%;
+            padding-top: 2em;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    
+    .bigdate {
+        float: none;
+        display: block;
+        width: 90px;
+        margin: 0 auto;
+        background: $blue;
+    }
+    
+    .suggested-news {
+        
+        h2 {
+            color: $blue;
+            margin-bottom: 2em;
+        }
+    }
+    
+    .portal-tweets {
+        float: left;
+        width: 100%;
+        padding: 2em 0;
+        border-top: 1px solid #ececec;
+        text-align: center;
+        
+        h2 {
+            color: $blue;
+            @include font-size(2.125, 2.125);
+        }
+        
+        .tweet {
+            
+            @include bp-l {
+                @include col(1, 3);
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ Template Name: News Page
 
         <div class="page-header" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
             <div class="container">
-                <h1>News &amp; Media</h1>
+                <h1>News &amp; Resources</h1>
                 <?php echo types_render_field("page-short-description"); ?>
             </div>
         </div>
@@ -62,7 +62,7 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-                    <a class="more-link" href="/news-category/in-the-news">See All</a>
+                    <a class="more-link" href="/news-category/in-the-news">Show All</a>
                 <h2>BSPA in the News</h2>
                 <?php
                 $bsp_itn = news_query('bspa-in-the-news');
@@ -75,11 +75,15 @@ Template Name: News Page
                         <?php endwhile;  ?>
                     </ul>
                 <?php endif; wp_reset_query(); ?>
-                <a class="more-link" href="/news-category/bspa-in-the-news">See All</a>
+                <a class="more-link" href="/news-category/bspa-in-the-news">Show All</a>
+                
+                <h2>Behavioral Science in Action</h2>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/g_map.png" alt="BSPA in action" />
+                <div class="organizations">
+                    <?= ot_get_option('in_action_billboard_text'); ?>
+                </div>
             </div>
         </div>
-
-        <?php get_template_part('billboard', 'in-action') ?>
 
         <div class="reports container" id="reports">
             <div class="content">
@@ -95,7 +99,6 @@ Template Name: News Page
                     <ul class="report-list">
                         <?php while ( $reports->have_posts() ) : $reports->the_post(); ?>
                             <li>
-                                <img class="thumb" src="<?php echo the_post_thumbnail_url('bio-thumb'); ?>" alt="<?php the_title(); ?>">
                                 <div class="item-details">
                                     <h3><?php the_title(); ?></h3>
                                     <?= types_render_field('news-short-description'); ?>
@@ -108,53 +111,52 @@ Template Name: News Page
             </div>
         </div>
 
-        <div id="new-to-bsp">
-            <?php get_template_part('billboard', 'new-to-bsp') ?>
-        </div>
+        <div class="news-section additional-resources">
+            <div class="container">
+                <div class="content">
+                    <h1>additional resources</h1>
+                    <h2>Recommended Reading</h2>
+                    <?php
+                    $reading = news_query('recommended-reading');
 
-        <div class="news-section container">
-            <div class="content">
-                <h2>Recommended Reading</h2>
-                <?php
-                $reading = news_query('recommended-reading');
+                    if ($reading->have_posts()) :
+                        ?>
+                        <ul>
+                            <?php while ( $reading->have_posts() ) : $reading->the_post(); ?>
+                                <?php get_template_part('loop', 'newsitem') ?>
+                            <?php endwhile;  ?>
+                        </ul>
+                    <?php endif; wp_reset_query(); ?>
+                    <a class="more-link" href="/news-category/recommended-reading">Show All</a>
 
-                if ($reading->have_posts()) :
-                    ?>
-                    <ul>
-                        <?php while ( $reading->have_posts() ) : $reading->the_post(); ?>
-                            <?php get_template_part('loop', 'newsitem') ?>
-                        <?php endwhile;  ?>
-                    </ul>
-                <?php endif; wp_reset_query(); ?>
-                <a class="more-link" href="/news-category/recommended-reading">See All</a>
+                    <h2>Free Resources</h2>
+                    <?php
+                    $free = news_query('free-resources');
 
-                <h2>Free Resources</h2>
-                <?php
-                $free = news_query('free-resources');
+                    if ($free->have_posts()) :
+                        ?>
+                        <ul>
+                            <?php while ( $free->have_posts() ) : $free->the_post(); ?>
+                                <?php get_template_part('loop', 'newsitem') ?>
+                            <?php endwhile;  ?>
+                        </ul>
+                    <?php endif; wp_reset_query(); ?>
+                    <a class="more-link" href="/news-category/free-resources">Show All</a>
+                    
+                    <h2>Exec Ed/Continuing Professional Development</h2>
+                    <?php
+                    $exec = news_query('exec-ed');
 
-                if ($free->have_posts()) :
-                    ?>
-                    <ul>
-                        <?php while ( $free->have_posts() ) : $free->the_post(); ?>
-                            <?php get_template_part('loop', 'newsitem') ?>
-                        <?php endwhile;  ?>
-                    </ul>
-                <?php endif; wp_reset_query(); ?>
-                <a class="more-link" href="/news-category/free-resources">See All</a>
-                
-                <h2>Exec Ed/Continuing Professional Development</h2>
-                <?php
-                $exec = news_query('exec-ed');
-
-                if ($exec->have_posts()) :
-                    ?>
-                    <ul>
-                        <?php while ( $exec->have_posts() ) : $exec->the_post(); ?>
-                            <?php get_template_part('loop', 'newsitem') ?>
-                        <?php endwhile;  ?>
-                    </ul>
-                <?php endif; wp_reset_query(); ?>
-                <a class="more-link" href="/news-category/exec-ed">See All</a>
+                    if ($exec->have_posts()) :
+                        ?>
+                        <ul>
+                            <?php while ( $exec->have_posts() ) : $exec->the_post(); ?>
+                                <?php get_template_part('loop', 'newsitem') ?>
+                            <?php endwhile;  ?>
+                        </ul>
+                    <?php endif; wp_reset_query(); ?>
+                    <a class="more-link" href="/news-category/exec-ed">Show All</a>
+                </div>
             </div>
         </div>
 

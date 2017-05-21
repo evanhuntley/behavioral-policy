@@ -11,7 +11,11 @@
             <?php if (types_render_field('news-featured') == '1') : ?>
                 <img src="<?php echo the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>">    
             <?php else : ?>
-                <img src="<?php echo the_post_thumbnail_url('news-item'); ?>" alt="<?php the_title(); ?>">
+                <?php if (has_post_thumbnail()) : ?>
+                    <img src="<?php echo the_post_thumbnail_url('news-item'); ?>" alt="<?php the_title(); ?>">
+                <?php else : ?>
+                    <img src="http://placehold.it/302x170" />
+                <?php endif; ?>
             <?php endif; ?>
             <svg class="icon">
                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#<?php echo $format; ?>"></use>

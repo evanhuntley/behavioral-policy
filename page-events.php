@@ -35,7 +35,14 @@
                             'posts_per_page' => -1,
                             'orderby' => 'meta_value',
                             'meta_key'  => 'wpcf-event-date',
-                            'order' => 'ASC'
+                            'order' => 'ASC',
+                            // 'meta_query' => array(
+                            //     array(
+                            //         'key' => 'wpcf-event-date',
+                            //         'value' => time(),
+                            //         'compare' => '>='
+                            //     )
+                            // )                            
                         );
 
                         $events = new WP_Query( $args);

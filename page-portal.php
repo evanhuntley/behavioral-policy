@@ -34,6 +34,7 @@
                 </ul>
                 <div class="tab-content active" id="tab-1">
                     <div class="primary">
+                        <h1>News</h1>
                         <?= types_render_field('portal-tab1-content'); ?>
                         <div class="suggested-news news-section">
                             <h2>Suggested News and Media</h2>
@@ -54,6 +55,20 @@
                                      <?php endwhile;  ?>
                                  </ul>
                              <?php endif; wp_reset_query(); ?>
+                        </div>
+                        <div class="portal-tweets">
+                            <h2>Our Favorite Tweets This Week</h2>
+                            <div class="row">
+                                <div class="tweet">
+                                    <?= types_render_field("portal-tweet-1"); ?>
+                                </div>
+                                <div class="tweet">
+                                    <?= types_render_field("portal-tweet-2"); ?>
+                                </div>
+                                <div class="tweet">
+                                    <?= types_render_field("portal-tweet-3"); ?>
+                                </div>
+                            </div>                            
                         </div>
                     </div>
                     <div class="sidebar">
@@ -82,6 +97,8 @@
                 </div>
             </section>
         </div>
+        
+        <?php get_template_part('billboard', 'submit') ?>
 
     </article>
 <?php endwhile; ?>

@@ -3,20 +3,28 @@
 =================================================================== */
 
 .news {
-
-    .primary {
-        background: #fafafa;
-    }
     
     .feature-heading {
         margin: 0 0 1em;
-        padding: 0 0 1em;
+        padding: 0 0 .75em;
         color: $blue;
         border-bottom: 1px solid #ececec;
+        
+        @include bp-l {
+            @include font-size(2.125, 2.125);
+        }
     }
     
     h2 {
         color: $blue;
+    }
+    
+    .subnav {
+        margin: 3.75em 0 0;
+        
+        li:first-of-type {
+            border-top: 1px solid #ececec;
+        }
     }
     
     /* Featured Item -------------------------------------------- */
@@ -57,6 +65,10 @@
         }
     }
     
+    .news-section {
+        @extend .primary;
+    }
+    
     /* Reports Section --------------------------------------------------- */
     .reports {
         @extend .primary;
@@ -92,6 +104,33 @@
             }
         }
         
+        // In action
+        .in-action {
+
+            .organizations {
+                color: #565656;
+                
+                ul {
+                    list-style-type: circle;
+                    @include font-size(.875, 1.2);
+                }
+                
+                > ul {
+                    list-style-type: none;
+                    
+                    > li {
+                        margin: 0 0 16px;
+                        @include rowMachine(2, 4%);
+                        
+                        @include bp-l {
+                            @include rowMachine(3, 4%);
+                        }
+                    }
+                }
+            }
+        }        
+        
+        // Reports
         .report-list {
             
             li {
@@ -104,20 +143,9 @@
                 }
             }
             
-            .thumb {
-                max-width: 225px;
-                
-                @include bp-l {
-                    position: absolute;
-                    top: 1em;
-                    left: 0;
-                }
-            }
-            
             .item-details {
                 
                 @include bp-l {
-                    padding-left: 250px;
                     padding-right: 220px;
                 }
             }
@@ -130,6 +158,19 @@
                     top: 1em;
                     right: 0;
                 }
+            }
+        }
+    }
+    
+    .additional-resources {
+        background: #fafafa;
+        
+        h1 {
+            
+            @include bp-l {
+                margin: 0 0 1.5em;
+                color: $blue;
+                @include font-size(2.125, 2.125);
             }
         }
     }

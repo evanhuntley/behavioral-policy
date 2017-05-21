@@ -92,48 +92,4 @@
     &.new-to-bsp {
         background: $blue;
     }
-    
-    // In action
-    &.in-action {
-        text-align: left;
-        background: $blue;
-        
-        @include bp-l {
-            padding: 48px 0;
-            @include row;
-        }
-        
-        img {
-            
-            @include bp-l {
-                @include col(1, 2);    
-            }
-        }
-        
-        .organizations {
-            color: #fff;
-            
-            @include bp-l {
-                @include col(1, 2);
-            }
-            
-            ul {
-                list-style-type: circle;
-                @include font-size(.875, 1.2);
-            }
-            
-            > ul {
-                list-style-type: none;
-                
-                > li {
-                    margin: 0 0 16px;
-                    @include rowMachine(2, 4%);
-                    
-                    @include bp-l {
-                        @include rowMachine(3, 4%);
-                    }
-                }
-            }
-        }
-    }
 }

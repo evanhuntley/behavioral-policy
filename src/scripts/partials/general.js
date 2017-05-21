@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
     if ( $('body').hasClass('home') && cookie != 'shown') {
         lity('.popup');    
         Cookies.set('popup', 'shown', { expires: 60 });
-    }
+    } 
     
     // Mobile Nav Menu
     $('.nav-toggle').on('click', function() {

@@ -149,8 +149,19 @@
 		}
 	}
 	
-	.location-details, .speakers {
-		background: #fafafa;
+	.subsection {
+		padding: 2em 0;
+		border-top: 1px solid #ececec;
+		
+		&:first-of-type {
+			padding-top: 0;
+			border: none;
+		}
+		
+		h2 {
+			@include font-size(2.25, 2.25);
+			color: $blue;
+		}
 	}
 	
 	.content:first-child {
@@ -185,33 +196,6 @@
 		
 		h1 {
 			margin-top: 1em;
-		}
-	}
-	
-	.about-conference {
-		margin: 0 0 3em;
-		
-		@include bp-l {
-			max-width: 800px;
-		}
-	}
-	
-	.event-date {
-		min-width: 80px;
-		display: inline-block;
-		padding: .5em 1.25em;
-		text-align: center;
-		text-transform: lowercase;
-		color: #fff;
-		background: $blue;
-
-		span {
-			display: block;
-			@include font-size(1, 1.4);
-		}
-
-		.day {
-			@include font-size(1.4, 1.8);
 		}
 	}
 	

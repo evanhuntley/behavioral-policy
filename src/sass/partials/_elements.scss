@@ -232,6 +232,17 @@ table {
 	z-index: 2;
 	/* for firefox 31 */
 	transform: rotateY(0deg);
+    
+    h2 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%) translateX(-50%);
+        @include font-size(1.25, 2);
+        color: #fff;
+        text-align: center;
+    }
 }
 
 /* back, initially hidden pane */
@@ -321,4 +332,59 @@ table {
         }
     }
     
+}
+
+/* News Sections -------------------------------------------- */
+.news-section {
+    @extend .primary;
+    background: #fff;
+
+    .content {
+        width: 75%;
+    }
+
+    ul {
+        margin: 16px 0;
+        padding: 0;
+        list-style-type: none;
+        @include row;
+    }
+
+    li {
+        @include col(1, 3);
+
+        &:hover {
+
+            svg {
+                fill: $orange;
+                opacity: 1;
+            }
+        }
+    }
+
+    .news-image {
+        position: relative;
+        margin: 0 0 1em;
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        top: 50%;
+        margin-top: -36px;
+        margin-left: -36px;
+        width: 72px;
+        height: 72px;
+        fill: #fff;
+        opacity: .5;
+        transition: all .2s;
+    }
+    
+    .more-link {
+        display: block;
+        text-align: right;
+        color: $blue;
+        text-transform: lowercase;
+    }
 }

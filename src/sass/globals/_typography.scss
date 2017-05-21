@@ -8,8 +8,8 @@ Font weights set as variables because sometimes there are multiple weights,
 so an example use might also be a variable of $mid-weight: 500;
 If you've just got normal and bold, you don't need the variable.
 */
-$normal: normal;
-$bold: bold;
+$normal: 300;
+$bold: 500;
 
 html {
     font-size: 100%;
@@ -23,7 +23,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	@include font-size(1.5, 1.75);
-    font-weight: 400;
+    font-weight: 500;
 }
 
     h2 {}
@@ -42,7 +42,8 @@ a {
 	@include hover-fade;
 
 	&:hover,
-    &:active {
+    &:active,
+    &:focus {
         outline: 0;
         color: #d57e00;
 		}
@@ -65,8 +66,18 @@ pre, code {
 	}
 
 blockquote {
-
+    margin: 1em 0;
+    padding: 1em;
+    background: #f6f6f6;
+    border-left: 4px solid $orange;
+    
     cite {
 
         }
     }
+
+.wp-caption-text {
+    margin-top: 1em;
+    @include font-size(.875, 1);
+    font-style: italic;
+}

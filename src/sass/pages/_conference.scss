@@ -1,0 +1,75 @@
+/* ================================================================
+    Conference Page Styles
+=================================================================== */
+
+.annual-conference {
+    
+    .page-header {
+        
+        @include bp-l {
+            padding: 6em 0;
+        }
+    }
+    
+    .content {
+        width: 100%;
+        text-align: center;
+        
+        h1 {
+            margin-top: .5em;
+            color: $orange;
+            
+            @include bp-l {
+                @include font-size(2.125, 2.5);
+            }
+        }
+    }
+    
+    h2, h3 {
+        color: $blue;
+    }
+    
+    p {
+        max-width: 800px;
+        margin: 0 auto 1em;
+    }
+    
+    .about-conference {
+        
+        h2 {
+            
+            @include bp-l {
+                @include font-size(2.125, 2.5);
+            }
+        }
+        
+        img {
+            margin: 0 0 3em;
+        
+            @include bp-l {
+                max-width: 800px;
+            }    
+        }
+
+    }
+
+    .event-date {
+        min-width: 80px;
+        display: inline-block;
+        margin: 0 0 1em;
+        padding: .5em 1.25em;
+        text-align: center;
+        text-transform: lowercase;
+        color: #fff;
+        background: $blue;
+
+        span {
+            display: block;
+            @include font-size(1, 1.4);
+        }
+
+        .day {
+            @include font-size(1.4, 1.8);
+        }
+    }
+}

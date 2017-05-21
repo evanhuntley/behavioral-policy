@@ -22,7 +22,7 @@
 			</div>
 			<div class="footer-newsletter">
 				<h2>Sign Up for Our Weekly Newsletter</h2>
-				<?php echo do_shortcode('[gravityform id="4" title="false" description="false" ajax="true"]'); ?>
+				<?php echo do_shortcode('[gravityform id="4" title="false" description="false" ajax="true" tabindex="99"]'); ?>
 			</div>
 		</div>
 	</div>

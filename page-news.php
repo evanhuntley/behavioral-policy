@@ -63,19 +63,6 @@ Template Name: News Page
                     </ul>
                 <?php endif; wp_reset_query(); ?>
                     <a class="more-link" href="/news-category/in-the-news">See All</a>
-                <h2>Policy Making</h2>
-                <?php
-                $policy = news_query('policy-making');
-
-                if ($policy->have_posts()) :
-                    ?>
-                    <ul>
-                        <?php while ( $policy->have_posts() ) : $policy->the_post(); ?>
-                            <?php get_template_part('loop', 'newsitem') ?>
-                        <?php endwhile;  ?>
-                    </ul>
-                <?php endif; wp_reset_query(); ?>
-                    <a class="more-link" href="/news-category/policy-making">See All</a>
                 <h2>BSPA in the News</h2>
                 <?php
                 $bsp_itn = news_query('bspa-in-the-news');

@@ -74,4 +74,9 @@
             @include font-size(.875, 1);
         }
     }
+    
+    .navigation {
+        margin: 0;
+        list-style-type: none;
+    }
 }

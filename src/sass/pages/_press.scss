@@ -8,6 +8,114 @@
         
         @include bp-xl {
             padding: 10em 0;
+            
+            h1 {
+                @include font-size(3, 3);
+            }
+            
+            p {
+                margin-bottom: 1em;
+                @include font-size(1.5, 2);
+            }
+        }
+    }
+    
+    .press-kit {
+        padding: 4em;
+        text-align: center;
+        background-color: #f6f6f6;
+        background-image: url('../img/bg_hex.png');
+        background-size: cover;
+        
+        h2 {
+            display: inline-block;
+            margin-right: 1em;
+            margin-bottom: 0;
+            @include font-size(2.125, 2.125);
+        }
+        
+        .button {
+            @include font-size(1.125, 1.4);
+            
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
+    
+    .primary {
+        @extend %clearfix;
+        
+         > div {
+            margin: 0 0 1em;
+            text-align: center;
+            
+            h2 {
+                @include font-size(2, 2);
+                font-weight: 300;
+                
+                @include bp-l {
+                    @include font-size(3, 3);
+                }
+            }
+            
+            p {
+                @include font-size(1.25, 1.6);
+            }
+            
+            ul {
+                text-align: left;
+                text-transform: lowercase;
+                @include font-size(1.25, 1.6);
+                
+                @include bp-l {
+                    margin: 0;    
+                }
+            }
+            
+            li {
+                margin: 0 0 1em;
+            }
+         }
+    }
+    
+    .in-the-news {
+        
+        @include bp-l {
+            width: 45%;
+            float: left;
+        }
+    }
+    
+    .press-releases {
+        
+        @include bp-l {
+            width: 45%;
+            float: right;
+        }
+    }
+    
+    .media {
+        padding: 4em 0;
+        color: #fff;
+        text-align: center;
+        background: url(../img/bg_media.jpg);
+        background-size: cover;
+        
+        h1 {
+            @include font-size(2, 2);
+            
+            @include bp-l {
+                @include font-size(3, 3);    
+            }
+        }
+        
+        h2 {
+            margin-bottom: 2em;
+        }
+        
+        p {
+            @include font-size(1.125, 1.4);
         }
     }
 }

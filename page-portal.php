@@ -33,7 +33,32 @@
                     <li><a href="#tab-4"><?= types_render_field('portal-tab4-name'); ?></a></li>
                 </ul>
                 <div class="tab-content active" id="tab-1">
-                    <?= types_render_field('portal-tab1-content'); ?>
+                    <div class="primary">
+                        <?= types_render_field('portal-tab1-content'); ?>
+                        <div class="suggested-news news-section">
+                            <h2>Suggested News and Media</h2>
+                            <?php 
+                                $args = array(
+                            		'post_type' => 'news',
+                            		'posts_per_page' => 6,
+                            		'order' => 'RAND'
+                            	);              
+                                
+                                $suggested = new WP_Query($args);    
+                                
+                                if ($suggested->have_posts()) :
+                             ?>
+                                 <ul>
+                                     <?php while ( $suggested->have_posts() ) : $suggested->the_post(); ?>
+                                         <?php get_template_part('loop', 'newsitem') ?>
+                                     <?php endwhile;  ?>
+                                 </ul>
+                             <?php endif; wp_reset_query(); ?>
+                        </div>
+                    </div>
+                    <div class="sidebar">
+                        
+                    </div>
                 </div>
                 <div class="tab-content" id="tab-2">
                     <?php 

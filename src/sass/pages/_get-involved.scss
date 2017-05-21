@@ -4,4 +4,48 @@
 
 .get-involved {
     
+    .cards {
+        @extend %clearfix;
+        padding-bottom: 2em;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 2em;
+        
+        .front, .back, .flip-container {
+            width: 280px;
+            height: 280px;
+        }
+    }
+    
+    .gform_wrapper {
+        float: left;
+        width: 100%;
+        
+        .gform_title {
+            color: $orange;
+        }
+    }
+    
+    .big-ty {
+        text-align: center;
+        
+        h2 {
+            color: $orange;
+            
+            @include bp-l {
+                @include font-size(2.5, 2.5);
+            }
+        }
+    }
+    
+    .billboard {
+        background-image: url('../img/bg_get-involved.jpg');
+    }
+    
+    .careers {
+        @extend .primary;
+        
+        h2 {
+            color: $orange;
+        }
+    }
 }

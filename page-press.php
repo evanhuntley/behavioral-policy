@@ -15,11 +15,28 @@
                 <?php echo types_render_field("page-short-description"); ?>
             </div>
         </div>
-
-        <div class="primary container">
-
+        
+        <div class="press-kit">
+            <h2>Press Kit</h2>
+            <a class="button" href="<?= types_render_field('press-kit', array('raw' => true)); ?>"><i class="fa fa-arrow-circle-down"></i> Download Press Kit</a>
         </div>
 
+        <div class="primary container">
+            <div class="in-the-news">
+                <h2>In the News</h2>
+                <?= types_render_field("press-in-the-news"); ?>
+            </div>
+            <div class="press-releases">
+                <h2>Press Releases</h2>
+                <?= types_render_field("press-releases"); ?>
+            </div>
+        </div>
+        
+        <div class="media">
+            <h1>Media Contact</h1>
+            <?= types_render_field("media-contact"); ?>
+        </div>
+        
     </article>
 <?php endwhile; ?>
 

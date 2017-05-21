@@ -19,10 +19,25 @@
         <div class="primary container">
             <?php get_sidebar(); ?>
             <section class="content">
+                <div class="cards">
+                    <?= types_render_field('gi-flip-cards'); ?>
+                </div>
                 <?php the_content(); ?>
             </section>
         </div>
         
+        <div class="billboard center light">
+            <div class="container">
+                <h2>Careers</h2>
+                <p><?= types_render_field('gi-careers-blurb'); ?></p>
+            </div>
+        </div>
+        
+        <div class="careers container" id="careers">
+            <div class="content">
+                <?= types_render_field('gi-careers-content'); ?>
+            </div>
+        </div> 
 
     </article>
 <?php endwhile; ?>

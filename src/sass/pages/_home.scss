@@ -150,7 +150,11 @@
             h2 {
                 margin-bottom: 0;
                 color: $orange;
-                @include font-size(1.4, 2.5);
+                @include font-size(1.2, 2);
+                
+                @include bp-l {
+                    @include font-size(1.4, 2.5);
+                }
                 
                 &:after {
                     content: "\f078";

@@ -105,6 +105,15 @@
             </section>
         </div>
         
+        <div class="leadership-council">
+            <div class="container">
+                <div class="content">
+                    <h2>Leadership Council</h2>
+                    <?= types_render_field("leadership-council-content"); ?>
+                </div>
+            </div>
+        </div>
+        
         <?php get_template_part('areas-block') ?>
         
         <div class="block faq" id="faq">

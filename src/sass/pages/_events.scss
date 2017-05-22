@@ -4,14 +4,28 @@
 
 .events {
 	
-	.content h1 {
-		@include font-size(1.75, 2);
-		color: $blue;
+	.content {
+		h1 {
+			@include font-size(1.75, 2);
+			color: $blue;
+			
+			@include bp-l {
+				@include font-size(2, 2.4);
+			}
+		}		
 		
-		@include bp-l {
-			@include font-size(2, 2.4);
+		.calendar {
+			
+			@include bp-l {
+				max-height: 600px;
+				overflow-y: scroll;				
+			}
+			
+			h1 {
+				color: $orange;
+			}
 		}
-	}
+	} 
 }
 
 .event-featured {
@@ -20,8 +34,13 @@
 	.featured-content {
 		padding: 2em;
 		color: #fff;
+		text-align: center;
 		background-image: url('../img/bg_events-cta.jpg');
 		background-size: cover;
+		
+		h2, p {
+			text-align: left;
+		}
 	}
 }
 
@@ -190,6 +209,33 @@
 }
 
 .single-conference {
+	
+	.conference-nav {
+		text-align: center;
+		
+		ul {
+			margin: 0;
+			list-style-type: none;
+		}
+		
+		li {
+			display: inline-block;
+			padding: .5em 0;
+			@include font-size(2, 2);
+			
+			&.active {
+				border-bottom: 3px solid $orange;
+			}
+		}
+		
+		a {
+			color: $blue;
+		}
+	}
+	
+	.tab-nav {
+		margin-top: 0;
+	}
 	
 	.current-conference {
 		text-align: center;

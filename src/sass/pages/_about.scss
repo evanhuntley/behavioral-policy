@@ -22,11 +22,16 @@
 
         h1 {
             @include font-size(2, 2);
+            color: $blue;
         }
     }
 
     .faq {
         background: #f3f3f3;
+        
+        h1 {
+            color: $blue;
+        }
 
         .faq-list {
             float: right;
@@ -39,10 +44,34 @@
         
         h2 {
             @include font-size(2, 2);
+            color: $blue;
         }
         
         .tab-content {
             padding: 1.5em 0;
+        }
+    }
+    
+    .leadership-council {
+        @extend .primary;
+        background: #f3f3f3;
+        
+        h2 {
+            @include font-size(2, 2);
+            color: $blue;
+        }
+        
+        h3 {
+            color: $orange;
+        }
+        
+        ul {
+            margin: 0;
+            list-style-type: none;
+        }
+        
+        li {
+            @include rowMachine(4, 2.5%, 2.5%);
         }
     }
 }

@@ -4,6 +4,8 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     
     <?php
+        $currID = $post->ID;
+    
         $terms = get_the_terms($post->ID, 'event-types');
         if ($terms) {
             $term = array_shift( $terms );
@@ -29,7 +31,46 @@
 
         <div class="primary container">
             <section class="content">
-                <h1><?php the_title(); ?></h1>
+                
+                <div class="conference-nav">
+                    <?php
+                        $args = array(
+                            'post_type' => 'bspa-events',
+                            'posts_per_page' => -1,
+                            'orderby' => 'meta_value',
+                            'meta_key'  => 'wpcf-event-date',
+                            'order' => 'ASC',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'event-types',
+                                    'field'    => 'slug',
+                                    'terms'    => 'conference',
+                                ),
+                            ),  
+                            'meta_query' => array(
+                                array(
+                                    'key' => 'wpcf-event-date',
+                                    'value' => time(),
+                                    'compare' => '<='
+                                ),
+                            ),    
+                        );
+
+                        $confs = new WP_Query( $args);
+
+                        if ( $confs->have_posts() ) :
+                    ?>
+                        <ul class="conf-nav-list">
+                            <?php while ( $confs->have_posts() ) : $confs->the_post(); ?>
+                                <?php $active = $currID == $post->ID ? 'active' : ''; ?>
+                                <li class="<?= $active; ?>">
+                                    <a href="<?php echo get_the_permalink(); ?>"><?= types_render_field("event-date", array("format" => "Y")); ?></a>
+                                </li>
+                            <?php endwhile; ?>
+                        </ul>
+                    <?php endif; wp_reset_query(); ?>
+                </div>
+                
                 <ul class="tab-nav">
                     <li><a class="active" href="#tab-1">Photos</a></li>
                     <li><a href="#tab-2">Videos</a></li>

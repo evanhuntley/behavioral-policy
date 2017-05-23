@@ -35,7 +35,15 @@
                 <div class="tab-content active" id="tab-1">
                     <div class="primary">
                         <h1>News</h1>
-                        <?= types_render_field('portal-tab1-content'); ?>
+                        <div class="segment">
+                            <?= types_render_field('portal-segment-1'); ?>
+                        </div>
+                        <div class="segment">
+                            <?= types_render_field('portal-segment-2'); ?>
+                        </div>
+                        <div class="segment">
+                            <?= types_render_field('portal-segment-3'); ?>
+                        </div>
                         <div class="suggested-news news-section">
                             <h2>Suggested News and Media</h2>
                             <?php 
@@ -72,6 +80,66 @@
                         </div>
                     </div>
                     <div class="sidebar">
+                        
+                        <div class="calendar-widget">
+                            <h3>Upcoming Events</h3>
+                            <?php
+                                $args = array(
+                                    'post_type' => 'bspa-events',
+                                    'posts_per_page' => -1,
+                                    'orderby' => 'meta_value',
+                                    'meta_key'  => 'wpcf-event-date',
+                                    'order' => 'ASC',
+                                    'meta_query' => array(
+                                        array(
+                                            'key' => 'wpcf-event-date',
+                                            'value' => time(),
+                                            'compare' => '>='
+                                        )
+                                    )                            
+                                );
+
+                                $events = new WP_Query( $args);
+
+                                if ( $events->have_posts() ) :
+                            ?>
+                                <ul class="cal-list">
+                                    <?php while ( $events->have_posts() ) : $events->the_post();
+
+                                        $date = types_render_field("event-date", array("format" => "M j, Y"));
+                                        $weekday = types_render_field("event-date", array("format" => "D"));
+                                        $month = types_render_field("event-date", array("format" => "M"));
+                                        $day = types_render_field("event-date", array("format" => "d"));
+                                    ?>
+                                        <li class="event">
+                                            <div class="event-date">
+                                                <?php if (types_render_field('event-external-url')) : ?>
+                                                    <a href="<?php echo types_render_field('event-external-url', array("raw" => true)); ?>">
+                                                        <span class="weekday"><?= $weekday; ?></span>
+                                                        <span class="month"><?= $month; ?></span>
+                                                        <span class="day"><?= $day; ?></span>
+                                                    </a>
+                                                <?php else : ?>
+                                                    <a href="<?php echo get_the_permalink(); ?>">
+                                                        <span class="weekday"><?= $weekday; ?></span>
+                                                        <span class="month"><?= $month; ?></span>
+                                                        <span class="day"><?= $day; ?></span>
+                                                    </a>
+                                                <?php endif; ?>                                                
+                                            </div>
+                                        </li>
+                                    <?php endwhile; ?>
+                                </ul>
+                            <?php endif; wp_reset_query(); ?>
+                            <div class="events-key">
+                                <ul>
+                                    <li class="bspa">bspa event</li>
+                                    <li class="community">community event</li>
+                                    <li class="spotlight">spotlight event</li>
+                                </ul>
+                                <a href="/bspa-events/#calendar">See Full Calendar</a> 
+                            </div>
+                        </div>                        
                         
                     </div>
                 </div>

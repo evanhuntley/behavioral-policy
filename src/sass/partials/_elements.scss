@@ -336,12 +336,7 @@ table {
 
 /* News Sections -------------------------------------------- */
 .news-section {
-    @extend .primary;
     background: #fff;
-
-    .content {
-        width: 75%;
-    }
 
     ul {
         @extend %clearfix;

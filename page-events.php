@@ -123,7 +123,12 @@
                                 <?php
                                     $vid_url = types_render_field('event-highlight-vimeo-url', array("raw" => true));
                                 ?>
-                                <a href="<?= $vid_url; ?>" data-lity><img src="<?= the_post_thumbnail_url('event-highlight'); ?>" /></a>
+                                <a href="<?= $vid_url; ?>" data-lity>
+                                    <img src="<?= the_post_thumbnail_url('event-highlight'); ?>" />
+                                    <svg class="icon">
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#video"></use>
+                                    </svg>
+                                </a>
                                 <h3><a href="<?= $vid_url; ?>" data-lity><?php the_title(); ?></a></h3>
                                 <div class="description">
                                     <?php echo types_render_field('event-highlight-short-description'); ?>

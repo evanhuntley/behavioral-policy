@@ -90,7 +90,12 @@
                                     $vid_url = $meta['wpcf-event-highlight-vimeo-url'][0];
                                     $desc = $meta['wpcf-event-highlight-short-description'][0];
                                 ?>
-                                <a href="<?= $vid_url; ?>" data-lity><img src="<?php echo get_the_post_thumbnail_url($video->ID, 'event-highlight'); ?>" /></a>
+                                <a href="<?= $vid_url; ?>" data-lity>
+                                    <img src="<?php echo get_the_post_thumbnail_url($video->ID, 'event-highlight'); ?>" />
+                                    <svg class="icon">
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#video"></use>
+                                    </svg>
+                                </a>
                                 <h3><a href="<?= $vid_url; ?>" data-lity><?php echo $video->post_title; ?></a></h3>
                                 <div class="description">
                                     <?php echo $desc; ?>

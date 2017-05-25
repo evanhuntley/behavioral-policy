@@ -160,21 +160,6 @@ Template Name: News Page
                         <?php endif; wp_reset_query(); ?>
                         <a class="more-link" href="/news-category/free-resources">Show All</a>
                     </div>
-                    <div class="news-section">
-                        <h2>Exec Ed/Continuing Professional Development</h2>
-                        <?php
-                        $exec = news_query('exec-ed');
-
-                        if ($exec->have_posts()) :
-                            ?>
-                            <ul>
-                                <?php while ( $exec->have_posts() ) : $exec->the_post(); ?>
-                                    <?php get_template_part('loop', 'newsitem') ?>
-                                <?php endwhile;  ?>
-                            </ul>
-                        <?php endif; wp_reset_query(); ?>
-                        <a class="more-link" href="/news-category/exec-ed">Show All</a>
-                    </div>
                 </div>
             </div>
         </div>

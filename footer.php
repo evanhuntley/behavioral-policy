@@ -7,7 +7,7 @@
 				<p>PO Box 51336<br />
 				Durham, NC 27717<br />
 				USA<br />
-				+1 (919) 681-5932
+				<a href="tel:1-919-681-5932">+1 (919) 681-5932</a>
 			</div>
 			<div class="footer-nav">
 				<?php

@@ -84,6 +84,8 @@
         @include bp-l {
             width: 45%;
             float: left;
+            max-height: 500px;
+            overflow-y: scroll;
         }
     }
     

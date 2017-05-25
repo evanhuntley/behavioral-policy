@@ -10,10 +10,6 @@
         @include bp-l {
             padding: 6em 0;
         }
-        
-        h1 {
-            margin-bottom: 0;
-        }
     }
     
     .content {
@@ -168,6 +164,24 @@
     			@include font-size(1, 1.4);
     		}
     	}
+        
+        .bspa-event {
+            .event-date {
+                background: $orange;
+            }
+        }
+        
+        .community {
+            .event-date {
+                background: $blue;
+            }
+        }
+        
+        .spotlight {
+            .event-date {
+                background: #333;
+            }
+        }
         
         .events-key {
             float: left;

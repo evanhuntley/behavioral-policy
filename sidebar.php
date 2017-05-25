@@ -25,7 +25,54 @@
         }
     }
     ?>
+    
+    <?php 
+        if (is_page('events')) : 
+    ?>
+        <div class="events-event-highlights">
+            <h3>Event Highlights</h3>
+        <?php
+            $args = array(
+                'post_type' => 'event-highlights',
+                'posts_per_page' => -1,
+                'orderby' => 'menu_order',
+                'order' => 'DESC',
+                'meta_query' => array(
+                    array(
+                        'key'	  	=> 'wpcf-event-highlight-featured',
+                        'value'	  	=> '1',
+                        'compare' 	=> '=',
+                    )
+                ),
+            );
 
+            $event_highlights = new WP_Query( $args);
+
+            if ( $event_highlights->have_posts() ) :
+        ?>
+            <ul class="event-highlight-list">
+                <?php while ( $event_highlights->have_posts() ) : $event_highlights->the_post(); ?>
+                    <li>
+                        <?php
+                            $vid_url = types_render_field('event-highlight-vimeo-url', array("raw" => true));
+                        ?>
+                        <a href="<?= $vid_url; ?>" data-lity>
+                            <img src="<?= the_post_thumbnail_url('event-highlight'); ?>" />
+                            <svg class="icon">
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#video"></use>
+                            </svg>
+                        </a>
+                        <h3><a href="<?= $vid_url; ?>" data-lity><?php the_title(); ?></a></h3>
+                        <div class="description">
+                            <?php echo types_render_field('event-highlight-short-description'); ?>
+                        </div>
+                    </li>
+                <?php endwhile; wp_reset_query(); ?>
+            </ul>
+        <?php endif; ?>    
+        </div>
+    <?php endif; ?>
+    
     <?php
         if (is_post_type_archive('articles')) {
             echo '<h2>Search Archive</h2>';

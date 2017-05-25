@@ -82,10 +82,14 @@
                 color: $orange;
             }
         }
-        
-        .select2-container {
-            max-width: 100%;
-        }
+    }
+}
+
+.select2-container {
+    max-width: 100%;
+    
+    .select2-results {
+        text-transform: lowercase;
     }
 }
 
@@ -137,10 +141,12 @@
         top: .75em;
         left: 0;
         fill: $orange;
+        color: $orange;
     }
 
     .authors {
         margin: 0 0 1em;
+        text-transform: lowercase;
     }
 
     .options {
@@ -360,6 +366,7 @@
                 margin: 0 0 .5em;
                 color: $blue;
                 @include font-size(1.2, 1.4);
+                font-weight: 500;
                 text-transform: lowercase;
             }
 

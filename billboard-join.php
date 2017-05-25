@@ -2,6 +2,6 @@
     <div class="container">
         <h2>Become a Member</h2>
         <?= ot_get_option('join_billboard_text'); ?>
-        <a href="https://behavioralpolicy.org/signup" class="button">Join Us</a>
+        <a href="/signup" class="button">Join Us</a>
     </div>
 </div>

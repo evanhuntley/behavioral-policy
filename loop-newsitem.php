@@ -7,9 +7,9 @@
 ?>
 <li class="news-item">
     <div class="news-image">
-        <a <?= $format == 'video' ? 'data-lity' : ''; ?> href="<?= types_render_field('news-item-url', array("raw" => true)); ?>" title="<?php the_title(); ?>">
+        <a <?= $format == 'video' ? 'data-lity' : ''; ?> href="<?= types_render_field('news-item-url', array("raw" => true)); ?>" target="_blank" title="<?php the_title(); ?>">
             <?php if (types_render_field('news-featured') == '1') : ?>
-                <img src="<?php echo the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>">    
+                <img src="<?php echo the_post_thumbnail_url('event-highlight'); ?>" alt="<?php the_title(); ?>">    
             <?php else : ?>
                 <?php if (has_post_thumbnail()) : ?>
                     <img src="<?php echo the_post_thumbnail_url('news-item'); ?>" alt="<?php the_title(); ?>">

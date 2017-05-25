@@ -22,7 +22,7 @@
     
     <article role="main" class="page single-conference" id="post-<?php the_ID(); ?>">
 
-        <div class="page-header">
+        <div class="page-header" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
             <div class="container">
                 <h1>BSPA Annual Conference</h1>
                 <p>BSPA hosts a range of annual events aimed at fostering networking within the behavioral science and policy communities. Spotlight workshops bring policymakers, practitioners and scientists together to brainstorm various research 'best practices' and topic areas.</p>

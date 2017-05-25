@@ -34,7 +34,7 @@
                 </ul>
                 <div class="tab-content active" id="tab-1">
                     <div class="primary">
-                        <h1>News</h1>
+                        <h1>Latest Updates</h1>
                         <div class="segment">
                             <?= types_render_field('portal-segment-1'); ?>
                         </div>
@@ -68,13 +68,13 @@
                             <h2>Our Favorite Tweets This Week</h2>
                             <div class="row">
                                 <div class="tweet">
-                                    <?= types_render_field("portal-tweet-1"); ?>
+                                    <?= ot_get_option('weekly_tweet_1'); ?>
                                 </div>
                                 <div class="tweet">
-                                    <?= types_render_field("portal-tweet-2"); ?>
+                                    <?= ot_get_option('weekly_tweet_2'); ?>
                                 </div>
                                 <div class="tweet">
-                                    <?= types_render_field("portal-tweet-3"); ?>
+                                    <?= ot_get_option('weekly_tweet_3'); ?>
                                 </div>
                             </div>                            
                         </div>
@@ -110,8 +110,14 @@
                                         $weekday = types_render_field("event-date", array("format" => "D"));
                                         $month = types_render_field("event-date", array("format" => "M"));
                                         $day = types_render_field("event-date", array("format" => "d"));
+                                        
+                                        $terms = get_the_terms($post->ID, 'event-types');
+                                        if ($terms) {
+                                            $term = array_shift( $terms );
+                                            $type = $term->slug;
+                                        }
                                     ?>
-                                        <li class="event">
+                                        <li class="event <?= $type; ?>">
                                             <div class="event-date">
                                                 <?php if (types_render_field('event-external-url')) : ?>
                                                     <a href="<?php echo types_render_field('event-external-url', array("raw" => true)); ?>">

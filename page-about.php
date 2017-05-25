@@ -105,7 +105,7 @@
             </section>
         </div>
         
-        <div class="leadership-council">
+        <div class="leadership-council" id="leadership-council">
             <div class="container">
                 <div class="content">
                     <h2>Leadership Council</h2>

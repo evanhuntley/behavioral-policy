@@ -50,7 +50,7 @@ Template Name: News Page
 
         <div class="news-main container">
             <div class="content">
-                <div class="news-section">
+                <div class="news-section" id="in-the-news">
                     <h2>In the News</h2>
                     <?php
                     $in_the_news = news_query('in-the-news');
@@ -99,7 +99,7 @@ Template Name: News Page
                     </diV>
                 </div>
                 <div class="online-database" id="online-database">
-                    <h2>Online Database</h2>
+                    <h2>Online Databases</h2>
                     <?= types_render_field('online-database'); ?>
                 </div>
                 <h2>Reports Corner</h2>

@@ -27,7 +27,7 @@
                         <?php
                             $terms = get_terms( array(
                                 'taxonomy' => 'team-roles',
-                                'include' => array(34, 35, 44, 7),
+                                'include' => array(34, 35, 44, 7, 45),
                                 'orderby' => 'name',
                                 'order' => 'ASC'
                             ) );
@@ -53,7 +53,7 @@
                                 array(
                                     'taxonomy' => 'team-roles',
                                     'field'    => 'slug',
-                                    'terms'    => array( 'senior-disciplinary-editor', 'senior-policy-editor', 'founding-coeditor', 'consulting-editor' ),
+                                    'terms'    => array( 'senior-disciplinary-editors', 'senior-policy-editors', 'founding-coeditors', 'consulting-editors', 'associate-disciplinary-editors' ),
                                 ),
                             ),                            
                         );

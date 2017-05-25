@@ -2,11 +2,6 @@
 /*
     Template Name: Home Page
 */
-
-    $tweet_1 = types_render_field("home-tweet-1", array("raw" => true));
-    $tweet_2 = types_render_field("home-tweet-2", array("raw" => true));
-    $tweet_3 = types_render_field("home-tweet-3", array("raw" => true));
-    $tweet_4 = types_render_field("home-tweet-4", array("raw" => true));
 ?>
 
 <?php get_header(); ?>
@@ -30,6 +25,9 @@
 
                     $dark = types_render_field('dark-look', array("raw" => true));
                     $dark = $dark == 1 ? 'dark' : '';
+                    
+                    $blue = types_render_field('slide-blue-button', array("raw" => true));
+                    $blue = $blue == 1 ? 'alt' : '';
 
                     $button_text = types_render_field('slide-button-text', array("raw" => true));
                     $button_url = types_render_field('slide-button-url', array("raw" => true));
@@ -39,7 +37,7 @@
                         <h1><?php the_title(); ?></h1>
                         <?php the_content(); ?>
                         <?php if ($button_text && $button_url) : ?>
-                            <a class="button" href="<?php echo $button_url; ?>"><?php echo $button_text; ?></a>
+                            <a class="button <?= $blue; ?>" href="<?php echo $button_url; ?>"><?php echo $button_text; ?></a>
                         <?php endif; ?>
                     </div>
                 </li>
@@ -60,7 +58,7 @@
                     <h2>Community Building</h2>
                 </div>
                 <div class="callout-content">
-                    <p>Convening communities and dialogues that promote the accessibility of social and behavioral science to policymakers and other practitioners.</p>
+                    <p>Convening communities and dialogues that promote the accessibility of social and behavioral science to policymakers and other practitioners</p>
                 </div>
             </div>
             <div class="home-callout third">
@@ -84,22 +82,22 @@
                 <h2>Our Favorite Tweets This Week</h2>
                 <div class="row">
                     <div class="tweet">
-                        <?= $tweet_1; ?>
+                        <?= ot_get_option('weekly_tweet_1'); ?>
                     </div>
                     <div class="tweet">
-                        <?= $tweet_2; ?>
+                        <?= ot_get_option('weekly_tweet_2'); ?>
                     </div>
                     <div class="tweet">
-                        <?= $tweet_3; ?>
+                        <?= ot_get_option('weekly_tweet_3'); ?>
                     </div>
                     <div class="tweet">
-                        <?= $tweet_4; ?>
+                        <?= ot_get_option('weekly_tweet_4'); ?>
                     </div>
                 </div>
                 <div class="follow">
                     <h2><i class="fa fa-twitter"></i> Follow us and share your stories</h2>
                     <p>We love feedback and want to hear from you! Whether you are interested in contributing stories or have a tweet that you want us to highlight, please email us at <a href="mailto:bspa@behavioralpolicy.org">bspa@behavioralpolicy.org</a></p>
-                    <a href="https://twitter.com/BeSciPol" class="button alt">Follow us</a>
+                    <a target="_blank" href="https://twitter.com/BeSciPol" class="button alt">Follow us</a>
                 </div>
             </div>
         </div>

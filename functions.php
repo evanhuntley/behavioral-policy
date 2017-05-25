@@ -286,4 +286,22 @@ function wpdocs_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
+// Disable Autofill on Gravityforms
+add_filter( 'gform_form_tag', 'gform_form_tag_autocomplete', 11, 2 );
+function gform_form_tag_autocomplete( $form_tag, $form ) {
+	if ( is_admin() ) return $form_tag;
+	if ( GFFormsModel::is_html5_enabled() ) {
+		$form_tag = str_replace( '>', ' autocomplete="off">', $form_tag );
+	}
+	return $form_tag;
+}
+add_filter( 'gform_field_content', 'gform_form_input_autocomplete', 11, 5 ); 
+function gform_form_input_autocomplete( $input, $field, $value, $lead_id, $form_id ) {
+	if ( is_admin() ) return $input;
+	if ( GFFormsModel::is_html5_enabled() ) {
+		$input = preg_replace( '/<(input|textarea)/', '<${1} autocomplete="off" ', $input ); 
+	}
+	return $input;
+}
+
 ?>

@@ -57,8 +57,14 @@
                                 $month = types_render_field("event-date", array("format" => "M"));
                                 $day = types_render_field("event-date", array("format" => "d"));
                                 $location = types_render_field("event-location", array("raw" => true));
+                                
+                                $terms = get_the_terms($post->ID, 'event-types');
+                                if ($terms) {
+                                    $term = array_shift( $terms );
+                                    $type = $term->slug;
+                                }
                             ?>
-                                <li class="event">
+                                <li class="event <?= $type; ?>">
                                     <div class="event-date">
                                         <span class="weekday"><?= $weekday; ?></span>
                                         <span class="month"><?= $month; ?></span>
@@ -66,7 +72,7 @@
                                     </div>
                                     <div class="event-details">
                                         <?php if (types_render_field('event-external-url')) : ?>
-                                            <h2><a href="<?php echo types_render_field('event-external-url', array("raw" => true)); ?>"><?php the_title(); ?></a></h2>
+                                            <h2><a target="_blank" href="<?php echo types_render_field('event-external-url', array("raw" => true)); ?>"><?php the_title(); ?></a></h2>
                                         <?php else : ?>
                                             <h2><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>    
                                         <?php endif; ?>
@@ -97,7 +103,7 @@
         <div class="events-page-spotlight" id="spotlight">
             <div class="container">
                 <div class="content">
-                    <h1>Spotlights Workshops</h1>
+                    <h1>Spotlight Workshops</h1>
                     <?= types_render_field("events-spotlights-workshops"); ?>
                 </div>
             </div>
@@ -110,7 +116,16 @@
                 <?php
                     $args = array(
                         'post_type' => 'event-highlights',
-                        'posts_per_page' => -1
+                        'posts_per_page' => -1,
+                        'orderby' => 'menu_order',
+                        'order' => 'DESC',
+                        'meta_query' => array(
+                            array(
+                                'key'	  	=> 'wpcf-event-highlight-featured',
+                                'value'	  	=> '1',
+                                'compare' 	=> '=',
+                            )
+                        ),
                     );
 
                     $event_highlights = new WP_Query( $args);
@@ -141,7 +156,7 @@
             </div>
         </div>
 
-        <?php get_template_part('billboard', 'notifications') ?>
+        <?php //get_template_part('billboard', 'notifications') ?>
         <?php get_template_part('billboard', 'join') ?>
 
     </article>

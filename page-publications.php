@@ -61,7 +61,7 @@
                         } else {
                             $args = array(
                                 'post_type' => 'articles',
-                                'posts_per_page' => 3,
+                                'posts_per_page' => -1,
                                 'orderby' => 'date',
                                 'order' => 'DESC'
                             );

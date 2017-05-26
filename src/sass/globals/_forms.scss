@@ -89,3 +89,26 @@ textarea {
 .gform_wrapper input, .gform_wrapper textarea {
     font-family: 'museo-sans', Arial, sans-serif;
 }
+
+.gform_wrapper .gfield_checkbox {
+    margin: 0;
+    list-style-type: none;
+}
+
+.gform_description {
+    display: block;
+    margin-bottom: 1em;
+}
+
+// Registration Form
+.ginput_complex {
+    margin: .5em 0 0;
+    
+    input {
+        margin-bottom: 0 !important;
+    }
+    
+    label {
+        margin-bottom: 1em;
+    }
+}

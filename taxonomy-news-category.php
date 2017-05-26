@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <article role="main" class="page" id="news-archive">
-	<div class="page-header">
+	<div class="page-header" style="background-image: url('/wp-content/uploads/2017/01/news-resources-banner.jpg')">
 		<div class="container">
 			<?php 
 				$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );

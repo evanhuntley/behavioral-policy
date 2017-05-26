@@ -108,7 +108,10 @@
         }
         
         h3 {
-            color: $blue;
+            
+            a {
+                color: $blue;    
+            }
         }
         
         ul {
@@ -193,6 +196,7 @@
             
             li {
                 position: relative;
+                min-height: 150px;
                 padding: 1em 0;
                 border-bottom: 1px solid #ececec;
             }

@@ -124,11 +124,15 @@
     position: relative;
     margin: 0 0 1em;
     padding-left: 65px;
-    padding-right: 200px;
+    padding-right: 1em;
     padding-top: 1em;
     padding-bottom: 1em;
     border-bottom: 1px solid #ececec;
     color: #23272a;
+    
+    @include bp-l {
+        padding-right: 200px;
+    }
 
     h3 {
         margin-bottom: 0;
@@ -169,10 +173,13 @@
     }
 
     img {
-        position: absolute;
-        top: 0;
-        right: 0;
-        max-width: 180px;
+        
+        @include bp-l {
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 180px;            
+        }
     }
 }
 
@@ -337,6 +344,33 @@
         p {
             @include bp-xl {
                 max-width: 90%;
+            }
+        }
+    }
+    
+    .prior-issues {
+        @extend %clearfix;
+        margin: 2em 0 0;
+        list-style-type: none;
+        
+        li {
+            text-align: center;
+            
+            @include bp-l {
+                @include rowMachine(4, 5%, 0);    
+            }
+        }
+        
+        a {
+            display: block;
+            margin: .25em 0;
+        }
+        
+        img {
+            width: 200px;
+            
+            @include bp-l {
+                width: auto;
             }
         }
     }

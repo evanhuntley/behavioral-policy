@@ -115,9 +115,9 @@ Template Name: News Page
                         <?php while ( $reports->have_posts() ) : $reports->the_post(); ?>
                             <li>
                                 <div class="item-details">
-                                    <h3><?php the_title(); ?></h3>
+                                    <h3><a href="<?= types_render_field('news-item-url', array("raw" => true)); ?>"><?php the_title(); ?></a></h3>
                                     <?= types_render_field('news-short-description'); ?>
-                                    <img class="org" src="<?php echo types_render_field('report-organization-logo', array("raw" => true)); ?>" alt="<?php types_render_field('report-organization-name', array("raw" => true)); ?>">
+                                    <img class="org" src="<?php echo get_the_post_thumbnail_url($post->ID, 'event-highlight'); ?>" alt="<?php types_render_field('report-organization-name', array("raw" => true)); ?>">
                                 </div>
                             </li>
                         <?php endwhile;  ?>

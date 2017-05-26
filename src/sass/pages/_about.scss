@@ -71,7 +71,11 @@
         }
         
         li {
-            @include rowMachine(4, 2.5%, 2.5%);
+            margin: 0 0 .5em;
+            
+            @include bp-l {
+                @include rowMachine(4, 2.5%, 2.5%);    
+            }
         }
     }
 }

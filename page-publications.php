@@ -24,8 +24,25 @@
                     <h1>Behavioral Science &amp; Policy</h1>
                     <?php the_content(); ?>
                     <a target="_blank" class="button" href="<?php echo types_render_field('bsp-issue-pdf'); ?>">Download</a>
-                    <a target="_blank" class="button" href="<?php echo types_render_field('bsp-issue-url'); ?>">Read Online</a>
+                    <a target="_blank" data-lity class="button" href="http://issuu.com/behavioralsciencepolicyassociation/docs/bspvol2no2_web_d4a8a301952b1a?e=28763323/49295524">Read Online</a>
                 </div>
+                <ul class="prior-issues">
+                    <li>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bsp-1-1.jpg" />
+                        <a target="_blank" href="/wp-content/uploads/2017/05/bsp_vol1issue1_web.pdf">Download</a>
+                        <a target="_blank" data-lity href="http://issuu.com/behavioralsciencepolicyassociation/docs/bsp_vol2issue1_web?e=28763323/48970013">Read Online</a>
+                    </li>
+                    <li>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bsp-1-2.jpg" />
+                        <a target="_blank" href="/wp-content/uploads/2017/05/bsp_vol1issue2_web.pdf">Download</a>
+                        <a target="_blank" data-lity href="http://issuu.com/behavioralsciencepolicyassociation/docs/bsp_vol1issue2_web?e=28763323/49363821">Read Online</a>                        
+                    </li>
+                    <li>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bsp-2-1.jpg" />
+                        <a target="_blank" href="/wp-content/uploads/2017/05/bsp_vol2issue1_web.pdf">Download</a>
+                        <a target="_blank" data-lity href="http://issuu.com/behavioralsciencepolicyassociation/docs/bsp_vol1issue1_web?e=28763323/49363811">Read Online</a>                        
+                    </li>
+                </ul>
                 <ul class="bsp-links">
                     <li><a target="_blank" href="http://bsp.msubmit.net/"><span>Submit</span> we are currently seeking submissions</a></li>
                     <li><a href="/signup"><span>Subscribe</span> subscribe to BSP to get access to...</a></li>
@@ -76,8 +93,8 @@
             </section>
         </div>
 
-        <?php get_template_part('billboard', 'subscribe') ?>
         <?php get_template_part('billboard', 'submit') ?>
+        <?php get_template_part('billboard', 'subscribe') ?>
         <?php get_template_part('billboard', 'join') ?>
 
     </article>

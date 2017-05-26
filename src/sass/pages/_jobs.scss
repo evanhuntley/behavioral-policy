@@ -127,7 +127,13 @@
     .mm-description {
         
         h1 {
-            @include font-size(2.75, 2.75);
+            @include font-size(2.5, 2.5);
+            text-align: center;
+            
+            @include bp-l {
+                text-align: left;
+                @include font-size(2.75, 2.75);
+            }
         }
         
         li {

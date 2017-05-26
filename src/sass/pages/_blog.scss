@@ -27,7 +27,10 @@
         }
         
         .blog-details {
-            margin-left: 336px;
+            
+            @include bp-l {
+                margin-left: 336px;
+            }
         }
         
         .blog-date {

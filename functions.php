@@ -101,6 +101,7 @@ function bp_theme_setup() {
   add_image_size( 'bio-large', 576, 863, false );
   add_image_size( 'news-item', 302, 170, true); // (cropped)
   add_image_size( 'event-highlight', 500, 281, true); // (cropped)
+  add_image_size('promo', 846, 360, true); // (cropped)
 }
 
 // Menu Meta Box
@@ -303,5 +304,17 @@ function gform_form_input_autocomplete( $input, $field, $value, $lead_id, $form_
 	}
 	return $input;
 }
+
+// Remove Unneeded Emoji stuff
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+// Remove comment-reply.min.js from footer
+function eh_clean_header_hook(){
+	wp_deregister_script( 'comment-reply' );
+         }
+add_action('init','eh_clean_header_hook');
+
+add_filter( 'gform_init_scripts_footer', '__return_true' );
 
 ?>

@@ -53,7 +53,7 @@
                                 array(
                                     'taxonomy' => 'team-roles',
                                     'field'    => 'slug',
-                                    'terms'    => array( 'associate-policy-editors', 'senior-disciplinary-editors', 'senior-policy-editors', 'founding-coeditors', 'consulting-editors', 'associate-disciplinary-editors' ),
+                                    'terms'    => array( 'associate-policy-editors', 'senior-disciplinary-editors', 'senior-policy-editors', 'founding-co-editors', 'consulting-editors', 'associate-disciplinary-editors' ),
                                 ),
                             ),                            
                         );

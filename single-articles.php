@@ -39,6 +39,34 @@
                 </div>
                 <div class="article-content">
                     <?php the_content(); ?>
+                   <?php if (types_render_field('article-supplemental-material', array("raw" => true))) : ?>
+                       <hr />
+                       <a href="<?= types_render_field('article-supplemental-material', array("raw" => true)); ?>">Supplemental Material</a>
+                   <?php endif; ?>
+                   <?php if (types_render_field('article-author-note')) : ?>
+                       <div class="author-note expand-block">
+                           <div class="expand-title"><h3>Author Note</h3></div>
+                           <div class="expand-description">
+                               <?= types_render_field('article-author-note'); ?>
+                           </div>
+                       </div>
+                   <?php endif; ?>
+                   <?php if (types_render_field('article-author-affiliation')) : ?>
+                       <div class="author-affiliation expand-block">
+                           <div class="expand-title"><h3>Author Affiliation</h3></div>
+                           <div class="expand-description">
+                               <?= types_render_field('article-author-affiliation'); ?>
+                           </div>
+                       </div>
+                   <?php endif; ?>
+                   <?php if (types_render_field('article-references')) : ?>
+                       <div class="references expand-block">
+                           <div class="expand-title"><h3>References</h3></div>
+                           <div class="expand-description">
+                               <?= types_render_field('article-references'); ?>
+                           </div>
+                       </div>
+                   <?php endif; ?>
                 </div>
             </section>
         </div>

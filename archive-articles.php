@@ -19,6 +19,8 @@
 		<section class="content">
 			<div class="articles">
 				<div class="displayed-results">
+					
+					<?php if( rcp_is_active() ) : ?>
 					<h2>
 						<?php
 							global $searchandfilter;
@@ -51,6 +53,10 @@
 					 	get_template_part( 'loop', 'journal' );
 				 	endwhile;
 				?>
+			<?php else : ?>	
+				<h2>Only BSPA Members can access the archive.  <a href="/signup">Join us</a> today for full access.</h2>
+				<p>Already a member? <a href="/login">Login now</a></p>
+			<?php endif; ?>				
 		</section>
 	</div>
 

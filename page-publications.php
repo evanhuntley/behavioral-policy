@@ -7,6 +7,7 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+    
     <article role="main" class="page publications" id="post-<?php the_ID(); ?>">
 
         <div class="page-header" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
@@ -24,9 +25,14 @@
                     <h1>Behavioral Science &amp; Policy</h1>
                     <?php the_content(); ?>
                     <a target="_blank" class="button" href="<?php echo types_render_field('bsp-issue-pdf'); ?>">Download</a>
-                    <a target="_blank" data-lity class="button" href="https://issuu.com/behavioralsciencepolicyassociation/docs/bspvol2no2_web_d4a8a301952b1a?e=28763323/49295524">Read Online</a>
+                    <a target="_blank" data-lity class="button" href="https://issuu.com/behavioralsciencepolicyassociation/docs/v3i3_web_full?e=28763323/52195868">Read Online</a>
                 </div>
                 <ul class="prior-issues">
+                    <li>
+                        <img src="https://behavioralpolicy.org/wp-content/uploads/2017/01/BSP-vol.-2-issue-2-Cover.jpg" />
+                        <a target="_blank" href="/wp-content/uploads/2017/06/BSPvol2no2_web-1.pdf">Download</a>
+                        <a target="_blank" data-lity href="https://issuu.com/behavioralsciencepolicyassociation/docs/bspvol2no2_web_d4a8a301952b1a?e=28763323/49295524">Read Online</a>
+                    </li>
                     <li>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bsp-1-1.jpg" />
                         <a target="_blank" href="/wp-content/uploads/2017/05/bsp_vol1issue1_web.pdf">Download</a>
@@ -46,7 +52,7 @@
                 <ul class="bsp-links">
                     <li><a target="_blank" href="http://bsp.msubmit.net/"><span>Submit</span> we are currently seeking submissions</a></li>
                     <li><a href="/signup"><span>Subscribe</span> subscribe to BSP to get access to...</a></li>
-                    <li><a href="/publications/about"><span>Learn More</span> meet our editors and learn more about the journal</a></li>
+                    <li><a href="/publications/about-bsp"><span>Learn More</span> meet our editors and learn more about the journal</a></li>
                     <li><a href="/articles"><span>Archive</span> sign in to access the<br /> BSP archive</a></li>
                 </ul>
                 <div class="featured-articles" id="featured">

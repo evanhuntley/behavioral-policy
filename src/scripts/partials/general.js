@@ -43,17 +43,17 @@ jQuery(document).ready(function($) {
     // Expand/Collapse Home Page items 
     $('.home-callout .callout-header').on('click', function() {
         $(this).next().slideToggle();
-        $(this).find('h2').toggleClass('open')
+        $(this).find('h2').toggleClass('open');
     });
-    
-    // init Isotope
-    setTimeout(function() {
-        var $grid = $('.grid').isotope({
+        
+    var $grid = $('.grid').imagesLoaded( function() {
+        
+        // init Isotope after all images have loaded
+        $grid.isotope({
             itemSelector: '.grid-item',
             layoutMode: 'fitRows'
         });
-        
-    }, 1000);
+    });
 
     // change is-checked class on buttons
     $('.grid-filters').each( function( i, filters ) {

@@ -6,7 +6,8 @@
         "src/components/isotope/dist/isotope.pkgd.js",
         "src/components/matchHeight/dist/jquery.matchHeight.js",
         "src/components/lity/dist/lity.js",
-        "src/components/js-cookie/src/js.cookie.js"
+        "src/components/js-cookie/src/js.cookie.js",
+        "src/components/imagesloaded/imagesloaded.js"
     ],
     "public" : [
         "src/components/css3-mediaqueries-js/css3-mediaqueries.js",

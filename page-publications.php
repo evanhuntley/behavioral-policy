@@ -7,7 +7,7 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-    
+
     <article role="main" class="page publications" id="post-<?php the_ID(); ?>">
 
         <div class="page-header" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
@@ -29,7 +29,7 @@
                 </div>
                 <ul class="prior-issues">
                     <li>
-                        <img src="https://behavioralpolicy.org/wp-content/uploads/2017/01/BSP-vol.-2-issue-2-Cover.jpg" />
+                        <img src="https://behavioralpolicy.org/wp-content/uploads/2017/01/BSP-vol.-2-issue-2-Cover-small.jpg" />
                         <a target="_blank" href="/wp-content/uploads/2017/06/BSPvol2no2_web-1.pdf">Download</a>
                         <a target="_blank" data-lity href="https://issuu.com/behavioralsciencepolicyassociation/docs/bspvol2no2_web_d4a8a301952b1a?e=28763323/49295524">Read Online</a>
                     </li>
@@ -41,12 +41,12 @@
                     <li>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bsp-1-2.jpg" />
                         <a target="_blank" href="/wp-content/uploads/2017/05/bsp_vol1issue2_web.pdf">Download</a>
-                        <a target="_blank" data-lity href="https://issuu.com/behavioralsciencepolicyassociation/docs/bsp_vol1issue2_web?e=28763323/49363821">Read Online</a>                        
+                        <a target="_blank" data-lity href="https://issuu.com/behavioralsciencepolicyassociation/docs/bsp_vol1issue2_web?e=28763323/49363821">Read Online</a>
                     </li>
                     <li>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bsp-2-1.jpg" />
                         <a target="_blank" href="/wp-content/uploads/2017/05/bsp_vol2issue1_web.pdf">Download</a>
-                        <a target="_blank" data-lity href="https://issuu.com/behavioralsciencepolicyassociation/docs/bsp_vol2issue1_web?e=28763323/48970013">Read Online</a>                        
+                        <a target="_blank" data-lity href="https://issuu.com/behavioralsciencepolicyassociation/docs/bsp_vol2issue1_web?e=28763323/48970013">Read Online</a>
                     </li>
                 </ul>
                 <ul class="bsp-links">

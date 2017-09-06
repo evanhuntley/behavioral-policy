@@ -201,8 +201,8 @@ function button_func( $atts ) {
 	), $atts );
 
 	$a['color'] == 'blue' ? $class = 'alt' : $class = '';
-	
-	$a['new-window'] == true ? $new = ' target="_blank" ' : '';
+
+	$new = ($a['new-window'] == true) ? ' target="_blank" ' : '';
 
 	$button = '<a' . $new . ' href="' . $a['url'] . '" class="button shortcode ' . $class . '">' . $a['text'] . '</a>';
 	return $button;
@@ -212,7 +212,7 @@ add_shortcode( 'button', 'button_func' );
 // Blog Star Block Shortcode
 // [starblock]Stuff Here[/starblock]
 function starblock_func( $atts, $content = null ) {
-	
+
 	return '<div class="star-block"><span class="star-white"></span><span class="star-grey"></span>' . $content . '</div>';
 
 }
@@ -221,7 +221,7 @@ add_shortcode( 'starblock', 'starblock_func' );
 // Blog Tag Block Shortcode
 // [tagblock]Stuff Here[/tagblock]
 function tagblock_func( $atts, $content = null ) {
-	
+
 	return '<div class="tag-block"><span class="tag-icon"></span>' . $content . '</div>';
 
 }
@@ -296,11 +296,11 @@ function gform_form_tag_autocomplete( $form_tag, $form ) {
 	}
 	return $form_tag;
 }
-add_filter( 'gform_field_content', 'gform_form_input_autocomplete', 11, 5 ); 
+add_filter( 'gform_field_content', 'gform_form_input_autocomplete', 11, 5 );
 function gform_form_input_autocomplete( $input, $field, $value, $lead_id, $form_id ) {
 	if ( is_admin() ) return $input;
 	if ( GFFormsModel::is_html5_enabled() ) {
-		$input = preg_replace( '/<(input|textarea)/', '<${1} autocomplete="off" ', $input ); 
+		$input = preg_replace( '/<(input|textarea)/', '<${1} autocomplete="off" ', $input );
 	}
 	return $input;
 }

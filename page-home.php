@@ -25,14 +25,14 @@
 
                     $dark = types_render_field('dark-look', array("raw" => true));
                     $dark = $dark == 1 ? 'dark' : '';
-                    
+
                     $blue = types_render_field('slide-blue-button', array("raw" => true));
                     $blue = $blue == 1 ? 'alt' : '';
 
                     $button_text = types_render_field('slide-button-text', array("raw" => true));
                     $button_url = types_render_field('slide-button-url', array("raw" => true));
                 ?>
-                <li class="<?= $simple; ?> <?= $dark; ?>" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
+                <li class="<?= $simple; ?> <?= $dark; ?>" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>');">
                     <div class="slide-content">
                         <h1><?php the_title(); ?></h1>
                         <?php the_content(); ?>

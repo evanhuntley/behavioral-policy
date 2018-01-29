@@ -317,4 +317,14 @@ add_action('init','eh_clean_header_hook');
 
 add_filter( 'gform_init_scripts_footer', '__return_true' );
 
+add_filter( 'gform_field_validation_15_20', 'custom_validation', 10, 4 );
+function custom_validation( $result, $value, $form, $field ) {
+ 
+    if ( $result['is_valid'] && $value != 'RWJFDuke' ) {
+        $result['is_valid'] = false;
+        $result['message'] = 'Hmm... That code isn\'t right... try again.';
+    }
+    return $result;
+}
+
 ?>

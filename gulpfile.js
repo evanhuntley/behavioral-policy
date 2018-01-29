@@ -158,6 +158,27 @@ gulp.task( "envProduction", function() {
 	env = 'prod';
 });
 
+gulp.task( "deploy", function() {
+    var config = require('./sftp-config.json');
+    
+    return gulp.src([
+        '*/**',
+        '!node_modules',
+        '!node_modules/**',
+        '!src',
+        '!src/**',
+        '!deploy',
+        '!sftp-config.json'
+    ])
+     .pipe($.sftp({
+         host: config.host,
+         user: config.user,
+         pass: config.password,
+         port: config.port,
+         remotePath: '/wp-content/themes/behavioral-policy'
+     }));
+});
+
 // Local/Dev
 gulp.task('default', ['styles', 'scripts', 'public', 'fonts', 'jshint']);
 

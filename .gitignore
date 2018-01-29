@@ -38,3 +38,4 @@ assets/svg
 
 deploy
 rsync_exclude.txt
+sftp-config.json

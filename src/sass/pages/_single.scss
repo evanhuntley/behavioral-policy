@@ -176,6 +176,44 @@
             }
         }
     }
+    
+    /* Behavioral Scientist -------------------------------------------- */
+    &.behavioral-scientist {
+        background: #fff;
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
+        
+        .post-meta {
+            margin-bottom: 1em;
+        }
+        
+        .attribution a {
+            margin-bottom: 1em;
+            color: #028b82;
+        }
+        
+        .featured-image {
+            margin: 2em 0;
+        }
+        
+        .post-content {
+            
+            p {
+                margin-bottom: 1em;
+            }
+            
+            blockquote {
+                padding: 2em 1em;
+                border-top: 2px solid #ddd;
+                border-bottom: 2px solid #ddd;
+                background: #fff;
+            }
+        }
+    }
 }
 
 /* Single People ------------------------------------------------------- */

@@ -6,7 +6,7 @@
 				<article role="main" class="single-post behavioral-scientist" id="post-<?php the_ID(); ?>">
 				<div class="primary container">
 					<div class="content">				
-						<h1><?php the_title(); ?></h1>
+						<h1><?php the_title(); ?> Testing</h1>
 						<div class="post-meta">
 							<p class="author">By </p>
 							<?php the_date('F j, Y'); ?>

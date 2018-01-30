@@ -327,4 +327,22 @@ function custom_validation( $result, $value, $form, $field ) {
     return $result;
 }
 
+/**
+ * Order posts by the last word in the post_title. 
+ * Activated when orderby is 'wpse_last_word' 
+ * @link https://wordpress.stackexchange.com/a/198624/26350
+ */
+add_filter( 'posts_orderby', function( $orderby, \WP_Query $q )
+{
+    if( 'wpse_last_word' === $q->get( 'orderby' ) && $get_order =  $q->get( 'order' ) )
+    {
+        if( in_array( strtoupper( $get_order ), ['ASC', 'DESC'] ) )
+        {
+            global $wpdb;
+            $orderby = " SUBSTRING_INDEX( {$wpdb->posts}.post_title, ' ', -1 ) " . $get_order;
+        }
+    }
+    return $orderby;
+}, PHP_INT_MAX, 2 );
+
 ?>

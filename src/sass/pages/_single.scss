@@ -204,7 +204,10 @@
         }
         
         .social-buttons {
-            text-align: right;
+            
+            @include bp-l {
+                text-align: right;    
+            }
             
             ul {
                 list-style: none;

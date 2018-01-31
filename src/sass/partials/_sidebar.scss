@@ -46,4 +46,22 @@
             margin: 0 0 1em;
         }
     }
+    
+        
+    .blog &, .single-post & {
+        
+        aside {
+            margin-bottom: 1em;
+            
+            img {
+                margin-bottom: 1em;
+            }
+        }
+        
+        ul {
+            margin-left: 0;
+            list-style-type: none;
+        }
+    }
+
 }

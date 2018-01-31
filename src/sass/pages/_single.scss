@@ -188,15 +188,18 @@
         }
         
         .header-col {
-            float: left;
             display: block;
-            margin-right: 2.3576520234%;
-            width: 57.3509783236%;
             
-            &:last-child {
-                margin-right: 0;
-                width: 40.291369653%;
-                padding-top: 0.5em;
+            @include bp-l {
+                float: left;
+                margin-right: 2.3576520234%;
+                width: 57.3509783236%;
+                
+                &:last-child {
+                    margin-right: 0;
+                    width: 40.291369653%;
+                    padding-top: 0.5em;
+                }
             }
         }
         

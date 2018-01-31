@@ -263,41 +263,6 @@
             display: none;
         }
     }
-    
-    // Expand Blocks
-    .expand-block {
-        padding: .5em;
-        border-top: 1px solid #ececec;
-
-        .expand-title {
-            
-            h3 {
-                color: $blue;
-                
-                &:before {
-                    content: "\f067";
-                    font-family: "fontawesome", Arial, sans-serif;
-                    display: inline-block;
-                    margin-right: 3em;
-                    padding: 4px 8px;
-                    font-size: 14px;
-                    color: #fff;
-                    background: $blue;
-                }
-            }
-            
-            &.open h3 {
-                
-                &:before {
-                    content: "\f068";
-                }
-            }
-        }
-        
-        .expand-description {
-            display: none;
-        }
-    }
 
     .summary {
         margin: 2em 3em 1em;
@@ -473,5 +438,41 @@
         h2 {
             @include font-size(2, 2);
         }
+    }
+}
+
+// Expand Blocks
+.expand-block {
+    padding: .5em;
+    border-top: 1px solid #ececec;
+
+    .expand-title {
+        
+        h3 {
+            color: $blue;
+            margin: 1.5em 0;
+            
+            &:before {
+                content: "\f067";
+                font-family: "fontawesome", Arial, sans-serif;
+                display: inline-block;
+                margin-right: 3em;
+                padding: 4px 8px;
+                font-size: 14px;
+                color: #fff;
+                background: $blue;
+            }
+        }
+        
+        &.open h3 {
+            
+            &:before {
+                content: "\f068";
+            }
+        }
+    }
+    
+    .expand-description {
+        display: none;
     }
 }

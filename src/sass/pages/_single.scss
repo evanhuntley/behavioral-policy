@@ -41,7 +41,7 @@
     .post-content {
         padding: 1em;
         background: #fff;
-            
+        
         p {
             margin-bottom: 1em;
         }
@@ -76,7 +76,7 @@
         .star-white {
             top: -20px;
             background: #fff;
-
+            
             &::before {
                 color: orange;
             }
@@ -187,31 +187,106 @@
             margin-bottom: 12px;
         }
         
-        .post-meta {
-            margin-bottom: 1em;
+        .header-col {
+            float: left;
+            display: block;
+            margin-right: 2.3576520234%;
+            width: 57.3509783236%;
+            
+            &:last-child {
+                margin-right: 0;
+                width: 40.291369653%;
+                padding-top: 0.5em;
+            }
         }
         
-        .attribution a {
-            margin-bottom: 1em;
-            color: #028b82;
+        .social-buttons {
+            text-align: right;
+            
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            
+            li {
+                display: inline-block;
+                font-size: 1.05em;
+                margin-right: 0.25em;
+                text-align: center;
+            }
+            
+            a {
+                background-color: #028b82;
+                border-radius: 50%;
+                color: #ffffff;
+                display: inline-block;
+                height: 1.75em;
+                line-height: 1.75em;
+                vertical-align: middle;
+                width: 1.75em;
+            }
+            
+            a.facebook {
+                background-color: #3b5998;
+            }
+            
+            a.twitter {
+                background-color: #00aced;
+            }
+            
+            a.linkedin {
+                background-color: #0077b5;
+            }
+        }
+        
+        .attribution {
+            margin: 1em 0;    
+            
+            a {
+                color: #028b82;
+            }
         }
         
         .featured-image {
-            margin: 2em 0;
+            margin: 4.5em 0 2em;
         }
         
         .post-content {
+            padding: 0 1em 0 0;
             
             p {
                 margin-bottom: 1em;
             }
             
             blockquote {
-                padding: 2em 1em;
+                padding: 1em;
                 border-top: 2px solid #ddd;
                 border-left: none;
                 border-bottom: 2px solid #ddd;
                 background: #fff;
+                @include font-size(1.8, 2.4);
+                
+                p {
+                    margin-bottom: 0;
+                    font-weight: 300;
+                    
+                    strong {
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+        
+        .bs-block {
+            padding: 1em 0;
+            @include font-size(1.2, 1.8);
+            border-top: 1px solid #ddd;
+            
+            img {
+                display: block;
+                margin: 1em 0;
+                max-width: 200px;
             }
         }
     }

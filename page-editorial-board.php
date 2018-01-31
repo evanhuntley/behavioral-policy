@@ -21,7 +21,6 @@
                 <?php the_content(); ?>
                 
                 <div class="editors">
-                    <h2>Editors</h2>
                     <ul class="grid-filters">
                         <li class="active" data-filter="*">All</li>
                         <?php

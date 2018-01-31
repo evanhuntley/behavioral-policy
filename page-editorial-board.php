@@ -63,6 +63,7 @@
 
                         $roles = get_the_terms($post, 'team-roles');
                         $areas = get_the_terms($post, 'areas-of-focus');
+                        $roles_areas = array_merge($roles, $areas);
 
                         $role_slugs = '';
                         foreach($roles as $role) {
@@ -78,24 +79,13 @@
                             <p>
                                 <?php
                                     $i = 1;
-                                    foreach($roles as $role) {
-                                        echo '<span>' . $role->name;
-                                        if ( $i < sizeof($roles)) {
+                                    foreach($roles_areas as $item) {
+                                        echo '<span>' . $item->name;
+                                        if ( $i < sizeof($roles_areas)) {
                                             echo ',';
                                         }
                                         echo '</span>';
                                         $i++;
-                                    }
-                                ?>
-                                <?php
-                                    $j = 1;
-                                    foreach($areas as $area) {
-                                        echo '<span>' . $area->name;
-                                        if ( $j < sizeof($areas)) {
-                                            echo ',';
-                                        }
-                                        echo '</span>';
-                                        $j++;
                                     }
                                 ?>
                             </p>

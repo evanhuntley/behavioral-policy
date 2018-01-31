@@ -62,6 +62,7 @@
                         while ( $people->have_posts() ) : $people->the_post();
 
                         $roles = get_the_terms($post, 'team-roles');
+                        $areas = get_the_terms($post, 'areas-of-focus');
 
                         $role_slugs = '';
                         foreach($roles as $role) {
@@ -84,6 +85,17 @@
                                         }
                                         echo '</span>';
                                         $i++;
+                                    }
+                                ?>
+                                <?php
+                                    $j = 1;
+                                    foreach($areas as $area) {
+                                        echo '<span>' . $area->name;
+                                        if ( $j < sizeof($areas)) {
+                                            echo ',';
+                                        }
+                                        echo '</span>';
+                                        $j++;
                                     }
                                 ?>
                             </p>

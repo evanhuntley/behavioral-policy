@@ -18,7 +18,16 @@
     .blog-item {
         @extend %clearfix;
         position: relative;
-        margin-bottom: 3em;
+        padding: 2em 0;
+        border-bottom: 1px solid #ddd;
+        
+        &:first-child {
+            padding-top: 0;
+        }
+        
+        &:last-child {
+            border: none;
+        }
         
         .blog-image {
             float: left;
@@ -29,8 +38,23 @@
         .blog-details {
             
             @include bp-l {
-                margin-left: 336px;
+                margin-left: 246px;
             }
+        }
+        
+        .blog-title-link {
+            color: $blue;
+            
+            h2 {
+                @include font-size(1.8, 2.4);
+                font-weight: 300;
+                margin-bottom: .5em;
+            }
+        }
+        
+        time {
+            display: block;
+            margin-bottom: 1em;
         }
         
         .blog-date {
@@ -73,13 +97,29 @@
         .read-more {
             display: block;
             margin: 1em 0;
-            text-align: right;
-            @include font-size(.875, 1);
         }
     }
     
     .navigation {
         margin: 0;
         list-style-type: none;
+    }
+    
+    .secondary-content {
+        
+        aside {
+            margin-bottom: 1em;
+        }
+        
+        ul {
+            margin-left: 0;
+            list-style-type: none;
+        }
+    }
+    
+    .bs-featured-in {
+        margin-bottom: .5em;
+        color: #000;
+        @include font-size(.875, 1);
     }
 }

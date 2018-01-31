@@ -20,23 +20,18 @@
 	<?php /* How to display standard posts and search results */ ?>
 
         <article class="blog-item">
-			<div class="blog-date">
-				<div class="date">
-					<span class="day"><?php the_time('d') ?></span>
-					<span class="month-year"><?php the_time('m, Y') ?></span>
-				</div>
-				<span class="icon"><i class="fa fa-pencil"></i></span>
-			</div>
 			<img class="blog-image" src="<?php echo the_post_thumbnail_url('bio-thumb'); ?>" />
 			<div class="blog-details">
-				<a target="_blank" href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+				<?php if (in_category('behavioral-scientist')) : ?>
+					<p class="bs-featured-in">Featured in Behavioral Scientist</p>
+				<?php endif; ?>
+				<a target="_blank" class="blog-title-link" href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '%s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 					<h2><?php the_title(); ?></h2>
 				</a>
-				<p class="entry-meta">
-					By PolicyShop Admin |
-					<time datetime="<?php the_time('F jS, Y') ?>" pubdate><?php the_time('F, j Y') ?></time> |
-					Categories: <?php the_category( ',' ); ?> 
+				<p class="author">By 
+					<?php echo (types_render_field('bs-author') ?  types_render_field('bs-author') : 'PolicyShop Admin'); ?>
 				</p>
+				<time datetime="<?php the_time('F jS, Y') ?>" pubdate><?php the_time('F, j Y') ?></time>
 				<?php the_excerpt(); ?>
 			</div>
 		</article>

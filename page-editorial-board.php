@@ -7,7 +7,7 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-    <article role="main" class="type-page about-bsp" id="post-<?php the_ID(); ?>">
+    <article role="main" class="type-page" id="post-<?php the_ID(); ?>">
         
         <div class="page-header" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
             <div class="container">

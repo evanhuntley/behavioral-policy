@@ -63,7 +63,14 @@
 
                         $roles = get_the_terms($post, 'team-roles');
                         $areas = get_the_terms($post, 'areas-of-focus');
-                        $roles_areas = array_merge($roles, $areas);
+                        
+                        if (is_array($roles) && is_array($areas)) {
+                            $roles_areas = array_merge($roles, $areas);    
+                        } else if (is_array($roles)) {
+                            $roles_areas = $roles;
+                        } else {
+                            $roles_areas = $areas;
+                        }
 
                         $role_slugs = '';
                         foreach($roles as $role) {

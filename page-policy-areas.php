@@ -11,7 +11,7 @@
         
         <div class="page-header" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
             <div class="container">
-                <h1>Policy Areas</h1>
+                <h1>Policy Areas of Focus</h1>
                 <?php echo types_render_field("page-short-description"); ?>
             </div>
         </div>

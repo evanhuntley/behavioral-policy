@@ -1,49 +1,24 @@
 <?php
 /*
-    Template Name: About BSP Page
+    Template Name: Policy Areas
 */
 ?>
 
 <?php get_header(); ?>
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-    <article role="main" class="type-page about-bsp" id="post-<?php the_ID(); ?>">
+    <article role="main" class="type-page" id="post-<?php the_ID(); ?>">
         
-        <div class="page-header" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
+        <div class="page-header" style="background-image: ">
             <div class="container">
-                <h1><img src="<?php echo get_template_directory_uri(); ?>/assets/img/l_bsp_small.png" alt="BSP" /></h1>
-                <?php echo types_render_field("page-short-description"); ?>
-            </div>
-        </div>
-
-        <div class="primary container">
-            <section class="content">
-                <?php the_content(); ?>
-                
+                <h1><?php single_term_title(); ?></h1>
+                <p><?php echo term_description(); ?></p>
                 <div class="editors">
                     <h2>Editors</h2>
-                    <ul class="grid-filters">
-                        <li class="active" data-filter="*">All</li>
-                        <?php
-                            $terms = get_terms( array(
-                                'taxonomy' => 'team-roles',
-                                'include' => array(34, 35, 44, 7, 45, 36),
-                                'orderby' => 'name',
-                                'order' => 'ASC'
-                            ) );
-
-                            foreach($terms as $term) :
-                        ?>
-                        <li data-filter=".<?php echo $term->slug; ?>">
-                            <?php 
-                                $str = str_replace("-", " ", $term->slug);
-                                echo $str;
-                            ?>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
                     <ul class="grid">
                     <?php
+                    $term = get_queried_object();
+                    $slug = $term->slug;
+                    
                         $args = array(
                             'post_type' => 'people',
                             'posts_per_page' => -1,
@@ -51,9 +26,9 @@
                             'orderby' => 'wpse_last_word', 
                             'tax_query' => array(
                                 array(
-                                    'taxonomy' => 'team-roles',
+                                    'taxonomy' => 'areas-of-focus',
                                     'field'    => 'slug',
-                                    'terms'    => array( 'associate-policy-editors', 'senior-disciplinary-editors', 'senior-policy-editors', 'founding-co-editors', 'consulting-editors', 'associate-disciplinary-editors' ),
+                                    'terms'    => $slug
                                 ),
                             ),                            
                         );
@@ -91,12 +66,13 @@
                     <?php endwhile; wp_reset_query(); ?>
                     </ul>                    
                 </div>
-            </section>
+            </div>
         </div>
-        
-        <?php get_template_part('areas-block') ?>
 
+        <div class="primary container">
+            <?php get_sidebar(); ?>
+
+        </div>
     </article>
-<?php endwhile; ?>
 
 <?php get_footer(); ?>

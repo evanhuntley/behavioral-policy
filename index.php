@@ -3,6 +3,7 @@
 		<div class="page-header">
 			<div class="container">
 				<h1>Policyshop Blog</h1>
+				<p>news and insights from behavioral science and policy -- content produced in partnership with the behavioral scientist</p>
 			</div>
 		</div>
 

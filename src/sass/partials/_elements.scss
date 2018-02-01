@@ -306,6 +306,11 @@ table {
         
         p {
             @include font-size(.8125, 1.5);
+            color: #000;
+        }
+        
+        a, a:hover {
+            color: #000;
         }
     }
     

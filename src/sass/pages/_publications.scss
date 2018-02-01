@@ -314,31 +314,8 @@
         }
     }
     
-    .prior-issues {
-        @extend %clearfix;
-        margin: 2em 0 0;
-        list-style-type: none;
-        
-        li {
-            text-align: center;
-            
-            @include bp-l {
-                @include rowMachine(4, 5%, 0);    
-            }
-        }
-        
-        a {
-            display: block;
-            margin: .25em 0;
-        }
-        
-        img {
-            width: 200px;
-            
-            @include bp-l {
-                width: auto;
-            }
-        }
+    .past-issues-link {
+        display: none;
     }
 
     .bsp-links {
@@ -474,5 +451,41 @@
     
     .expand-description {
         display: none;
+    }
+}
+
+/* Past Issues -------------------------------------------------------- */
+
+.past-issues {
+    
+    .issue-list {
+        margin: 0 0 1em;
+        list-style-type: none;
+        
+        @include bp-l {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+    
+    .issue {        
+        display: block;
+        margin-bottom: 3em;
+        @extend %clearfix;
+        
+        @include bp-l {
+            width: 50%;
+        }
+        
+        img {
+            max-width: 45%;
+            float: left;
+            margin-right: 5%;
+        }
+        
+        .button {
+            width: 40%;
+        }
     }
 }

@@ -21,39 +21,36 @@
             <?php get_sidebar(); ?>
             <section class="content">
                 <div class="current-bsp">
-                    <img class="bsp-cover" src="<?php echo types_render_field('bsp-issue-cover', array("raw" => true)); ?>" alt="BSP Current Issue" />
+                    <?php 
+                        $issue_list = get_terms( array(
+                            'taxonomy' => 'journal-issue',
+                            'hide_empty' => false,
+                            'order' => 'DESC',
+                            'meta_query' => array(
+                                array(
+                                    'key'	  	=> 'wpcf-issue-current',
+                                    'value'	  	=> '1',
+                                    'compare' 	=> '=',
+                                )
+                            ),
+                        ));
+                    ?>
+                    <?php foreach($issue_list as $issue) : ?>                    
+                        <img class="bsp-cover" src="<?php echo types_render_termmeta('issue-cover-image', array("term_id" => $issue->term_id, "raw" => true)); ?>" alt="BSP Current Issue" />
+                    <?php endforeach; ?>
                     <h1>Behavioral Science &amp; Policy</h1>
                     <?php the_content(); ?>
-                    <a target="_blank" class="button" href="<?php echo types_render_field('bsp-issue-pdf'); ?>">Download</a>
-                    <a target="_blank" data-lity class="button" href="https://issuu.com/behavioralsciencepolicyassociation/docs/v3i3_web_full?e=28763323/52195868">Read Online</a>
+                    <?php foreach($issue_list as $issue) : ?>                    
+                        <a target="_blank" class="button" href="<?php echo types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true)); ?>">Download</a>
+                        <a target="_blank" data-lity class="button" href="<?php echo types_render_termmeta('issue-embed-url', array("term_id" => $issue->term_id, "raw" => true)); ?>">Read Online</a>
+                    <?php endforeach; ?>
+                        <a class="past-issues-link" href="/publications/past-issues">View Past Issues</a>
                 </div>
-                <ul class="prior-issues">
-                    <li>
-                        <img src="https://behavioralpolicy.org/wp-content/uploads/2017/01/BSP-vol.-2-issue-2-Cover-small.jpg" />
-                        <a target="_blank" href="/wp-content/uploads/2017/06/BSPvol2no2_web-1.pdf">Download</a>
-                        <a target="_blank" data-lity href="https://issuu.com/behavioralsciencepolicyassociation/docs/bspvol2no2_web_d4a8a301952b1a?e=28763323/49295524">Read Online</a>
-                    </li>
-                    <li>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bsp-1-1.jpg" />
-                        <a target="_blank" href="/wp-content/uploads/2017/05/bsp_vol1issue1_web.pdf">Download</a>
-                        <a target="_blank" data-lity href="https://issuu.com/behavioralsciencepolicyassociation/docs/bsp_vol1issue1_web?e=28763323/49363811">Read Online</a>
-                    </li>
-                    <li>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bsp-1-2.jpg" />
-                        <a target="_blank" href="/wp-content/uploads/2017/05/bsp_vol1issue2_web.pdf">Download</a>
-                        <a target="_blank" data-lity href="https://issuu.com/behavioralsciencepolicyassociation/docs/bsp_vol1issue2_web?e=28763323/49363821">Read Online</a>
-                    </li>
-                    <li>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bsp-2-1.jpg" />
-                        <a target="_blank" href="/wp-content/uploads/2017/05/bsp_vol2issue1_web.pdf">Download</a>
-                        <a target="_blank" data-lity href="https://issuu.com/behavioralsciencepolicyassociation/docs/bsp_vol2issue1_web?e=28763323/48970013">Read Online</a>
-                    </li>
-                </ul>
                 <ul class="bsp-links">
-                    <li><a target="_blank" href="http://bsp.msubmit.net/"><span>Submit</span> we are currently seeking submissions</a></li>
+                    <li><a href="/articles"><span>Search</span> find articles of interest<br />in the BSP archive</a></li>
+                    <li><a href="/publications/past-issues"><span>past issues</span> view every volume of BSP to date</a></li>
                     <li><a href="/signup"><span>Subscribe</span> subscribe to BSP to get access to...</a></li>
-                    <li><a href="/publications/about-bsp"><span>Learn More</span> meet our editors and learn more about the journal</a></li>
-                    <li><a href="/articles"><span>Archive</span> sign in to access the<br /> BSP archive</a></li>
+                    <li><a target="_blank" href="http://bsp.msubmit.net/"><span>Submit</span> we are currently seeking submissions</a></li>
                 </ul>
                 <div class="featured-articles" id="featured">
 

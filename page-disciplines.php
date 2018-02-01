@@ -36,11 +36,13 @@
                 <ul class="areas-list disciplinary">
                     <?php foreach($disciplinary_list as $item) : ?>
                         <li class="equal">
-                            <svg class="icon">
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#<?php echo $item->slug; ?>"></use>
-                            </svg>                                
-                            <h3><?php echo $item->name; ?></h3>
-                            <p><?php echo $item->description; ?></p>
+                            <a href="/areas-of-focus/<?php echo $item->slug; ?>">
+                                <svg class="icon">
+                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#<?php echo $item->slug; ?>"></use>
+                                </svg>                                
+                                <h3><?php echo $item->name; ?></h3>
+                                <p><?php echo $item->description; ?></p>
+                            </a>
                         </li>
                     <?php endforeach; ?>
                 </ul>

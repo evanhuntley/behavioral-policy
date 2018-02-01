@@ -6,12 +6,17 @@
 
 <?php get_header(); ?>
 
-    <article role="main" class="type-page" id="post-<?php the_ID(); ?>">
+    <article role="main" class="page type-page" id="post-<?php the_ID(); ?>">
         
-        <div class="page-header" style="background-image: ">
+        <div class="page-header" style="background-image: url('/wp-content/uploads/2017/01/bg_home-bsp.jpg');">
             <div class="container">
                 <h1><?php single_term_title(); ?></h1>
                 <p><?php echo term_description(); ?></p>
+            </div>
+        </div>
+
+        <div class="primary container">
+            <section class="content">
                 <div class="editors">
                     <h2>Editors</h2>
                     <ul class="grid">
@@ -66,12 +71,8 @@
                     <?php endwhile; wp_reset_query(); ?>
                     </ul>                    
                 </div>
-            </div>
-        </div>
-
-        <div class="primary container">
+            </section>
             <?php get_sidebar(); ?>
-
         </div>
     </article>
 

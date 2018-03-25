@@ -68,7 +68,7 @@
 						<?php endif; ?>
 						<div class="bs-block">
 							<img src="<?php echo bloginfo('template_directory'); ?>/assets/img/l_behavioral-scientist.png" alt="Behavioral Scientist" />
-							<p>This piece was published in partnership with The Behavioral Scientist, a collaboration between BSPA and (TKTK).  The Behavioral Scientist is a non-profit online magazine that offers readers original, thought-provoking reports from the front lines of behavioral science.  Visit them at <a href="http://behavioralscientist.org">behavioralscientist.org</a>.</p>
+							<p>This piece was published in partnership with The Behavioral Scientist, a collaboration between BSPA, <a href="http://ideas42.org/">ideas42</a> and the <a href="https://research.chicagobooth.edu/cdr/">Center for Decision Research</a>.  The Behavioral Scientist is a non-profit online magazine that offers readers original, thought-provoking reports from the front lines of behavioral science.  Visit us at <a href="http://behavioralscientist.org">behavioralscientist.org</a>.</p>
 						</div>
 					</div>
 				</div>

@@ -4,7 +4,6 @@
 
 // Gulp
 var gulp = require('gulp'),
-    browsersync = require('browser-sync'),
     cssnano = require('cssnano'),
     cssimport = require('postcss-import'),
     svgSprite = require('gulp-svg-sprite'),
@@ -71,14 +70,6 @@ var gulp = require('gulp'),
         doctypeDeclaration: false // don't include the !DOCTYPE declaration
       }
     };
-
-// BrowserSync proxy
-gulp.task('browsersync', function () {
-    browsersync({
-        proxy: 'dev_URL',
-        open: false
-    });
-});
 
 // SVG
 gulp.task('svg', function() {
@@ -185,13 +176,3 @@ gulp.task('default', ['styles', 'scripts', 'public', 'fonts', 'jshint']);
 // Production
 gulp.task('prod', ['envProduction', 'styles', 'scripts', 'public', 'fonts']);
 
-// Watch
-gulp.task('watch', ['browsersync'], function () {
-
-    // Watch .scss files
-    gulp.watch(paths.scss, ['styles']).on('change', browsersync.reload);
-
-    //Watch .js files
-    gulp.watch(paths.scripts, ['scripts', 'jshint']).on('change', browsersync.reload);
-
-});

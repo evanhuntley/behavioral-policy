@@ -143,7 +143,7 @@
                         <?php
                         $date = types_render_field("event-date", array("format" => "M j, Y"));
                         $weekday = types_render_field("event-date", array("format" => "D"));
-                        $month = types_render_field("event-date", array("format" => "M"));
+                        $month = types_render_field("event-date", array("format" => "F"));
                         $day = types_render_field("event-date", array("format" => "d"));
                         $location = types_render_field("event-location", array("raw" => true));
                         ?>

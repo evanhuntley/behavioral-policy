@@ -19,15 +19,7 @@
         <div class="primary container">
             <?php get_sidebar(); ?>
             <section class="content">
-                <div class="event-featured" id="featured">
-                    <h1>Highlights</h1>
-                    <div class="featured-content">
-                        <h2><?= types_render_field("event-feature-title"); ?></h2>
-                        <?= types_render_field("event-feature-description"); ?>
-                        <a class="button alt" href="<?= types_render_field("event-feature-url"); ?>"><?= types_render_field("event-feature-link-text"); ?></a>
-                    </div>
-                </div>
-                <div class="calendar" id="calendar">
+                <!-- <div class="calendar" id="calendar">
                     <h1>Calendar</h1>
                     <?php
                         $args = array(
@@ -86,18 +78,11 @@
                             <?php endwhile; ?>
                         </ul>
                     <?php endif; wp_reset_query(); ?>
-                </div>
-            </section>
-        </div>
-
-        <div class="events-page-conference" id="conference">
-            <div class="container">
-                <div class="content">
-                    <h1>BSPA Annual Conference</h1>
-                    <?= types_render_field("events-annual-conference"); ?>
-                </div>
+                </div> -->
+                <h1>BSPA Annual Conference</h1>
+                <?= types_render_field("events-annual-conference"); ?>
                 
-            </div>
+            </section>
         </div>
 
         <div class="events-page-spotlight" id="spotlight">

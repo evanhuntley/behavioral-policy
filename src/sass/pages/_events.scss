@@ -127,6 +127,7 @@
 
 .events-page-spotlight {
 	@extend .primary;
+	background: #fafafa;
 	
 	.flip-container, .front, .back {
     	width: 280px;
@@ -135,7 +136,6 @@
 }
 
 .events-event-highlights {
-	background: #fafafa;
 	
 	.event-highlight-list {
 		margin: 0;

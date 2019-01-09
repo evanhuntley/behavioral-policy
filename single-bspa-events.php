@@ -64,7 +64,7 @@
                                 <?php while ( $confs->have_posts() ) : $confs->the_post(); ?>
                                     <?php $active = $currID == $post->ID ? 'active' : ''; ?>
                                     <li class="<?= $active; ?>">
-                                        <a href="<?php echo get_the_permalink(); ?>"><?= types_render_field("event-date", array("format" => "Y")); ?></a>
+                                        <a href="<?php echo get_the_permalink(); ?>"><?= types_render_field("event-date", array("style" => "text", "format" => "Y")); ?></a>
                                     </li>
                                 <?php endwhile; ?>
                             </ul>

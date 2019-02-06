@@ -419,7 +419,8 @@
 	
 	p {
 		margin-top: 1em;
-		@include font-size(.875, 1.3125);
+		font-size: 13px;
+		line-height: 21px;
 	}
 	
 	img {

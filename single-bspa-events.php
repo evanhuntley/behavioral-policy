@@ -240,7 +240,53 @@
                         <?php if ($submissions) : ?>
                             <div class="submissions subsection" id="submissions">
                                 <h2>Submissions</h2>
-                                <?= $submissions; ?>      
+                                <?= $submissions; ?>  
+                                <h3>Policy Areas</h3>
+                                <ul>
+                                 	<li>
+                                        <svg class="icon">
+                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#education-culture"></use>
+                                        </svg>      
+                                        Education &amp; Culture
+                                    </li>
+                                 	<li>
+                                        <svg class="icon">
+                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#health"></use>
+                                        </svg>      
+                                        Health
+                                    </li>
+                                 	<li>
+                                        <svg class="icon">
+                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#energy-environment"></use>
+                                        </svg>      
+                                        Energy &amp; Environment
+                                    </li>
+                                 	<li>
+                                        <svg class="icon">
+                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#justice-ethics"></use>
+                                        </svg>      
+                                        Justice &amp; Ethics
+                                    </li>
+                                 	<li>
+                                        <svg class="icon">
+                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#financial-decision-making"></use>
+                                        </svg>      
+                                        Financial Decision Making
+                                    </li>
+                                 	<li>
+                                        <svg class="icon">
+                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#management-labor"></use>
+                                        </svg>      
+                                        Management &amp; Labor
+                                    </li>
+                                    <li>
+                                        <svg class="icon">
+                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#technology"></use>
+                                        </svg>      
+                                        Technology
+                                    </li>
+                                </ul>
+                                <a href="/call-for-presenters/" class="button shortcode ">Submit</a>
                             </div>
                         <?php endif; ?>
                         

@@ -255,6 +255,7 @@
     }
 	
 	.page-header {
+		padding: 5em 0;
 		
 		.date {
 			margin: 0 0 1em;
@@ -274,6 +275,9 @@
 		h1 {
 			margin-bottom: .25em;
 			@include font-size(2.6, 3.0);
+			font-weight: 300;
+    		max-width: 800px;
+    		margin: 0 auto;
 		}
 		
 		.location {
@@ -305,6 +309,27 @@
 	.secondary-content:last-child {
 		padding-left: 0;
 		padding-right: 1em;
+	}
+	
+	.submissions {
+		
+		ul {
+			list-style-type: none;
+		}
+		
+		li {
+			width: 100%;
+			
+			@include bp-l {
+				@include rowMachine(3, 5%, 2.5%);	
+			}
+			
+			svg {
+				width: 32px;
+				height: 32px;
+				fill: $blue;
+			}
+		}
 	}
 }
 

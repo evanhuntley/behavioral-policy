@@ -206,9 +206,12 @@
                                         ?>
                                         <li>
                                             <img src="<?php echo get_the_post_thumbnail_url($speaker->ID, 'person'); ?>" />
-                                            <h3>
-                                                <?php echo $speaker->post_title; ?>
-                                            </h3>
+                                            <p>
+                                                <strong><?php echo $speaker->post_title; ?></strong>
+                                                <br />
+                                                <?php echo get_post_meta($sp_id, 'wpcf-speaker-affiliation', true); ?>
+                                            </p>
+                                            
                                         </li>
                                     <?php endforeach; ?>                    
                                 </ul>               

@@ -25,6 +25,10 @@
 				color: $orange;
 			}
 		}
+		
+		.button + .button {
+			margin-left: 24px;
+		}
 	} 
 }
 
@@ -142,7 +146,7 @@
 		list-style-type: none;
 		
 		li {
-			
+
 			@include bp-l {
 				@include rowMachine(3, 5%, 2.5%);	
 			}
@@ -319,12 +323,17 @@
 		
 		li {
 			width: 100%;
+			position: relative;
+			padding-left: 48px;
 			
 			@include bp-l {
 				@include rowMachine(3, 5%, 2.5%);	
 			}
 			
 			svg {
+				position: absolute;
+				top: 0;
+				left: 0;
 				width: 32px;
 				height: 32px;
 				fill: $blue;

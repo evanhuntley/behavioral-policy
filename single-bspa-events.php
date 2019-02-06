@@ -281,12 +281,12 @@
                                     </li>
                                     <li>
                                         <svg class="icon">
-                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#technology"></use>
+                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#technology-innovation"></use>
                                         </svg>      
                                         Technology
                                     </li>
                                 </ul>
-                                <a href="/call-for-presenters/" class="button shortcode ">Submit</a>
+                                <p><a href="/call-for-presenters/" class="button shortcode ">Submit</a></p>
                             </div>
                         <?php endif; ?>
                         

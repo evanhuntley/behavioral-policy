@@ -222,13 +222,6 @@
                             </div>   
                         <?php endif; ?>
                         
-                        <?php if ($submissions) : ?>
-                            <div class="submissions subsection" id="submissions">
-                                <h2>Submissions</h2>
-                                <?= $submissions; ?>      
-                            </div>
-                        <?php endif; ?>
-                        
                         <?php if ($location_info) : ?>
                             <div class="location subsection" id="location">
                                 <h2>Location &amp; Accommodations</h2>
@@ -236,9 +229,16 @@
                             </div>
                         <?php endif; ?>
                         
+                        <?php if ($submissions) : ?>
+                            <div class="submissions subsection" id="submissions">
+                                <h2>Submissions</h2>
+                                <?= $submissions; ?>      
+                            </div>
+                        <?php endif; ?>
+                        
                         <?php if ($cancellation) : ?>
                             <div class="cancellation subsection" id="cancellation">
-                                <h2>Cancellation &amp; Refund Policy</h2>
+                                <h3>Cancellation &amp; Refund Policy</h3>
                                 <?= $cancellation; ?>
                             </div>
                         <?php endif; ?>

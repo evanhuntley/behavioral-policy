@@ -146,7 +146,11 @@
                         $month = types_render_field("event-date", array("format" => "F"));
                         $day = types_render_field("event-date", array("format" => "d"));
                         $location = types_render_field("event-location", array("raw" => true));
+                        $special_title = types_render_field("event-special-title", array("raw" => true));
                         ?>
+                        <?php if ($special_title) : ?>
+                            <h1><?= $special_title; ?></h1>
+                        <?php else : ?>
                         <div class="date">
                             <span class="month"><?php echo $month; ?></span>
                             <span class="day"><?php echo $day; ?></span>
@@ -155,6 +159,7 @@
                         <div class="location">
                             <?php echo $location; ?>
                         </div>
+                        <?php endif; ?>
                     </div>
                 </div>
                 

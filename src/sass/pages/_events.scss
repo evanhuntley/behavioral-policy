@@ -407,7 +407,6 @@
 	@include row;
 
 	li {
-		text-align: center;
 		
 		@include bp-l {
 			@include rowMachine(3, 2.5%, 0);
@@ -418,8 +417,9 @@
 		}
 	}
 	
-	h3 {
-		@include font-size(1, 1.4);
+	p {
+		margin-top: 1em;
+		@include font-size(.875, 1.3125);
 	}
 	
 	img {

@@ -58,7 +58,7 @@
                             'post_type' => 'people',
                             'posts_per_page' => -1,
                             'order' => 'ASC',
-                            'orderby' => 'title',
+                            'orderby' => 'wpse_last_word',
                             'tax_query' => array(
                         		array(
                         			'taxonomy' => 'team-roles',

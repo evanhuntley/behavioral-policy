@@ -152,8 +152,8 @@
                             <h1><?= $special_title; ?></h1>
                         <?php else : ?>
                         <div class="date">
-                            <span class="month"><?php echo $month; ?></span>
-                            <span class="day"><?php echo $day; ?></span>
+                            <span class="month">May<?php //echo $month; ?></span>
+                            <span class="day">28-29<?php //echo $day; ?></span>
                         </div>
                         <h1><?php the_title(); ?></h1>
                         <div class="location">

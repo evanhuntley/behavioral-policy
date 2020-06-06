@@ -22,7 +22,7 @@
                 <?php the_content(); ?>
                 <?php 
                     $issue_list = get_terms( array(
-                        'taxonomy' => 'journal-issue',
+                        'taxonomy' => 'journal_issue',
                         'hide_empty' => false,
                         'order' => 'DESC',
                         'meta_query' => array(

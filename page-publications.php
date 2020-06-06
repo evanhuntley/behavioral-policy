@@ -47,7 +47,7 @@
                         <?php if (types_render_termmeta('issue-embed-url', array("term_id" => $issue->term_id, "raw" => true))) : ?>
                             <a target="_blank" data-lity class="button" href="<?php echo types_render_termmeta('issue-embed-url', array("term_id" => $issue->term_id, "raw" => true)); ?>">Read Online</a>
                         <?php else : ?>
-                            <a class="button" href="/journal_issue/<?= $issue->term_slug ?>">Read Online</a>
+                            <a class="button" href="/journal_issue/<?= $issue->slug ?>">Read Online</a>
                         <?php endif; ?>
                     <?php endforeach; ?>
                         <a class="past-issues-link" href="/publications/past-issues">View Past Issues</a>

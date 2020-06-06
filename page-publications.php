@@ -40,9 +40,15 @@
                     <?php endforeach; ?>
                     <h1>Behavioral Science &amp; Policy</h1>
                     <?php the_content(); ?>
-                    <?php foreach($issue_list as $issue) : ?>                    
-                        <a target="_blank" class="button" href="<?php echo types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true)); ?>">Download</a>
-                        <a target="_blank" data-lity class="button" href="<?php echo types_render_termmeta('issue-embed-url', array("term_id" => $issue->term_id, "raw" => true)); ?>">Read Online</a>
+                    <?php foreach($issue_list as $issue) : ?>         
+                        <?php if (types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true))) : ?>       
+                            <a target="_blank" class="button" href="<?php echo types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true)); ?>">Download</a>
+                        <?php endif; ?>
+                        <?php if (types_render_termmeta('issue-embed-url', array("term_id" => $issue->term_id, "raw" => true))) : ?>
+                            <a target="_blank" data-lity class="button" href="<?php echo types_render_termmeta('issue-embed-url', array("term_id" => $issue->term_id, "raw" => true)); ?>">Read Online</a>
+                        <?php else : ?>
+                            <a class="button" href="/journal_issue/<?= $issue->term_slug ?>">Read Online</a>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                         <a class="past-issues-link" href="/publications/past-issues">View Past Issues</a>
                 </div>

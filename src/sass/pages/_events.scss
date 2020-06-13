@@ -487,6 +487,8 @@
 
 .recording {
 	
+	margin: 3em 0;
+	
 	a {
 		position: relative;
 	}
@@ -507,5 +509,14 @@
 
 	img {
 		margin-bottom: 1em;
+	}
+	
+	@include bp-l {
+		a[data-lity] {
+			float: right;
+			max-width: 40%;
+			border: 1px solid #ccc;
+			margin-left: 2em;
+		}
 	}
 }

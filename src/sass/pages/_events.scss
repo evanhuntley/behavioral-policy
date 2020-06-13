@@ -512,7 +512,7 @@
 	}
 	
 	@include bp-l {
-		a[data-lity] {
+		.recording-thumb {
 			float: right;
 			max-width: 40%;
 			border: 1px solid #ccc;

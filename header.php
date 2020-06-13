@@ -30,7 +30,7 @@
 
 	<script src="https://use.typekit.net/kqt4yvo.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
-	<link rel="stylesheet" href="<?php echo bloginfo('template_directory'); ?>/assets/css/style.css?v=1.4" />
+	<link rel="stylesheet" href="<?php echo bloginfo('template_directory'); ?>/assets/css/style.css?v=1.5" />
 
 	<?php wp_head(); ?>
 	

@@ -230,8 +230,8 @@ function recording_func( $atts ) {
 		$recording .= '<li>';
 		$recording .= '<a href="' . $vid_url .'" data-lity>';
 		$recording .= '<img src="' . the_post_thumbnail_url('event-highlight') . '" />';
-		$recording .= '<svg class="icon"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#video"></use></svg></a>';
-		$recording .= '<h3><a href="' . $vid_url; . '" data-lity>' . the_title() . '</a></h3>';
+		$recording .= '<svg class="icon"><use xlink:href="' . get_template_directory_uri() . '/assets/svg/sprite.svg#video"></use></svg></a>';
+		$recording .= '<h3><a href="' . $vid_url . '" data-lity>' . the_title() . '</a></h3>';
 		$recording .= '<div class="description">' . types_render_field('event-highlight-short-description') . '</div>';
 		$recording .= '</li>';	
 	endwhile;

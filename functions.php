@@ -227,13 +227,13 @@ function recording_func( $atts ) {
 	
 	while ( $recordings->have_posts() ) : $recordings->the_post();
 		$vid_url = types_render_field('event-highlight-vimeo-url', array("raw" => true));
-		$recording .= '<li>';
+		$recording .= '<div class="recording">';
 		$recording .= '<a href="' . $vid_url .'" data-lity>';
 		$recording .= '<img src="' . get_the_post_thumbnail_url($post->ID, 'event-highlight') . '" />';
 		$recording .= '<svg class="icon"><use xlink:href="' . get_template_directory_uri() . '/assets/svg/sprite.svg#video"></use></svg></a>';
 		$recording .= '<h3><a href="' . $vid_url . '" data-lity>' . get_the_title() . '</a></h3>';
 		$recording .= '<div class="description">' . types_render_field('event-highlight-short-description') . '</div>';
-		$recording .= '</li>';	
+		$recording .= '</div>';	
 	endwhile;
 	return $recording;
 }

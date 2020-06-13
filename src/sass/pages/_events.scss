@@ -506,10 +506,6 @@
 		opacity: .5;
 		transition: all .2s;
 	}
-
-	img {
-		margin-bottom: 1em;
-	}
 	
 	@include bp-l {
 		.recording-thumb {

@@ -486,6 +486,7 @@
 }
 
 .recording {
+	@extend %clearfix;
 	
 	margin: 3em 0;
 	

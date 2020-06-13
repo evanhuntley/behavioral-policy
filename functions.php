@@ -209,6 +209,36 @@ function button_func( $atts ) {
 }
 add_shortcode( 'button', 'button_func' );
 
+
+// Event Highlight Shortcode
+// [recording id="#"]
+function recording_func( $atts ) {
+
+	$a = shortcode_atts( array(
+	    'id' => '#',
+	), $atts );
+	
+	$args = array(
+		'post_type' => 'event-highlights',
+		'p' => $a['id']
+	);
+
+	$recordings = new WP_Query( $args);	
+	
+	while ( $recordings->have_posts() ) : $recordings->the_post();
+		$vid_url = types_render_field('event-highlight-vimeo-url', array("raw" => true));
+		$recording .= '<li>';
+		$recording .= '<a href="<?= $vid_url; ?>" data-lity>';
+		$recording .= '<img src="' . the_post_thumbnail_url('event-highlight') . '" />';
+		$recording .= '<svg class="icon"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/sprite.svg#video"></use></svg></a>';
+		$recording .= '<h3><a href="' . $vid_url; . '" data-lity>' . the_title() . '</a></h3>';
+		$recording .= '<div class="description">' . types_render_field('event-highlight-short-description') . '</div>';
+		$recording .= '</li>';	
+	endwhile;
+	return $recording;
+}
+add_shortcode( 'recording', 'recording_func' );
+
 // Blog Star Block Shortcode
 // [starblock]Stuff Here[/starblock]
 function starblock_func( $atts, $content = null ) {

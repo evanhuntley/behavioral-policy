@@ -487,7 +487,6 @@
 
 .recording {
 	@extend %clearfix;
-	
 	margin: 3em 0;
 	
 	a {
@@ -517,7 +516,11 @@
 			float: right;
 			max-width: 40%;
 			border: 1px solid #ccc;
-			margin-left: 2em;
+		}
+		
+		.description {
+			float: left;
+			width: 55%;
 		}
 	}
 }

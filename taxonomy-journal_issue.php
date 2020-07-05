@@ -18,7 +18,28 @@
         <div class="primary container">
             <section class="content">
                 <div class="featured-articles">
-                    <?php get_template_part( 'loop', 'journal' ); ?>
+                    <?php
+                    $term = get_queried_object();
+                    $slug = $term->slug;
+                    
+                        $args = array(
+                            'post_type' => 'article',
+                            'posts_per_page' => -1,
+                            'order' => 'ASC',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'journal_issue',
+                                    'field'    => 'slug',
+                                    'terms'    => $slug
+                                ),
+                            ),                            
+                        );
+                        $results = new WP_Query( $args);
+
+                        while ( $results->have_posts() ) : $results->the_post();
+                        get_template_part( 'loop', 'journal' );
+                        endwhile;
+                    ?>
                 </div>
             </section>
             <?php get_sidebar(); ?>

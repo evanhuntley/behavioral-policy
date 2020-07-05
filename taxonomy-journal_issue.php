@@ -23,7 +23,7 @@
                     $slug = $term->slug;
                     
                         $args = array(
-                            'post_type' => 'article',
+                            'post_type' => 'articles',
                             'posts_per_page' => -1,
                             'order' => 'ASC',
                             'tax_query' => array(

@@ -25,7 +25,7 @@
                         $args = array(
                             'post_type' => 'articles',
                             'posts_per_page' => -1,
-                            'order' => 'ASC',
+                            'order' => 'DESC',
                             'tax_query' => array(
                                 array(
                                     'taxonomy' => 'journal_issue',

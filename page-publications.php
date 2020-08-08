@@ -38,8 +38,8 @@
                     <h1>Behavioral Science &amp; Policy</h1>
                     <?php the_content(); ?>
                     <?php foreach($issue_list as $issue) : ?>
-                        <div class="bsp-issue-unit">      
-                            <h2><?= $issue->title; ?></h2>       
+                        <section class="bsp-issue-unit">      
+                            <h2><?= $issue->term_name; ?></h2>       
                             <img class="bsp-cover" src="<?php echo types_render_termmeta('issue-cover-image', array("term_id" => $issue->term_id, "raw" => true)); ?>" alt="BSP Current Issue" />
                             <?php if (types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true))) : ?>       
                                 <a target="_blank" class="button" href="<?php echo types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true)); ?>">Download</a>
@@ -49,7 +49,7 @@
                             <?php else : ?>
                                 <a class="button" href="/journal_issue/<?= $issue->slug ?>">Read Online</a>
                             <?php endif; ?>
-                        </div>
+                        </section>
                     <?php endforeach; ?>
                     <a class="past-issues-link" href="/publications/past-issues">View Past Issues</a>
                 </div>

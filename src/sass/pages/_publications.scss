@@ -93,6 +93,11 @@
     }
 }
 
+.bsp-issue-unit {
+    @extend %clearfix;
+    padding-top: 20px;
+}
+
 .displayed-results {
 
     h2 {

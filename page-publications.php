@@ -39,7 +39,7 @@
                     <?php the_content(); ?>
                     <?php foreach($issue_list as $issue) : ?>
                         <section class="bsp-issue-unit">      
-                            <h2><?= $issue->term_name; ?></h2>       
+                            <h2><?= $issue->name; ?></h2>       
                             <img class="bsp-cover" src="<?php echo types_render_termmeta('issue-cover-image', array("term_id" => $issue->term_id, "raw" => true)); ?>" alt="BSP Current Issue" />
                             <?php if (types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true))) : ?>       
                                 <a target="_blank" class="button" href="<?php echo types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true)); ?>">Download</a>

@@ -35,22 +35,23 @@
                             ),
                         ));
                     ?>
-                    <?php foreach($issue_list as $issue) : ?>                    
-                        <img class="bsp-cover" src="<?php echo types_render_termmeta('issue-cover-image', array("term_id" => $issue->term_id, "raw" => true)); ?>" alt="BSP Current Issue" />
-                    <?php endforeach; ?>
                     <h1>Behavioral Science &amp; Policy</h1>
                     <?php the_content(); ?>
-                    <?php foreach($issue_list as $issue) : ?>         
-                        <?php if (types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true))) : ?>       
-                            <a target="_blank" class="button" href="<?php echo types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true)); ?>">Download</a>
-                        <?php endif; ?>
-                        <?php if (types_render_termmeta('issue-embed-url', array("term_id" => $issue->term_id, "raw" => true))) : ?>
-                            <a target="_blank" data-lity class="button" href="<?php echo types_render_termmeta('issue-embed-url', array("term_id" => $issue->term_id, "raw" => true)); ?>">Read Online</a>
-                        <?php else : ?>
-                            <a class="button" href="/journal_issue/<?= $issue->slug ?>">Read Online</a>
-                        <?php endif; ?>
+                    <?php foreach($issue_list as $issue) : ?>
+                        <div class="bsp-issue-unit">      
+                            <h2><?= $issue->title; ?></h2>       
+                            <img class="bsp-cover" src="<?php echo types_render_termmeta('issue-cover-image', array("term_id" => $issue->term_id, "raw" => true)); ?>" alt="BSP Current Issue" />
+                            <?php if (types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true))) : ?>       
+                                <a target="_blank" class="button" href="<?php echo types_render_termmeta('issue-pdf', array("term_id" => $issue->term_id, "raw" => true)); ?>">Download</a>
+                            <?php endif; ?>
+                            <?php if (types_render_termmeta('issue-embed-url', array("term_id" => $issue->term_id, "raw" => true))) : ?>
+                                <a target="_blank" data-lity class="button" href="<?php echo types_render_termmeta('issue-embed-url', array("term_id" => $issue->term_id, "raw" => true)); ?>">Read Online</a>
+                            <?php else : ?>
+                                <a class="button" href="/journal_issue/<?= $issue->slug ?>">Read Online</a>
+                            <?php endif; ?>
+                        </div>
                     <?php endforeach; ?>
-                        <a class="past-issues-link" href="/publications/past-issues">View Past Issues</a>
+                    <a class="past-issues-link" href="/publications/past-issues">View Past Issues</a>
                 </div>
                 <ul class="bsp-links">
                     <li><a href="/articles"><span>Search</span> find articles of interest<br />in the BSP archive</a></li>

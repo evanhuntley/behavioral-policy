@@ -81,7 +81,8 @@
             $args = array(
                 'post_type' => 'articles',
                 'posts_per_page' => 3,
-                'orderby' => 'RAND'
+                'orderby' => 'RAND',
+                'post__not_in' => array (get_the_ID())
             );
 
             $related = new WP_Query($args);

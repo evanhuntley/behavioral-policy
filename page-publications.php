@@ -90,8 +90,7 @@
                                 'post_type' => 'articles',
                                 'posts_per_page' => -1,
                                 'orderby' => 'date',
-                                'order' => 'DESC',
-                                'post__not_in' => array (get_the_ID())
+                                'order' => 'DESC'
                             );
                         }
 

@@ -91,13 +91,6 @@
                                 'posts_per_page' => 3,
                                 'orderby' => 'date',
                                 'order' => 'DESC',
-                                'meta_query'	=> array(
-                                    array(
-                                        'key'	  	=> 'wpcf-is-featured-article',
-                                        'value'	  	=> '0',
-                                        'compare' 	=> '=',
-                                    )
-                            	)
                             );
                         }
 

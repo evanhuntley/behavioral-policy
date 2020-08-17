@@ -94,8 +94,8 @@
                                 'meta_query'	=> array(
                                     array(
                                         'key'	  	=> 'wpcf-is-featured-article',
-                                        'value'	  	=> '1',
-                                        'compare' 	=> '!=',
+                                        'value'	  	=> '0',
+                                        'compare' 	=> '=',
                                     )
                             	)
                             );

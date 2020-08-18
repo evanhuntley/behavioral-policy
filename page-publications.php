@@ -91,13 +91,18 @@
                                 'posts_per_page' => -1,
                                 'orderby' => 'date',
                                 'order' => 'DESC',
-                                'meta_query'	=> array(
+                                'meta_query' => array(
+                                    'relation' => 'OR',
                                     array(
-                                        'key'	  	=> 'wpcf-is-featured-article',
-                                        'value'	  	=> '',
-                                        'compare' 	=> '=',
+                                        'key' => 'wpcf-is-featured-article',
+                                        'value' => false,
+                                        'type' => 'BOOLEAN'
+                                    ),
+                                    array(
+                                        'key' => 'wpcf-is-featured-article',
+                                        'compare' => 'NOT EXISTS'
                                     )
-                                ),
+                                )
                             );
                         }
 
